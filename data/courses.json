@@ -214,9 +214,17 @@
      "status": "live",
      "thumb": "assets/img/yt_LguP8SzxbeU.jpg",
      "meta": "8:18 · build heap in O(n) · n log n always · not stable"
+    },
+    {
+     "code": "",
+     "title": "Graph Representation Explained Visually: Adjacency List vs Adjacency Matrix",
+     "youtube": "https://youtu.be/K-PeWrwZgtI",
+     "status": "live",
+     "thumb": "assets/img/yt_K-PeWrwZgtI.jpg",
+     "meta": "7:43"
     }
    ],
-   "total": 3
+   "total": 4
   },
   {
    "slug": "networks",
