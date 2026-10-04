@@ -401,7 +401,7 @@
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",
    "blurb": "Quick visual ideas from every series, each under a minute.",
-   "total": 7,
+   "total": 8,
    "lessons": [
     {
      "code": "SHORT",
@@ -458,6 +458,14 @@
      "status": "live",
      "thumb": "assets/img/yt_ZLPYeDQMxd4.jpg",
      "meta": "0:25 · algorithms"
+    },
+    {
+     "code": "SHORT",
+     "title": "Adjacency Matrix vs List: 200,000× Difference",
+     "youtube": "https://youtu.be/LApjZYE4KC0",
+     "status": "live",
+     "thumb": "assets/img/yt_LApjZYE4KC0.jpg",
+     "meta": "0:50 · Short"
     }
    ]
   }

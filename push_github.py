@@ -68,7 +68,10 @@ def files():
 def main():
     msg = sys.argv[1] if len(sys.argv) > 1 else "Update website"
     tok = token()
-    owner = call("GET", "/user", tok)["login"]
+    req = urllib.request.Request(API + "/user", headers={"Authorization": f"Bearer {tok}", "User-Agent": "aafaqcs-push"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        owner = json.loads(r.read())["login"]
+        can_workflow = "workflow" in (r.headers.get("X-OAuth-Scopes") or "workflow")
     repo = call("GET", f"/repos/{owner}/{GITHUB_REPO}", tok, ok404=True)
     if repo is None:
         print(f"Creating repository {owner}/{GITHUB_REPO} ({'private' if PRIVATE else 'public'}) ...")
@@ -82,6 +85,9 @@ def main():
     parent = ref["object"]["sha"]
     tree, n, size = [], 0, 0
     for rel, f in files():
+        if rel.startswith(".github/workflows/") and not can_workflow:
+            print(f"skipped {rel}: the token needs the 'workflow' scope to publish GitHub Actions")
+            continue
         data = f.read_bytes()
         blob = call("POST", f"/repos/{full}/git/blobs", tok, {"content": base64.b64encode(data).decode(), "encoding": "base64"})
         tree.append({"path": rel, "mode": "100755" if os.access(f, os.X_OK) and f.suffix == ".py" else "100644", "type": "blob", "sha": blob["sha"]})

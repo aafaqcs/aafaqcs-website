@@ -81,6 +81,10 @@ def thumb(vid):
 
 
 def clean(title):
+    # keep the first headline: stop at the first emoji or hashtag when a real title precedes it
+    m = re.search(r"[\U0001F300-\U0001FAFF\u2600-\u27BF]|#\w+", title)
+    if m and len(title[:m.start()].strip()) >= 15:
+        title = title[:m.start()]
     t = re.sub(r"#\w+", "", title)
     t = re.split(r"\s+\|\s+", t)[0]
     t = re.sub(r"[\U0001F300-\U0001FAFF☀-➿️]", "", t)
