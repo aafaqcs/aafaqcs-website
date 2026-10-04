@@ -64,6 +64,8 @@ h3{font:700 15px var(--display);margin:22px 0 8px;color:var(--ink)}
 .stat b{display:block;font:800 26px/1.1 var(--display);color:var(--banner);letter-spacing:-.02em}.stat small{color:var(--muted);font-size:12px;line-height:1.35;display:block;margin-top:3px}
 ul.news{list-style:none;padding:0;margin:0;border-left:2px solid var(--line);margin-left:8px}
 ul.news li{position:relative;padding:0 0 16px 22px;font-size:14px;line-height:1.5}
+ul.news .when{display:block;font:600 11.5px var(--mono);color:var(--muted);letter-spacing:.03em;margin:0 0 3px}
+.tag.short{background:#7c3aed1f;color:#7c3aed}
 ul.news li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--sheet);border:2px solid var(--bullet)}
 .tag{display:inline-block;font:700 10.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:1px}
 .tag.video{background:#e621171a;color:#d0311f}.tag.paper{background:#1f6fd11a;color:var(--link)}.tag.milestone{background:#6aa1421f;color:#4f8a2c}
@@ -241,6 +243,23 @@ def gcr_html(sub, big=False):
     return '<span class="meta">Google Classroom: ask in class for the joining code.</span>'
 
 
+def news_date(d):
+    m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", d or "")
+    if not m:
+        return E(d or "")
+    return f"{int(m.group(3))} {('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')[int(m.group(2)) - 1]} {m.group(1)}"
+
+
+def news_item(n):
+    """A news entry is a dict {date, kind, text, pin} (older plain strings still work)."""
+    if isinstance(n, str):
+        return f"<li>{news_tag(n)}{rich(n)}</li>"
+    kind = n.get("kind", "")
+    tag = {"video": '<span class="tag video">Video</span>', "short": '<span class="tag short">Short</span>',
+           "paper": '<span class="tag paper">Paper</span>', "milestone": '<span class="tag milestone">Milestone</span>'}.get(kind) or news_tag(n["text"])
+    return f'<li><span class="when">{news_date(n.get("date"))}</span>{tag}{rich(n["text"])}</li>'
+
+
 def news_tag(text):
     t = text.lower()
     if t.startswith(("released", "started", "finished")):
@@ -289,7 +308,7 @@ def build():
     home = f"""<p>I am an Assistant Professor in the Department of Computer Science &amp; Engineering at <a href="https://gcetkashmir.ac.in">GCET Kashmir</a>.</p>
 <p>My research is in machine learning on graphs: {E(research)}. My PhD at <a href="https://nitsri.ac.in">NIT Srinagar</a> studied why deep graph neural networks lose information as they grow (over-smoothing and over-squashing) and how to build networks that don't. I also make free visual lectures for GATE and engineering students, where every graph is computed from real data and every answer is checked.</p>
 {stats}
-{h2("What's new")}<ul class="news">{"".join(f"<li>{news_tag(n)}{rich(n)}</li>" for n in prof.get("news", []))}</ul>
+{h2("What's new")}<ul class="news">{"".join(news_item(n) for n in prof.get("news", []))}</ul>
 {h2("Video courses")}<div class="cards">{"".join(card(c) for c in courses[:3])}</div>
 <p class="more"><a href="courses.html">All video courses →</a></p>
 {h2("Latest publications")}{"".join(pub_html(p) for p in sorted(pubs["publications"], key=lambda p: -p["year"])[:3])}

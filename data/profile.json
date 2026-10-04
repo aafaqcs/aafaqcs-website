@@ -129,15 +129,84 @@
  ],
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
-  "Released [Graph Representation Explained Visually: Adjacency List vs Adjacency Matrix](https://youtu.be/K-PeWrwZgtI) in [Algorithm Arena · GATE CS](courses/algorithms.html).",
-  "Released [Heap Sort Explained Visually](https://youtu.be/LguP8SzxbeU) in the [Algorithm Arena](courses/algorithms.html): build heap in O(n), n log n always, and why heap sort is not stable.",
-  "Completed the [JKSSB Computer Knowledge](courses/jkssb.html) series: all 10 episodes, from computer fundamentals to GIS and GPS.",
-  "Started [Shorts](courses/shorts.html): one idea in 60 seconds, from heap sort to supernetting.",
-  "Released [ML 02: Simple Linear Regression](https://youtu.be/F5n9dZmEfso), the second lecture of the free [GATE DA 2027 Machine Learning series](courses/gate-da-ml.html). Least squares worked out by hand on real Iris data.",
-  "Released [ML 01: What is Machine Learning?](https://youtu.be/F7jnhEnSN1E), the opening lecture of a 20-part visual series covering the whole GATE DA machine learning syllabus.",
-  "Started [GATE DA · Start here](https://youtu.be/Rei1dHPOCBI): what the GATE Data Science & AI paper is, its pattern, its 7 syllabus pillars and a roadmap.",
-  "Finished the [Computer Networks](courses/networks.html) unit on IP addressing: classful addressing, subnetting, longest prefix match, supernetting and the IPv4 packet format.",
-  "Released [Strassen's matrix multiplication](https://youtu.be/VMCJ0cLXxzY) in the [Algorithm Arena](courses/algorithms.html) series for GATE CS.",
-  "Joined [GCET Kashmir](https://gcetkashmir.ac.in) as Assistant Professor after ranking first in the JKPSC selection. January 2024."
+  {
+   "date": "2026-10-04",
+   "kind": "milestone",
+   "pin": true,
+   "text": "Launched this website: every lecture, Short and course in one place, updated automatically from YouTube."
+  },
+  {
+   "date": "2026-10-04",
+   "kind": "video",
+   "text": "Released [Graph Representation: adjacency list vs adjacency matrix](https://youtu.be/K-PeWrwZgtI) in the [Algorithm Arena](courses/algorithms.html): Θ(n + e) vs Θ(n²), and when each one wins."
+  },
+  {
+   "date": "2026-10-04",
+   "kind": "short",
+   "text": "Short: [Adjacency Matrix vs List: 200,000× Difference](https://youtu.be/LApjZYE4KC0)."
+  },
+  {
+   "date": "2026-10-03",
+   "kind": "video",
+   "text": "Released [Heap Sort Explained Visually](https://youtu.be/LguP8SzxbeU) in the [Algorithm Arena](courses/algorithms.html): build heap in O(n), n log n always, and why heap sort is not stable."
+  },
+  {
+   "date": "2026-10-03",
+   "kind": "short",
+   "text": "Short: [Heap Sort Secretly Reversed My Data](https://youtu.be/x7Zkqb2NEXo)."
+  },
+  {
+   "date": "2026-10-02",
+   "kind": "video",
+   "text": "Released [ML 02: Simple Linear Regression](https://youtu.be/F5n9dZmEfso), the second lecture of the free [GATE DA 2027 Machine Learning series](courses/gate-da-ml.html). Least squares worked out by hand on real Iris data."
+  },
+  {
+   "date": "2026-10-02",
+   "kind": "video",
+   "text": "Released [ML 01: What is Machine Learning?](https://youtu.be/F7jnhEnSN1E), the opening lecture of a 20-part visual series covering the whole GATE DA machine learning syllabus."
+  },
+  {
+   "date": "2026-09-30",
+   "kind": "video",
+   "text": "Started [GATE DA · Start here](https://youtu.be/Rei1dHPOCBI): what the GATE Data Science & AI paper is, its pattern, its 7 syllabus pillars and a roadmap."
+  },
+  {
+   "date": "2026-09-29",
+   "kind": "milestone",
+   "text": "Finished the [Computer Networks](courses/networks.html) unit on IP addressing: classful addressing, subnetting, longest prefix match, supernetting and the IPv4 packet format."
+  },
+  {
+   "date": "2026-09-29",
+   "kind": "video",
+   "text": "Released [Strassen's matrix multiplication](https://youtu.be/VMCJ0cLXxzY) in the [Algorithm Arena](courses/algorithms.html) series for GATE CS."
+  },
+  {
+   "date": "2026-09-28",
+   "kind": "video",
+   "text": "Released [Find the k-th Smallest Without Sorting: Selection Procedure](https://youtu.be/b_QP8RgZ6ZI) in the [Algorithm Arena](courses/algorithms.html)."
+  },
+  {
+   "date": "2026-09-28",
+   "kind": "short",
+   "text": "Started [Shorts](courses/shorts.html): one idea in 60 seconds, from heap sort to supernetting."
+  },
+  {
+   "date": "2026-09-27",
+   "kind": "milestone",
+   "pin": true,
+   "text": "Completed the [JKSSB Computer Knowledge](courses/jkssb.html) series: all 10 episodes, from computer fundamentals to GIS and GPS."
+  },
+  {
+   "date": "January 2024",
+   "kind": "milestone",
+   "pin": true,
+   "text": "Joined [GCET Kashmir](https://gcetkashmir.ac.in) as Assistant Professor after ranking first in the JKPSC selection."
+  },
+  {
+   "date": "2023",
+   "kind": "paper",
+   "pin": true,
+   "text": "Our paper on [over-smoothing and over-squashing in graph neural networks](publications.html) appeared in Big Data Mining and Analytics (IEEE, impact factor 13.6)."
+  }
  ]
 }

@@ -24,7 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CHANNEL = "UCbrkPZ63BAZFrMLBf0tWzHA"
 H = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64)", "Accept-Language": "en-US,en;q=0.9"}
-NEWS_MAX = 10
+NEWS_MAX = 12          # dated video/Short items kept on the home page; pinned milestones and papers are never dropped
 
 
 def get(url, timeout=30):
@@ -35,15 +35,15 @@ def channel_videos():
     """{video_id: {"title", "short"}} from the feed, plus the channel pages when YouTube serves them."""
     vids = {}
     feed = get(f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL}").decode()
-    for vid, title in re.findall(r"<yt:videoId>(.*?)</yt:videoId>.*?<title>(.*?)</title>", feed, re.S):
-        vids[vid] = {"title": html.unescape(title), "short": None}
+    for vid, title, pub in re.findall(r"<yt:videoId>(.*?)</yt:videoId>.*?<title>(.*?)</title>.*?<published>(.*?)</published>", feed, re.S):
+        vids[vid] = {"title": html.unescape(title), "short": None, "date": pub[:10]}
     for tab in ("videos", "shorts"):
         try:
             page = get(f"https://www.youtube.com/channel/{CHANNEL}/{tab}").decode("utf-8", "replace")
         except Exception:
             continue
         for vid in dict.fromkeys(re.findall(r'"videoId":"([\w-]{11})"', page)):
-            vids.setdefault(vid, {"title": None, "short": None})
+            vids.setdefault(vid, {"title": None, "short": None, "date": str(date.today())})
             if tab == "shorts":
                 vids[vid]["short"] = True
     for vid, d in vids.items():
@@ -131,13 +131,24 @@ def main():
             course["lessons"].append(lesson)
             course["total"] = max(course.get("total", 0), len(course["lessons"]))
         added.append((slug, lesson))
-        if not d["short"]:
-            item = f"Released [{lesson['title']}]({lesson['youtube']}) in [{course['title']}](courses/{slug}.html)."
-            prof["news"] = [item] + [n for n in prof["news"] if n != item]
+        if d["short"]:
+            item = {"date": d["date"], "kind": "short", "text": f"Short: [{lesson['title']}]({lesson['youtube']})."}
+        else:
+            item = {"date": d["date"], "kind": "video", "text": f"Released [{lesson['title']}]({lesson['youtube']}) in [{course['title']}](courses/{slug}.html)."}
+        prof["news"] = [item] + [n for n in prof["news"] if n != item]
     if not added:
         print("No new videos.")
         return
-    prof["news"] = prof["news"][:NEWS_MAX]
+    # newest first (dated items), then undated pinned items such as "January 2024"; trim only unpinned dated items
+    iso = lambda n: n.get("date", "") if isinstance(n, dict) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", n.get("date", "")) else ""
+    ordered = sorted([n for n in prof["news"] if iso(n)], key=iso, reverse=True) + [n for n in prof["news"] if not iso(n)]
+    kept, n_dated = [], 0
+    for n in ordered:
+        pinned = isinstance(n, str) or n.get("pin")
+        if pinned or n_dated < NEWS_MAX:
+            kept.append(n)
+            n_dated += 0 if pinned else 1
+    prof["news"] = kept
     (ROOT / "data" / "courses.json").write_text(json.dumps(courses, indent=1, ensure_ascii=False) + "\n")
     (ROOT / "data" / "profile.json").write_text(json.dumps(prof, indent=1, ensure_ascii=False) + "\n")
     for slug, l in added:
