@@ -169,6 +169,8 @@ NET = ('<svg viewBox="0 0 300 120" aria-hidden="true"><g stroke="#fff" stroke-wi
 
 
 PAGES = []
+import hashlib
+CSS_V = None
 
 
 PLAYER = """<div class="ytm" id="ytm" role="dialog" aria-label="Video player"><button class="x" type="button">✕ Close</button><a class="yt" id="ytl" href="#">Open on YouTube ↗</a></div>
@@ -193,7 +195,7 @@ def page(path, title, body, prof, active, desc, up=None, index=True):
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}"><link rel="icon" href="{FAVICON}">{f'<link rel="canonical" href="{SITE}/{"" if path == "index.html" else path}">' if index else '<meta name="robots" content="noindex">'}
 <meta property="og:type" content="website"><meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:image" content="{SITE}/assets/img/photo.jpg">
-<meta name="theme-color" content="#2f3439">{THEME_JS}{FONTS}<link rel="stylesheet" href="{up}assets/site.css"></head>
+<meta name="theme-color" content="#2f3439">{THEME_JS}{FONTS}<link rel="stylesheet" href="{up}assets/site.css?v={CSS_V}"></head>
 <body><div class="sheet"><div class="bar"><a class="brand" href="{up}index.html">aafaq<b>cs</b></a><span class="inst">GCET KASHMIR<small>DEPARTMENT OF CSE</small></span>{THEME}</div>
 <div class="cols"><div class="left"><img class="photo" src="{up}assets/img/photo.jpg" alt="{E(prof["name"])}">
 <nav class="menu">{menu}</nav>
@@ -276,6 +278,8 @@ def build():
     (DIST / "assets").mkdir(parents=True)
     shutil.copytree(ROOT / "assets" / "img", DIST / "assets" / "img")
     (DIST / "assets" / "site.css").write_text(CSS, encoding="utf-8")
+    global CSS_V
+    CSS_V = hashlib.sha1(CSS.encode()).hexdigest()[:8]
     links, m = prof["links"], pubs["metrics"]
     name = prof["name"]
 
