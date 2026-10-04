@@ -1,0 +1,110 @@
+{
+ "note": "Subjects taught this semester. Edit freely, then run python3 build.py. gcr_link = the Google Classroom invite link (Classroom > class > Settings > Invite link); gcr_code = the class code. Leave both empty to show 'Ask in class'. Week topics are a standard outline: rename any week to match your syllabus. Files for each week go in teaching/<slug>/weekNN/ (see teaching/README.txt).",
+ "semester": "Autumn 2026",
+ "subjects": [
+  {
+   "slug": "ada",
+   "title": "Design & Analysis of Algorithms",
+   "code": "ADA",
+   "programme": "B.Tech CSE",
+   "gcr_link": "",
+   "gcr_code": "",
+   "blurb": "How to design algorithms and prove how fast they are: divide and conquer, greedy, dynamic programming, graph algorithms and NP-completeness.",
+   "weeks": [
+    "Introduction: algorithms, the analysis framework, asymptotic notations",
+    "Recurrences: substitution, recursion tree, master theorem",
+    "Divide & conquer I: binary search, merge sort, quick sort",
+    "Divide & conquer II: Strassen's matrix multiplication, selection (quickselect)",
+    "Heaps, heap sort and priority queues",
+    "Sorting lower bound; counting sort and radix sort",
+    "Greedy I: activity selection, fractional knapsack, Huffman coding",
+    "Greedy II: minimum spanning trees (Kruskal, Prim), union-find",
+    "Graph traversal: BFS, DFS, topological sort",
+    "Shortest paths: Dijkstra, Bellman-Ford",
+    "Dynamic programming I: principles, matrix-chain multiplication, LCS",
+    "Dynamic programming II: 0/1 knapsack, Floyd-Warshall",
+    "Backtracking: N-queens, sum of subsets, graph colouring",
+    "Branch and bound: 0/1 knapsack, travelling salesperson",
+    "P, NP and NP-completeness; revision"
+   ]
+  },
+  {
+   "slug": "ds",
+   "title": "Data Structures",
+   "code": "DS",
+   "programme": "B.Tech CSE",
+   "gcr_link": "",
+   "gcr_code": "",
+   "blurb": "How data is organised in memory and why it matters: arrays, linked lists, stacks, queues, trees, graphs, hashing, searching and sorting.",
+   "weeks": [
+    "Introduction: abstract data types, complexity, arrays",
+    "Arrays II: 2-D arrays, sparse matrices, strings",
+    "Singly linked lists",
+    "Doubly and circular linked lists; polynomial addition",
+    "Stacks: array and list implementations; infix to postfix",
+    "Stack applications: expression evaluation, recursion",
+    "Queues: linear, circular, deque, priority queue",
+    "Trees: terminology, binary trees, traversals",
+    "Binary search trees",
+    "Balanced trees: AVL trees; introduction to B-trees",
+    "Heaps and heap sort",
+    "Graphs: representations, BFS, DFS",
+    "Searching and hashing: collision resolution",
+    "Sorting: bubble, insertion, selection, merge, quick",
+    "Revision and previous-year questions"
+   ]
+  },
+  {
+   "slug": "os",
+   "title": "Operating Systems",
+   "code": "OS",
+   "programme": "B.Tech CSE",
+   "gcr_link": "",
+   "gcr_code": "",
+   "blurb": "What happens between your program and the hardware: processes, CPU scheduling, synchronisation, deadlocks, memory, file systems and disks.",
+   "weeks": [
+    "Introduction: OS functions, structures, system calls",
+    "Processes and threads: states, PCB, context switch",
+    "CPU scheduling I: FCFS, SJF, SRTF",
+    "CPU scheduling II: priority, round robin, multilevel queues",
+    "Process synchronisation: critical section, Peterson's solution",
+    "Semaphores, mutexes and classical synchronisation problems",
+    "Monitors; deadlocks: conditions and resource-allocation graphs",
+    "Deadlock prevention, avoidance (Banker's algorithm), detection",
+    "Memory management: contiguous allocation, fragmentation",
+    "Paging, TLB and segmentation",
+    "Virtual memory: demand paging, page replacement (FIFO, LRU, Optimal)",
+    "Thrashing and working sets; file-system interface",
+    "File-system implementation: allocation methods, directories",
+    "Disk scheduling and I/O systems",
+    "Protection and security; revision"
+   ]
+  },
+  {
+   "slug": "cd",
+   "title": "Compiler Design",
+   "code": "CD",
+   "programme": "B.Tech CSE",
+   "gcr_link": "",
+   "gcr_code": "",
+   "blurb": "How source code becomes machine code: lexical analysis, parsing, syntax-directed translation, intermediate code, optimisation and code generation.",
+   "weeks": [
+    "Introduction: phases of a compiler, bootstrapping",
+    "Lexical analysis: tokens, regular expressions",
+    "Finite automata: RE to NFA to DFA; Lex",
+    "Syntax analysis: context-free grammars, derivations, ambiguity",
+    "Top-down parsing: recursive descent, left recursion, left factoring",
+    "FIRST, FOLLOW and LL(1) parsing",
+    "Bottom-up parsing: shift-reduce, handles, operator precedence",
+    "LR(0) and SLR(1) parsing",
+    "CLR(1) and LALR(1) parsing; YACC",
+    "Syntax-directed translation: S- and L-attributed definitions",
+    "Intermediate code: three-address code, quadruples, triples",
+    "Type checking, symbol tables, run-time environments",
+    "Code optimisation: basic blocks, flow graphs, DAGs",
+    "Local and global optimisation; data-flow analysis",
+    "Code generation; revision"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,457 @@
+{
+ "courses": [
+  {
+   "slug": "gate-da-ml",
+   "title": "GATE DA 2027 · Machine Learning",
+   "short": "GATE DA · ML",
+   "blurb": "The full Machine Learning section of the GATE DA syllabus, in 20 visual lectures built on real data, with GATE-style questions in every video.",
+   "total": 20,
+   "lessons": [
+    {
+     "code": "ML 01",
+     "title": "What is Machine Learning?",
+     "status": "live",
+     "meta": "10:12 · real data · supervised vs unsupervised · GATE-style MSQ",
+     "thumb": "assets/img/ml01.jpg",
+     "youtube": "https://youtu.be/F7jnhEnSN1E"
+    },
+    {
+     "code": "ML 02",
+     "title": "Simple Linear Regression",
+     "status": "live",
+     "meta": "10:10 · least squares · formulas · R² · NAT + MSQ",
+     "thumb": "assets/img/ml02.jpg",
+     "youtube": "https://youtu.be/F5n9dZmEfso"
+    },
+    {
+     "code": "ML 03",
+     "title": "Multiple Linear Regression",
+     "status": "soon",
+     "meta": "9:15 · 3D · normal equation · multicollinearity · adjusted R²",
+     "thumb": "assets/img/ml03.jpg",
+     "youtube": ""
+    },
+    {
+     "code": "ML 04",
+     "title": "Gradient Descent",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 05",
+     "title": "Bias-Variance Trade-off",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 06",
+     "title": "Ridge Regression",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 07",
+     "title": "Cross-Validation (k-fold, LOO)",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 08",
+     "title": "Logistic Regression",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 09",
+     "title": "k-Nearest Neighbour",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 10",
+     "title": "Naive Bayes",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 11",
+     "title": "Linear Discriminant Analysis",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 12",
+     "title": "Support Vector Machine",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 13",
+     "title": "Decision Trees",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 14",
+     "title": "Perceptron to Multi-layer Perceptron",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 15",
+     "title": "Feed-forward Neural Network",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 16",
+     "title": "k-Means & k-Medoids",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 17",
+     "title": "Hierarchical Clustering",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 18",
+     "title": "Principal Component Analysis",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 19",
+     "title": "ML Revision: all formulas",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    },
+    {
+     "code": "ML 20",
+     "title": "ML PYQ Marathon",
+     "status": "soon",
+     "meta": "coming soon",
+     "thumb": null,
+     "youtube": ""
+    }
+   ]
+  },
+  {
+   "slug": "gate-da",
+   "title": "GATE DA · Start here",
+   "short": "GATE DA",
+   "blurb": "What GATE DA is, the exam pattern, the 7 syllabus pillars, and your roadmap.",
+   "lessons": [
+    {
+     "code": "",
+     "title": "Confused After B.Tech? This GATE Paper Was Made for the AI Era",
+     "status": "live",
+     "meta": "10:15 · exam pattern · 7 pillars · roadmap",
+     "thumb": "assets/img/gateda_intro.jpg",
+     "youtube": "https://youtu.be/Rei1dHPOCBI"
+    }
+   ]
+  },
+  {
+   "slug": "algorithms",
+   "title": "Algorithm Arena · GATE CS",
+   "short": "Algorithms",
+   "blurb": "Algorithm design and analysis for GATE CS, with PYQs in every concept.",
+   "lessons": [
+    {
+     "code": "",
+     "title": "Find the k-th Smallest WITHOUT Sorting: Selection Procedure",
+     "youtube": "https://youtu.be/b_QP8RgZ6ZI",
+     "status": "live",
+     "thumb": "assets/img/ada_sel.jpg",
+     "meta": "8:55 · divide & conquer · recurrences"
+    },
+    {
+     "code": "",
+     "title": "Strassen's Matrix Multiplication",
+     "youtube": "https://youtu.be/VMCJ0cLXxzY",
+     "status": "live",
+     "thumb": "assets/img/ada_str.jpg",
+     "meta": "6:19 · standard vs divide & conquer vs Strassen"
+    },
+    {
+     "code": "",
+     "title": "Heap Sort Explained Visually",
+     "youtube": "https://youtu.be/LguP8SzxbeU",
+     "status": "live",
+     "thumb": "assets/img/yt_LguP8SzxbeU.jpg",
+     "meta": "8:18 · build heap in O(n) · n log n always · not stable"
+    }
+   ],
+   "total": 3
+  },
+  {
+   "slug": "networks",
+   "title": "Computer Networks",
+   "short": "Networks",
+   "blurb": "IP addressing, subnetting and routing, explained step by step.",
+   "lessons": [
+    {
+     "code": "Lec 3.1",
+     "title": "Why IP Addresses Have Classes (A, B, C Explained)",
+     "status": "live",
+     "meta": "3:52 · classful addressing",
+     "youtube": "https://youtu.be/dv1vukVZ45w",
+     "thumb": "assets/img/cn_classful.jpg"
+    },
+    {
+     "code": "Lec 3.2",
+     "title": "Subnetting · Classful",
+     "status": "live",
+     "meta": "16:48 · subnet masks · hosts per subnet",
+     "youtube": "https://youtu.be/MjBqglqg6Ps",
+     "thumb": "assets/img/cn_subnet.jpg"
+    },
+    {
+     "code": "",
+     "title": "VLSM & CIDR: Stop Wasting IP Addresses",
+     "youtube": "https://youtu.be/4d7stQgoKMA",
+     "status": "live",
+     "thumb": "assets/img/yt_4d7stQgoKMA.jpg",
+     "meta": "4:44 · variable-length subnet masks · CIDR"
+    },
+    {
+     "code": "",
+     "title": "How Routers Pick the Right Path: Longest Prefix Match",
+     "status": "live",
+     "meta": "7:14 · routing tables",
+     "youtube": "https://youtu.be/pfEYofdewsI",
+     "thumb": "assets/img/cn_lpm.jpg"
+    },
+    {
+     "code": "Lec 3.4",
+     "title": "Supernetting: Route Aggregation, CIDR & Longest Prefix Match",
+     "status": "live",
+     "meta": "6:11 · CIDR · aggregation",
+     "youtube": "https://youtu.be/ANeuwC4b5E0",
+     "thumb": "assets/img/cn_supernet.jpg"
+    },
+    {
+     "code": "Lec 3.5",
+     "title": "IPv4 Packet Format · Fragmentation",
+     "status": "live",
+     "meta": "10:44 · headers · fragmentation",
+     "youtube": "https://youtu.be/GqbdFxylS4s",
+     "thumb": "assets/img/cn_ipv4.jpg"
+    }
+   ],
+   "total": 6
+  },
+  {
+   "slug": "programming",
+   "title": "Programming Fundamentals",
+   "short": "Programming",
+   "blurb": "What really happens between your C code and the CPU.",
+   "lessons": [
+    {
+     "code": "",
+     "title": "Life of a Program: C Code to CPU",
+     "status": "soon",
+     "meta": "compiler · assembler · linker · loader",
+     "thumb": "assets/img/prog_life.jpg",
+     "youtube": ""
+    },
+    {
+     "code": "",
+     "title": "How Your Computer Checks a PIN",
+     "status": "soon",
+     "meta": "every if = compare + jump",
+     "thumb": "assets/img/prog_pin.jpg",
+     "youtube": ""
+    }
+   ]
+  },
+  {
+   "slug": "jkssb",
+   "title": "JKSSB Computer Knowledge",
+   "short": "JKSSB",
+   "blurb": "Exam-focused computer knowledge for JKSSB aspirants: the complete 10-episode series.",
+   "lessons": [
+    {
+     "code": "EP01",
+     "title": "Computer Fundamentals & Input/Output Devices",
+     "youtube": "https://youtu.be/p-5OEeOU9UM",
+     "status": "live",
+     "thumb": "assets/img/ep01.jpg",
+     "meta": "10:39 · JKSSB computer series"
+    },
+    {
+     "code": "EP02A",
+     "title": "Hardware, Software & Open Source",
+     "youtube": "https://youtu.be/53tKmHZiayQ",
+     "status": "live",
+     "thumb": "assets/img/ep02.jpg",
+     "meta": "8:12 · JKSSB computer series"
+    },
+    {
+     "code": "EP02B",
+     "title": "Operating System: The Invisible Manager",
+     "youtube": "https://youtu.be/xhq1L_wt0cU",
+     "status": "live",
+     "thumb": "assets/img/yt_xhq1L_wt0cU.jpg",
+     "meta": "9:26 · JKSSB computer series"
+    },
+    {
+     "code": "EP03A",
+     "title": "MS Word: Ribbon, Shortcuts & Mail Merge",
+     "youtube": "https://youtu.be/Lh_hJgVfSTI",
+     "status": "live",
+     "thumb": "assets/img/ep03a.jpg",
+     "meta": "7:40 · JKSSB computer series"
+    },
+    {
+     "code": "EP03B",
+     "title": "MS Excel: COUNT Family, Errors & Shortcuts",
+     "youtube": "https://youtu.be/JTIdrOCGSPw",
+     "status": "live",
+     "thumb": "assets/img/ep03b.jpg",
+     "meta": "7:47 · JKSSB computer series"
+    },
+    {
+     "code": "EP03C",
+     "title": "MS Access & PowerPoint",
+     "youtube": "https://youtu.be/l4UZ5y0Ijos",
+     "status": "live",
+     "thumb": "assets/img/ep03c.jpg",
+     "meta": "6:15 · JKSSB computer series"
+    },
+    {
+     "code": "EP04",
+     "title": "Internet, E-mail & Protocols",
+     "youtube": "https://youtu.be/VwOpLQ2GM9o",
+     "status": "live",
+     "thumb": "assets/img/yt_VwOpLQ2GM9o.jpg",
+     "meta": "8:08 · JKSSB computer series"
+    },
+    {
+     "code": "EP05",
+     "title": "Viruses vs Antivirus: Inside a Cyber Attack",
+     "youtube": "https://youtu.be/d0StFOrJB6E",
+     "status": "live",
+     "thumb": "assets/img/ep05.jpg",
+     "meta": "7:23 · JKSSB computer series"
+    },
+    {
+     "code": "EP06",
+     "title": "IT Speed Run: 65 Terms, File Extensions & Shortcuts",
+     "youtube": "https://youtu.be/WR8jFIrumlk",
+     "status": "live",
+     "thumb": "assets/img/yt_WR8jFIrumlk.jpg",
+     "meta": "10:04 · JKSSB computer series"
+    },
+    {
+     "code": "EP07",
+     "title": "PDF, Remote Sensing, GIS, GPS, DGPS & ETS",
+     "youtube": "https://youtu.be/SxxE4pjGECI",
+     "status": "live",
+     "thumb": "assets/img/ep07.jpg",
+     "meta": "8:36 · JKSSB computer series"
+    }
+   ],
+   "total": 10
+  },
+  {
+   "slug": "shorts",
+   "title": "Shorts · one idea in 60 seconds",
+   "short": "Shorts",
+   "blurb": "Quick visual ideas from every series, each under a minute.",
+   "total": 7,
+   "lessons": [
+    {
+     "code": "SHORT",
+     "title": "Heap Sort Secretly Reversed My Data",
+     "youtube": "https://youtu.be/x7Zkqb2NEXo",
+     "status": "live",
+     "thumb": "assets/img/yt_x7Zkqb2NEXo.jpg",
+     "meta": "0:50 · algorithms"
+    },
+    {
+     "code": "SHORT",
+     "title": "Why Do We SQUARE the Errors?",
+     "youtube": "https://youtu.be/hzZEeeq3TGs",
+     "status": "live",
+     "thumb": "assets/img/yt_hzZEeeq3TGs.jpg",
+     "meta": "0:22 · machine learning"
+    },
+    {
+     "code": "SHORT",
+     "title": "0 Mistakes in Practice. FAILED the Exam.",
+     "youtube": "https://youtu.be/FEw5Vw5syNU",
+     "status": "live",
+     "thumb": "assets/img/yt_FEw5Vw5syNU.jpg",
+     "meta": "0:30 · overfitting"
+    },
+    {
+     "code": "SHORT",
+     "title": "Scared of AI? What if you BUILT it?",
+     "youtube": "https://youtu.be/9rWyNevyEJY",
+     "status": "live",
+     "thumb": "assets/img/yt_9rWyNevyEJY.jpg",
+     "meta": "0:51 · GATE DA"
+    },
+    {
+     "code": "SHORT",
+     "title": "4 Routes → 1 Route: The Supernetting Trick",
+     "youtube": "https://youtu.be/hCSJbFRZfiY",
+     "status": "live",
+     "thumb": "assets/img/yt_hCSJbFRZfiY.jpg",
+     "meta": "0:30 · networks"
+    },
+    {
+     "code": "SHORT",
+     "title": "8 → 7: The Multiplication That Changed History",
+     "youtube": "https://youtu.be/rQDSmV6p5gA",
+     "status": "live",
+     "thumb": "assets/img/yt_rQDSmV6p5gA.jpg",
+     "meta": "0:31 · algorithms"
+    },
+    {
+     "code": "SHORT",
+     "title": "One Line Turns n log n Into n",
+     "youtube": "https://youtu.be/ZLPYeDQMxd4",
+     "status": "live",
+     "thumb": "assets/img/yt_ZLPYeDQMxd4.jpg",
+     "meta": "0:25 · algorithms"
+    }
+   ]
+  }
+ ]
+}

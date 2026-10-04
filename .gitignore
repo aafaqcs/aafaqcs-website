@@ -1,0 +1,10 @@
+# build output (Netlify rebuilds it, or upload dist/ by hand)
+dist/
+# local previews and browser profiles
+.shots/
+.ffprof.*
+__pycache__/
+*.pyc
+# backups made while editing
+build_pre_*.py
+data/*_before_*.json

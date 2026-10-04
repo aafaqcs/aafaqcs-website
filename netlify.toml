@@ -1,0 +1,4 @@
+# Used when Netlify is linked to the GitHub repository: every push rebuilds and publishes the site.
+[build]
+  command = "python3 build.py"
+  publish = "dist"

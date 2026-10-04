@@ -1,0 +1,143 @@
+{
+ "name": "Dr. Aafaq Mohi Ud Din",
+ "short_name": "Dr. Aafaq",
+ "title": "Assistant Professor, Department of CSE",
+ "institution": "GCET Kashmir",
+ "tagline": "Computer science, shown with real data.",
+ "bio": "Dr. Aafaq Mohi Ud Din is an Assistant Professor (Rank 1, JKPSC State Cadre) in the Department of Computer Science & Engineering at GCET Kashmir. He earned his PhD in Computer Science & Engineering from NIT Srinagar, working on geometric deep learning and graph neural networks, after an M.Tech and B.Tech from the University of Kashmir. He has taught Data Structures, Algorithms, Programming, Graph Theory, Compiler Design and Operating Systems at NIT Srinagar and GCET Kashmir, and has qualified GATE (CS & IT) seven times.",
+ "email": "cse.aafaq@gmail.com",
+ "links": {
+  "linkedin": "https://www.linkedin.com/in/aafaq-cs-149bb9334/",
+  "youtube": "https://www.youtube.com/channel/UCbrkPZ63BAZFrMLBf0tWzHA",
+  "scholar": "https://scholar.google.com/citations?user=tZw2GSYAAAAJ&hl=en",
+  "orcid": ""
+ },
+ "domain": "aafaqcs.com",
+ "institution_full": "Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
+ "experience": [
+  {
+   "when": "Jan 2024 – present",
+   "role": "Assistant Professor (Rank 1, JKPSC – State Cadre)",
+   "where": "Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
+   "points": [
+    "Teaches Data Structures, Algorithms, Programming, Graph Theory, Compiler Design and Operating Systems",
+    "Guides B.Tech projects in natural algorithms, machine learning and graph learning",
+    "Conducts labs for C, C++, Python and Compiler Design"
+   ]
+  },
+  {
+   "when": "Mar 2019 – Dec 2019",
+   "role": "Assistant Professor",
+   "where": "National Institute of Technology, Srinagar",
+   "points": [
+    "Taught Data Structures, Algorithms, Programming, Graph Theory, Compiler Design and Operating Systems",
+    "Guided B.Tech projects in natural algorithms and graph learning",
+    "Conducted labs for C, C++ and Compiler Design"
+   ]
+  }
+ ],
+ "roles": [
+  "Purchasing Officer cum Convener",
+  "Nodal Officer, MY Bharat Portal",
+  "MOOC Coordinator, GCET"
+ ],
+ "education": [
+  {
+   "when": "2019 – 2024",
+   "degree": "PhD, Computer Science & Engineering",
+   "where": "National Institute of Technology, Srinagar",
+   "note": "Area: Geometric Deep Learning"
+  },
+  {
+   "when": "2016 – 2019",
+   "degree": "M.Tech, Computer Science & Engineering",
+   "where": "University of Kashmir",
+   "note": "Thesis: Estimation of Software Reliability using Neural Networks"
+  },
+  {
+   "when": "2010 – 2014",
+   "degree": "B.Tech, Computer Science & Engineering",
+   "where": "University of Kashmir",
+   "note": "Thesis: Elliptic Curve Cryptography, an asymmetric encryption algorithm"
+  }
+ ],
+ "projects": [
+  {
+   "when": "2022 – 2024",
+   "title": "OOF-SAGE: an over-smoothing and over-squashing free graph neural network",
+   "note": "Advisor: Dr. Shaima Qureshi, NIT Srinagar"
+  },
+  {
+   "when": "2022 – 2023",
+   "title": "Partitioned-GNN for personalised recommendations",
+   "note": "Advisor: Dr. Shaima Qureshi, NIT Srinagar"
+  }
+ ],
+ "achievements": [
+  "Assistant Professor, Rank 1, JKPSC State Cadre (2024)",
+  "GATE qualified in CS & IT, 7 times",
+  "UGC-NET qualified in CS & IT, 5 times",
+  "SET qualified in CS & IT (2017)",
+  "Institute fellowship, full-time research scholar, NIT Srinagar (2019 – 2024)",
+  "AICTE GATE fellowship for M.Tech (2016 – 2018)",
+  "Merit-cum-Means fellowship, Ministry of Minority Affairs, Govt. of India (2010 – 2014)"
+ ],
+ "certifications": [
+  "Machine Learning, Stanford Online (2021 – 2022)",
+  "Networking, Hewlett-Packard Education Services"
+ ],
+ "subjects": [
+  "Data Structures",
+  "Algorithms",
+  "Programming in C / C++ / Python",
+  "Graph Theory",
+  "Compiler Design",
+  "Operating Systems"
+ ],
+ "emails": [
+  "cse.aafaq@gmail.com",
+  "aafaq.cse@gcetkashmir.ac.in"
+ ],
+ "channel_name": "Dr. Aafaq Dar | Computational Sense Making",
+ "headline": "I teach computer science the way I wish I had been taught: with real data, moving pictures, and answers you can check.",
+ "bio_story": [
+  "I have qualified GATE seven times and UGC-NET five times. Somewhere along the way I noticed that students forget formulas, but they remember what they have seen. So every lecture I make starts from a real dataset and a picture, and every number on screen is computed and verified before it reaches you.",
+  "By day I teach in the Department of Computer Science & Engineering at GCET Kashmir, where I joined as Assistant Professor after ranking first in the JKPSC selection. Before that I taught at NIT Srinagar.",
+  "My PhD at NIT Srinagar was on graph neural networks, and in particular on over-smoothing and over-squashing: the two reasons deep GNNs lose the information they are meant to pass along. That work, OOF-SAGE, and its follow-ups appear in journals with impact factors up to 13.6."
+ ],
+ "highlights": [
+  [
+   "7×",
+   "GATE qualified (CS & IT)"
+  ],
+  [
+   "5×",
+   "UGC-NET qualified"
+  ],
+  [
+   "Rank 1",
+   "JKPSC Assistant Professor"
+  ],
+  [
+   "13.6",
+   "highest journal impact factor"
+  ],
+  [
+   "PhD",
+   "NIT Srinagar · graph learning"
+  ]
+ ],
+ "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
+ "news": [
+  "Released [Heap Sort Explained Visually](https://youtu.be/LguP8SzxbeU) in the [Algorithm Arena](courses/algorithms.html): build heap in O(n), n log n always, and why heap sort is not stable.",
+  "Completed the [JKSSB Computer Knowledge](courses/jkssb.html) series: all 10 episodes, from computer fundamentals to GIS and GPS.",
+  "Started [Shorts](courses/shorts.html): one idea in 60 seconds, from heap sort to supernetting.",
+  "Released [ML 02: Simple Linear Regression](https://youtu.be/F5n9dZmEfso), the second lecture of the free [GATE DA 2027 Machine Learning series](courses/gate-da-ml.html). Least squares worked out by hand on real Iris data.",
+  "Released [ML 01: What is Machine Learning?](https://youtu.be/F7jnhEnSN1E), the opening lecture of a 20-part visual series covering the whole GATE DA machine learning syllabus.",
+  "Started [GATE DA · Start here](https://youtu.be/Rei1dHPOCBI): what the GATE Data Science & AI paper is, its pattern, its 7 syllabus pillars and a roadmap.",
+  "Finished the [Computer Networks](courses/networks.html) unit on IP addressing: classful addressing, subnetting, longest prefix match, supernetting and the IPv4 packet format.",
+  "Released [Strassen's matrix multiplication](https://youtu.be/VMCJ0cLXxzY) in the [Algorithm Arena](courses/algorithms.html) series for GATE CS.",
+  "Joined [GCET Kashmir](https://gcetkashmir.ac.in) as Assistant Professor after ranking first in the JKPSC selection. January 2024.",
+  "Our paper on [over-smoothing and over-squashing in graph neural networks](publications.html) appeared in Big Data Mining and Analytics (IEEE, impact factor 13.6). 2023."
+ ]
+}

@@ -1,0 +1,87 @@
+{
+  "source": "Google Scholar profile, fetched 2026-10-03 (refresh before publishing)",
+  "metrics": {
+    "citations": 75,
+    "h_index": 3,
+    "i10_index": 2
+  },
+  "interests": [
+    "Geometric Deep Learning",
+    "Graph Learning",
+    "Reliability"
+  ],
+  "affiliation_scholar": "Government College of Engineering and Technology Kashmir; National Institute of Technology Srinagar",
+  "publications": [
+    {
+      "title": "Limits of depth: Over-smoothing and over-squashing in GNNs",
+      "venue": "Big Data Mining and Analytics 7(1), 205–216",
+      "year": 2023,
+      "citations": 55,
+      "type": "journal",
+      "publisher": "IEEE",
+      "impact_factor": "13.6"
+    },
+    {
+      "title": "A review of challenges and solutions in the design and implementation of deep graph neural networks",
+      "venue": "International Journal of Computers and Applications 45(3), 221–230",
+      "year": 2023,
+      "citations": 13,
+      "type": "journal",
+      "publisher": "Taylor & Francis",
+      "impact_factor": "3.6"
+    },
+    {
+      "title": "GNN approach for software reliability",
+      "venue": "System Reliability and Security, 1–13",
+      "year": 2023,
+      "citations": 3,
+      "type": "chapter",
+      "publisher": "CRC Press",
+      "impact_factor": null
+    },
+    {
+      "title": "Depth-defying OOF-GNN: Sailing smoothly amidst GNN waves",
+      "venue": "Knowledge-Based Systems 280, 110991",
+      "year": 2023,
+      "citations": 3,
+      "type": "journal",
+      "publisher": "Elsevier",
+      "impact_factor": "8.8"
+    },
+    {
+      "title": "Software reliability prediction using neural networks: A non-parametric approach",
+      "venue": "System Reliability and Security, 14–27",
+      "year": 2023,
+      "citations": 1,
+      "type": "chapter",
+      "publisher": "CRC Press",
+      "impact_factor": null
+    },
+    {
+      "title": "Deep Learning Meets Graph Theory: A Novel Approach to Generating Embeddings for Recommender Systems",
+      "venue": "21st Learning and Technology Conference (L&T), IEEE, 302–307",
+      "year": 2024,
+      "citations": null,
+      "type": "conference",
+      "publisher": "IEEE Xplore",
+      "impact_factor": null
+    }
+  ],
+  "under_review": [
+    {
+      "title": "AI-driven intelligent visualization agents for high-performance, user-centric web-based data exploration",
+      "venue": "Data and Knowledge Engineering (Elsevier)",
+      "year": 2025
+    },
+    {
+      "title": "Trinity: Transformer-driven real-time intrusion detection with adaptive intelligence",
+      "venue": "IEEE Big Data Mining and Analytics",
+      "year": 2025
+    },
+    {
+      "title": "Multi-model performance benchmarking for house price prediction",
+      "venue": "SN Computer Science (Springer Nature)",
+      "year": 2025
+    }
+  ]
+}
