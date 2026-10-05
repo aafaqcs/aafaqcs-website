@@ -26,10 +26,10 @@
     {
      "code": "ML 03",
      "title": "Multiple Linear Regression",
-     "status": "soon",
-     "meta": "9:15 · 3D · normal equation · multicollinearity · adjusted R²",
-     "thumb": "assets/img/ml03.jpg",
-     "youtube": ""
+     "status": "live",
+     "meta": "9:15",
+     "thumb": "assets/img/yt_uZNy_dULJE4.jpg",
+     "youtube": "https://youtu.be/uZNy_dULJE4"
     },
     {
      "code": "ML 04",
@@ -227,6 +227,23 @@
    "total": 4
   },
   {
+   "slug": "compiler-design",
+   "title": "Compiler Design · GATE CS/IT",
+   "short": "Compiler Design",
+   "blurb": "How your source code becomes machine code: the phases of a compiler, visualized step by step for GATE CS/IT.",
+   "total": 1,
+   "lessons": [
+    {
+     "code": "Lec 1",
+     "title": "How a Compiler Works: 6 Phases, Visualized",
+     "youtube": "https://youtu.be/yzgq5_2XU7Q",
+     "status": "live",
+     "thumb": "assets/img/yt_yzgq5_2XU7Q.jpg",
+     "meta": "8:48"
+    }
+   ]
+  },
+  {
    "slug": "networks",
    "title": "Computer Networks",
    "short": "Networks",
@@ -401,7 +418,7 @@
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",
    "blurb": "Quick visual ideas from every series, each under a minute.",
-   "total": 8,
+   "total": 9,
    "lessons": [
     {
      "code": "SHORT",
@@ -466,6 +483,14 @@
      "status": "live",
      "thumb": "assets/img/yt_LApjZYE4KC0.jpg",
      "meta": "0:50 · Short"
+    },
+    {
+     "code": "SHORT",
+     "title": "What happens when you press RUN?",
+     "youtube": "https://youtu.be/_XXVxrhzfi8",
+     "status": "live",
+     "thumb": "assets/img/yt__XXVxrhzfi8.jpg",
+     "meta": "1:01 · Short"
     }
    ]
   }

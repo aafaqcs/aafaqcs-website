@@ -130,10 +130,25 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-05",
+   "kind": "short",
+   "text": "Short: [What happens when you press RUN?](https://youtu.be/_XXVxrhzfi8)."
+  },
+  {
+   "date": "2026-10-05",
+   "kind": "video",
+   "text": "Released [How a Compiler Works: 6 Phases, Visualized](https://youtu.be/yzgq5_2XU7Q) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
+  },
+  {
+   "date": "2026-10-05",
+   "kind": "video",
+   "text": "Released [Multiple Linear Regression Explained Visually in 3D](https://youtu.be/uZNy_dULJE4) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
+  },
+  {
    "date": "2026-10-04",
    "kind": "milestone",
    "pin": true,
-   "text": "Launched this website: every lecture, Short and course in one place, updated automatically from YouTube."
+   "text": "Launched this website: every lecture, Short and course in one place."
   },
   {
    "date": "2026-10-04",
@@ -179,16 +194,6 @@
    "date": "2026-09-29",
    "kind": "video",
    "text": "Released [Strassen's matrix multiplication](https://youtu.be/VMCJ0cLXxzY) in the [Algorithm Arena](courses/algorithms.html) series for GATE CS."
-  },
-  {
-   "date": "2026-09-28",
-   "kind": "video",
-   "text": "Released [Find the k-th Smallest Without Sorting: Selection Procedure](https://youtu.be/b_QP8RgZ6ZI) in the [Algorithm Arena](courses/algorithms.html)."
-  },
-  {
-   "date": "2026-09-28",
-   "kind": "short",
-   "text": "Started [Shorts](courses/shorts.html): one idea in 60 seconds, from heap sort to supernetting."
   },
   {
    "date": "2026-09-27",
