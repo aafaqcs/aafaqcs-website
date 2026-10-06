@@ -41,11 +41,11 @@
     },
     {
      "code": "ML 05",
-     "title": "Bias-Variance Trade-off",
-     "status": "soon",
-     "meta": "coming soon",
-     "thumb": null,
-     "youtube": ""
+     "title": "Bias-Variance Trade-off Explained Visually: Underfitting vs Overfitting",
+     "status": "live",
+     "meta": "8:06",
+     "thumb": "assets/img/yt_sS4uZIax7wc.jpg",
+     "youtube": "https://youtu.be/sS4uZIax7wc"
     },
     {
      "code": "ML 06",
@@ -231,7 +231,7 @@
    "title": "Compiler Design · GATE CS/IT",
    "short": "Compiler Design",
    "blurb": "How your source code becomes machine code: the phases of a compiler, visualized step by step for GATE CS/IT.",
-   "total": 1,
+   "total": 2,
    "lessons": [
     {
      "code": "Lec 1",
@@ -240,6 +240,14 @@
      "status": "live",
      "thumb": "assets/img/yt_yzgq5_2XU7Q.jpg",
      "meta": "8:48"
+    },
+    {
+     "code": "",
+     "title": "Lexical Analysis, Visualised: How a Compiler Reads Code",
+     "youtube": "https://youtu.be/HB0wpdpfFKI",
+     "status": "live",
+     "thumb": "assets/img/yt_HB0wpdpfFKI.jpg",
+     "meta": "10:20"
     }
    ]
   },

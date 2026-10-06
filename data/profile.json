@@ -130,6 +130,16 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-06",
+   "kind": "video",
+   "text": "Released [Bias-Variance Trade-off Explained Visually: Underfitting vs Overfitting](https://youtu.be/sS4uZIax7wc) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
+  },
+  {
+   "date": "2026-10-06",
+   "kind": "video",
+   "text": "Released [Lexical Analysis, Visualised: How a Compiler Reads Code](https://youtu.be/HB0wpdpfFKI) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
+  },
+  {
    "date": "2026-10-05",
    "kind": "short",
    "text": "Short: [What happens when you press RUN?](https://youtu.be/_XXVxrhzfi8)."
@@ -184,16 +194,6 @@
    "date": "2026-09-30",
    "kind": "video",
    "text": "Started [GATE DA · Start here](https://youtu.be/Rei1dHPOCBI): what the GATE Data Science & AI paper is, its pattern, its 7 syllabus pillars and a roadmap."
-  },
-  {
-   "date": "2026-09-29",
-   "kind": "milestone",
-   "text": "Finished the [Computer Networks](courses/networks.html) unit on IP addressing: classful addressing, subnetting, longest prefix match, supernetting and the IPv4 packet format."
-  },
-  {
-   "date": "2026-09-29",
-   "kind": "video",
-   "text": "Released [Strassen's matrix multiplication](https://youtu.be/VMCJ0cLXxzY) in the [Algorithm Arena](courses/algorithms.html) series for GATE CS."
   },
   {
    "date": "2026-09-27",
