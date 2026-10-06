@@ -130,7 +130,9 @@ def main():
         lesson = {"code": code, "title": clean(d["title"]), "youtube": f"https://youtu.be/{vid}", "status": "live", "thumb": thumb(vid), "meta": meta}
         slot = next((l for l in course["lessons"] if code and l.get("code") == code and l["status"] != "live"), None)
         if slot:                                                       # fill the matching "coming soon" slot
-            slot.update({k: v for k, v in lesson.items() if v or k == "code"})
+            keep = {"title"} if slot.get("title") else set()            # planned short names (e.g. "Gradient Descent") stay
+            slot.update({k: v for k, v in lesson.items() if (v or k == "code") and k not in keep})
+            lesson["title"] = slot["title"]
         else:
             course["lessons"].append(lesson)
             course["total"] = max(course.get("total", 0), len(course["lessons"]))
