@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-07",
+   "kind": "video",
+   "text": "Released [Semantic Analysis, Visualised: Types, Scope & SDD](https://youtu.be/mhU1g-zGL0w) in [Algorithm Arena · GATE CS](courses/algorithms.html)."
+  },
+  {
    "date": "2026-10-06",
    "kind": "video",
    "text": "Released [ML 05: Bias-Variance Trade-off](https://youtu.be/sS4uZIax7wc) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
@@ -189,11 +194,6 @@
    "date": "2026-10-02",
    "kind": "video",
    "text": "Released [ML 01: What is Machine Learning?](https://youtu.be/F7jnhEnSN1E), the opening lecture of a 20-part visual series covering the whole GATE DA machine learning syllabus."
-  },
-  {
-   "date": "2026-09-30",
-   "kind": "video",
-   "text": "Started [GATE DA · Start here](https://youtu.be/Rei1dHPOCBI): what the GATE Data Science & AI paper is, its pattern, its 7 syllabus pillars and a roadmap."
   },
   {
    "date": "2026-09-27",

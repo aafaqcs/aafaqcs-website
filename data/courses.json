@@ -222,9 +222,17 @@
      "status": "live",
      "thumb": "assets/img/yt_K-PeWrwZgtI.jpg",
      "meta": "7:43"
+    },
+    {
+     "code": "",
+     "title": "Semantic Analysis, Visualised: Types, Scope & SDD",
+     "youtube": "https://youtu.be/mhU1g-zGL0w",
+     "status": "live",
+     "thumb": "assets/img/yt_mhU1g-zGL0w.jpg",
+     "meta": "8:33"
     }
    ],
-   "total": 4
+   "total": 5
   },
   {
    "slug": "compiler-design",
