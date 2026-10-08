@@ -9,5 +9,5 @@ exec >>"$LOG" 2>&1
 echo "== $(date '+%F %T')"
 out=$(nice -n 19 ionice -c3 python3 sync_youtube.py 2>&1); echo "$out"
 if grep -q "new video(s)" <<<"$out"; then
-  nice -n 19 python3 build.py && nice -n 19 python3 push_github.py "Auto: $(grep -c '^added' <<<"$out") new YouTube video(s)"
+  nice -n 19 python3 build.py && nice -n 19 python3 push_github.py "Auto: new YouTube video(s)" && nice -n 19 python3 push_pages.py "Auto: new YouTube video(s)"
 fi

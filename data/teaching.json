@@ -1,5 +1,5 @@
 {
- "note": "Subjects taught this semester. Edit freely, then run python3 build.py. gcr_link = the Google Classroom invite link (Classroom > class > Settings > Invite link); gcr_code = the class code. Leave both empty to show 'Ask in class'. Week topics are a standard outline: rename any week to match your syllabus. Files for each week go in teaching/<slug>/weekNN/ (see teaching/README.txt).",
+ "note": "Subjects taught this semester. Edit freely, then run python3 build.py. gcr_link = the Google Classroom invite link (Classroom > class > Settings > Invite link); gcr_code = the class code. Leave both empty to show 'Ask in class'. Week topics are a standard outline: rename any week to match your syllabus. Files for each week go in teaching/<slug>/weekNN/ (see teaching/README.txt). video_courses = slugs from courses.json whose videos appear on the subject's Videos tab. File names containing 'note' or 'handout' go to Notes; 'practice', 'question', 'assignment', 'quiz', 'tutorial', 'sheet', 'problem', 'exercise' go to Practice; everything else is Slides.",
  "semester": "Autumn 2026",
  "subjects": [
   {
@@ -26,6 +26,9 @@
     "Backtracking: N-queens, sum of subsets, graph colouring",
     "Branch and bound: 0/1 knapsack, travelling salesperson",
     "P, NP and NP-completeness; revision"
+   ],
+   "video_courses": [
+    "algorithms"
    ]
   },
   {
@@ -52,7 +55,8 @@
     "Searching and hashing: collision resolution",
     "Sorting: bubble, insertion, selection, merge, quick",
     "Revision and previous-year questions"
-   ]
+   ],
+   "video_courses": []
   },
   {
    "slug": "os",
@@ -78,7 +82,8 @@
     "File-system implementation: allocation methods, directories",
     "Disk scheduling and I/O systems",
     "Protection and security; revision"
-   ]
+   ],
+   "video_courses": []
   },
   {
    "slug": "cd",
@@ -104,6 +109,9 @@
     "Code optimisation: basic blocks, flow graphs, DAGs",
     "Local and global optimisation; data-flow analysis",
     "Code generation; revision"
+   ],
+   "video_courses": [
+    "compiler-design"
    ]
   }
  ]

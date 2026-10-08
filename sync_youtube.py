@@ -105,7 +105,7 @@ def place(title, short):
             return "jkssb", ""
         num, letter = re.match(r"(\d+)([A-C]?)", m.group(1).upper()).groups()
         return "jkssb", f"EP{int(num):02d}{letter}"
-    if "compiler" in t:
+    if re.search(r"compiler|lexical|semantic analysis|syntax analysis|parser|parsing|code generation|code optimi", t):
         m = re.search(r"\blec\s*(\d+(?:\.\d+)?)", title, re.I)
         return "compiler-design", f"Lec {m.group(1)}" if m else ""
     if re.search(r"\blec\s*3\.|\bip\b|ipv4|subnet|supernet|cidr|vlsm|routing|router|prefix match", t):

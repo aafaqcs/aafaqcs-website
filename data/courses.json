@@ -222,24 +222,16 @@
      "status": "live",
      "thumb": "assets/img/yt_K-PeWrwZgtI.jpg",
      "meta": "7:43"
-    },
-    {
-     "code": "",
-     "title": "Semantic Analysis, Visualised: Types, Scope & SDD",
-     "youtube": "https://youtu.be/mhU1g-zGL0w",
-     "status": "live",
-     "thumb": "assets/img/yt_mhU1g-zGL0w.jpg",
-     "meta": "8:33"
     }
    ],
-   "total": 5
+   "total": 4
   },
   {
    "slug": "compiler-design",
    "title": "Compiler Design · GATE CS/IT",
    "short": "Compiler Design",
    "blurb": "How your source code becomes machine code: the phases of a compiler, visualized step by step for GATE CS/IT.",
-   "total": 2,
+   "total": 3,
    "lessons": [
     {
      "code": "Lec 1",
@@ -256,6 +248,14 @@
      "status": "live",
      "thumb": "assets/img/yt_HB0wpdpfFKI.jpg",
      "meta": "10:20"
+    },
+    {
+     "code": "",
+     "title": "Semantic Analysis, Visualised: Types, Scope & SDD",
+     "youtube": "https://youtu.be/mhU1g-zGL0w",
+     "status": "live",
+     "thumb": "assets/img/yt_mhU1g-zGL0w.jpg",
+     "meta": "8:33"
     }
    ]
   },
