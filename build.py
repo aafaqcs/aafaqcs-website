@@ -193,6 +193,21 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{background:linear-gradient(180deg,#050912e6 0%,#050912b3 50%,#05091ef0 100%)}}
 :root[data-theme="dark"] body::after{background:linear-gradient(180deg,#050912e6 0%,#050912b3 50%,#05091ef0 100%)}
 footer .photo-credit{font-size:12px;opacity:.8}
+
+/* ----- terminal intro (home) ----- */
+.term{border-radius:14px;overflow:hidden;background:#0a1220;border:1px solid #1d2b45;box-shadow:0 18px 44px #0b1b2e40;margin:20px 0 22px;font:14.5px/1.65 var(--mono);color:#d6e2f0}
+.term .tbar{display:flex;align-items:center;gap:7px;padding:9px 14px;background:#111d33;border-bottom:1px solid #1d2b45}
+.term .tbar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .tbar i:nth-child(2){background:#febc2e}.term .tbar i:nth-child(3){background:#28c840}
+.term .tbar span{margin-left:8px;font-size:12px;color:#7e90aa}
+.term .tbody{padding:16px 18px 18px}
+.term .ln,.term .out{opacity:0;animation:tin .45s ease forwards;animation-delay:var(--d)}
+.term .pr{color:#2ec4b6;font-weight:700}.term .cmd{color:#ffb020}
+.term .out{color:#d6e2f0;padding:2px 0 10px 18px;border-left:2px solid #1d2b45;margin-left:6px;font-family:var(--sans);font-size:15px}
+.term .out a{color:#4cc9f0}.term .out b{color:#fff}.term .mot{color:#ffb020!important;font-family:var(--display);font-size:18px}
+.term .cur{display:inline-block;width:9px;height:17px;background:#2ec4b6;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes tin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.term .ln,.term .out{opacity:1;animation:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 @media (max-width:780px){
  body{padding:0}.sheet{border-radius:0}.bar{padding:10px 14px;gap:10px;flex-wrap:wrap}.inst{display:none}.theme{margin-left:auto}.theme button{padding:4px 8px}
@@ -394,8 +409,14 @@ def build():
 
     # Home
     research = ", ".join(pubs["interests"]).lower()
-    home = f"""<p>I am an Assistant Professor in the Department of Computer Science &amp; Engineering at <a href="https://gcetkashmir.ac.in">GCET Kashmir</a>.</p>
-<p>My research is in machine learning on graphs: {E(research)}. My PhD at <a href="https://nitsri.ac.in">NIT Srinagar</a> studied why deep graph neural networks lose information as they grow (over-smoothing and over-squashing) and how to build networks that don't. I also make free visual lectures for GATE and engineering students, where every graph is computed from real data and every answer is checked.</p>
+    term = [("whoami", f'{E(name)} · Assistant Professor, CSE @ <a href="https://gcetkashmir.ac.in">GCET Kashmir</a>'),
+            ("cat research.md", 'Deep graph neural networks <b>forget</b> as they grow (over-smoothing, over-squashing). My PhD at <a href="https://nitsri.ac.in">NIT Srinagar</a> built ones that <b>remember</b>.'),
+            ("./teach --free --visual --verified", '<a href="courses.html">GATE · GATE DA · JKSSB</a>: every graph computed from real data, every answer checked.'),
+            ("echo $MOTTO", '<b class="mot">"Computer science, shown. Not just told."</b>')]
+    lines = "".join(f'<div class="ln" style="--d:{0.15 + 0.9 * k}s"><span class="pr">aafaq@cs:~$</span> <span class="cmd">{E(c)}</span></div>'
+                    f'<div class="out" style="--d:{0.6 + 0.9 * k}s">{o}</div>' for k, (c, o) in enumerate(term))
+    home = f"""<div class="term" aria-label="Introduction"><div class="tbar"><i></i><i></i><i></i><span>aafaq@cs: ~</span></div>
+<div class="tbody">{lines}<div class="ln" style="--d:{0.15 + 0.9 * len(term)}s"><span class="pr">aafaq@cs:~$</span> <span class="cur"></span></div></div></div>
 {stats}
 {h2("What's new")}<ul class="news">{"".join(news_item(n) for n in prof.get("news", []))}</ul>
 {h2("Video courses")}<div class="pls">{"".join(card(c) for c in courses[:3])}</div>
