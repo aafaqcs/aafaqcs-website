@@ -181,6 +181,18 @@ h2 svg{color:var(--teal)!important}
 .plhead .gcrbox{background:#ffffff1f!important;border:1px solid #ffffff40!important;color:#fff!important}.plhead .gcrbox .meta,.plhead .gcrbox span{color:#e8f1fb!important}.plhead .gcrbox b{color:#fff}
 .empty-pane{padding:22px;border:1px dashed var(--box);border-radius:14px;color:var(--muted);text-align:center}
 @media (max-width:780px){.plhead{grid-template-columns:1fr}.res-row{grid-template-columns:1fr}.res-row .f{justify-content:flex-start}}
+
+/* ----- GCET Kashmir campus photo: blurred page backdrop + sharp banner ----- */
+html{background:var(--page)}
+body{background:transparent!important;position:relative}
+body::before{content:"";position:fixed;inset:-30px;background:url(img/campus.jpg) center 58%/cover no-repeat;filter:blur(5px) saturate(1.15);z-index:-2}
+body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,#0b1b2eb8 0%,#0b1b2e66 45%,#0e8a7e59 75%,#0b1b2ed9 100%);z-index:-1}
+.banner{background:linear-gradient(105deg,#0b1b2ef5 0%,#0f2a4ad9 42%,#0e8a7e8c 75%,#0e8a7e33 100%),url(img/campus.jpg) center 64%/cover no-repeat!important;min-height:150px}
+.banner svg{opacity:.18!important}
+.banner p{text-shadow:0 1px 6px #0009}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::after{background:linear-gradient(180deg,#050912e6 0%,#050912b3 50%,#05091ef0 100%)}}
+:root[data-theme="dark"] body::after{background:linear-gradient(180deg,#050912e6 0%,#050912b3 50%,#05091ef0 100%)}
+footer .photo-credit{font-size:12px;opacity:.8}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
 @media (max-width:780px){
  body{padding:0}.sheet{border-radius:0}.bar{padding:10px 14px;gap:10px;flex-wrap:wrap}.inst{display:none}.theme{margin-left:auto}.theme button{padding:4px 8px}
@@ -268,7 +280,7 @@ def page(path, title, body, prof, active, desc, up=None, index=True):
 <div class="note">Preparing for GATE DA 2027? The full <a href="{up}courses/gate-da-ml.html">Machine Learning series</a> is free on YouTube, built on real data.</div>
 <a class="follow" href="{E(links.get("youtube", ""))}">▶ Subscribe on YouTube</a></div>
 <main class="right">{banner}{body}</main></div>{PLAYER}
-<footer><span>© {date.today().year} {E(prof["name"])}</span><span>{ext}</span><span class="sp">Last updated {date.today():%B %Y}</span></footer></div></body></html>"""
+<footer><span>© {date.today().year} {E(prof["name"])}</span><span>{ext}</span><span class="photo-credit">Campus photo: GCET Kashmir</span><span class="sp">Last updated {date.today():%B %Y}</span></footer></div></body></html>"""
     out = DIST / path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
