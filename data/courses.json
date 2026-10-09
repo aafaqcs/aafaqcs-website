@@ -231,7 +231,7 @@
    "title": "Compiler Design · GATE CS/IT",
    "short": "Compiler Design",
    "blurb": "How your source code becomes machine code: the phases of a compiler, visualized step by step for GATE CS/IT.",
-   "total": 4,
+   "total": 5,
    "lessons": [
     {
      "code": "Lec 1",
@@ -264,6 +264,14 @@
      "status": "live",
      "thumb": "assets/img/yt_7Zm_ukepHp0.jpg",
      "meta": "5:23"
+    },
+    {
+     "code": "",
+     "title": "Syntax Analysis: CFG, Parse Trees & Ambiguity (Visual)",
+     "youtube": "https://youtu.be/etJKYkK8wrM",
+     "status": "live",
+     "thumb": "assets/img/yt_etJKYkK8wrM.jpg",
+     "meta": "5:03"
     }
    ]
   },
