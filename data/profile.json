@@ -130,6 +130,16 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-09",
+   "kind": "video",
+   "text": "Released [Memory & Storage for JKSSB](https://youtu.be/X0PUioqiIgg) in [JKSSB Computer Knowledge](courses/jkssb.html)."
+  },
+  {
+   "date": "2026-10-08",
+   "kind": "video",
+   "text": "Released [Syntax Analysis: The Big Picture (Visual)](https://youtu.be/7Zm_ukepHp0) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
+  },
+  {
    "date": "2026-10-07",
    "kind": "video",
    "text": "Released [Semantic Analysis, Visualised: Types, Scope & SDD](https://youtu.be/mhU1g-zGL0w) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
@@ -184,16 +194,6 @@
    "date": "2026-10-03",
    "kind": "short",
    "text": "Short: [Heap Sort Secretly Reversed My Data](https://youtu.be/x7Zkqb2NEXo)."
-  },
-  {
-   "date": "2026-10-02",
-   "kind": "video",
-   "text": "Released [ML 02: Simple Linear Regression](https://youtu.be/F5n9dZmEfso), the second lecture of the free [GATE DA 2027 Machine Learning series](courses/gate-da-ml.html). Least squares worked out by hand on real Iris data."
-  },
-  {
-   "date": "2026-10-02",
-   "kind": "video",
-   "text": "Released [ML 01: What is Machine Learning?](https://youtu.be/F7jnhEnSN1E), the opening lecture of a 20-part visual series covering the whole GATE DA machine learning syllabus."
   },
   {
    "date": "2026-09-27",

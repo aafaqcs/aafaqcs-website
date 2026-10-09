@@ -231,7 +231,7 @@
    "title": "Compiler Design · GATE CS/IT",
    "short": "Compiler Design",
    "blurb": "How your source code becomes machine code: the phases of a compiler, visualized step by step for GATE CS/IT.",
-   "total": 3,
+   "total": 4,
    "lessons": [
     {
      "code": "Lec 1",
@@ -256,6 +256,14 @@
      "status": "live",
      "thumb": "assets/img/yt_mhU1g-zGL0w.jpg",
      "meta": "8:33"
+    },
+    {
+     "code": "",
+     "title": "Syntax Analysis: The Big Picture (Visual)",
+     "youtube": "https://youtu.be/7Zm_ukepHp0",
+     "status": "live",
+     "thumb": "assets/img/yt_7Zm_ukepHp0.jpg",
+     "meta": "5:23"
     }
    ]
   },
@@ -425,9 +433,17 @@
      "status": "live",
      "thumb": "assets/img/ep07.jpg",
      "meta": "8:36 · JKSSB computer series"
+    },
+    {
+     "code": "EP01",
+     "title": "Memory & Storage for JKSSB",
+     "youtube": "https://youtu.be/X0PUioqiIgg",
+     "status": "live",
+     "thumb": "assets/img/yt_X0PUioqiIgg.jpg",
+     "meta": "8:47"
     }
    ],
-   "total": 10
+   "total": 11
   },
   {
    "slug": "shorts",
