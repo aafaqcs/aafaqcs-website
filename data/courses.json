@@ -50,10 +50,10 @@
     {
      "code": "ML 06",
      "title": "Ridge Regression",
-     "status": "soon",
-     "meta": "coming soon",
-     "thumb": null,
-     "youtube": ""
+     "status": "live",
+     "meta": "8:34",
+     "thumb": "assets/img/yt_OlFmy6D_vQU.jpg",
+     "youtube": "https://youtu.be/OlFmy6D_vQU"
     },
     {
      "code": "ML 07",
@@ -231,7 +231,7 @@
    "title": "Compiler Design · GATE CS/IT",
    "short": "Compiler Design",
    "blurb": "How your source code becomes machine code: the phases of a compiler, visualized step by step for GATE CS/IT.",
-   "total": 5,
+   "total": 6,
    "lessons": [
     {
      "code": "Lec 1",
@@ -272,6 +272,14 @@
      "status": "live",
      "thumb": "assets/img/yt_etJKYkK8wrM.jpg",
      "meta": "5:03"
+    },
+    {
+     "code": "",
+     "title": "Left Recursion & Left Factoring, Visualised",
+     "youtube": "https://youtu.be/yIqYR2iUIic",
+     "status": "live",
+     "thumb": "assets/img/yt_yIqYR2iUIic.jpg",
+     "meta": "5:45"
     }
    ]
   },
@@ -449,9 +457,17 @@
      "status": "live",
      "thumb": "assets/img/yt_X0PUioqiIgg.jpg",
      "meta": "8:47"
+    },
+    {
+     "code": "EP02",
+     "title": "CPU, Hardware & I/O Devices for JKSSB",
+     "youtube": "https://youtu.be/BJABCZlvfwY",
+     "status": "live",
+     "thumb": "assets/img/yt_BJABCZlvfwY.jpg",
+     "meta": "0:00"
     }
    ],
-   "total": 11
+   "total": 12
   },
   {
    "slug": "shorts",

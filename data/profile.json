@@ -130,6 +130,21 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-10",
+   "kind": "video",
+   "text": "Released [CPU, Hardware & I/O Devices for JKSSB](https://youtu.be/BJABCZlvfwY) in [JKSSB Computer Knowledge](courses/jkssb.html)."
+  },
+  {
+   "date": "2026-10-10",
+   "kind": "video",
+   "text": "Released [Ridge Regression](https://youtu.be/OlFmy6D_vQU) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
+  },
+  {
+   "date": "2026-10-10",
+   "kind": "video",
+   "text": "Released [Left Recursion & Left Factoring, Visualised](https://youtu.be/yIqYR2iUIic) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
+  },
+  {
    "date": "2026-10-09",
    "kind": "video",
    "text": "Released [Syntax Analysis: CFG, Parse Trees & Ambiguity (Visual)](https://youtu.be/etJKYkK8wrM) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
@@ -179,21 +194,6 @@
    "kind": "milestone",
    "pin": true,
    "text": "Launched this website: every lecture, Short and course in one place."
-  },
-  {
-   "date": "2026-10-04",
-   "kind": "video",
-   "text": "Released [Graph Representation: adjacency list vs adjacency matrix](https://youtu.be/K-PeWrwZgtI) in the [Algorithm Arena](courses/algorithms.html): Θ(n + e) vs Θ(n²), and when each one wins."
-  },
-  {
-   "date": "2026-10-04",
-   "kind": "short",
-   "text": "Short: [Adjacency Matrix vs List: 200,000× Difference](https://youtu.be/LApjZYE4KC0)."
-  },
-  {
-   "date": "2026-10-03",
-   "kind": "video",
-   "text": "Released [Heap Sort Explained Visually](https://youtu.be/LguP8SzxbeU) in the [Algorithm Arena](courses/algorithms.html): build heap in O(n), n log n always, and why heap sort is not stable."
   },
   {
    "date": "2026-09-27",
