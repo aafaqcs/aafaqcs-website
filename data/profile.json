@@ -132,6 +132,11 @@
   {
    "date": "2026-10-11",
    "kind": "video",
+   "text": "Released [MS Word & PowerPoint](https://youtu.be/iYhX16AAKTA) in [Algorithm Arena · GATE CS](courses/algorithms.html)."
+  },
+  {
+   "date": "2026-10-11",
+   "kind": "video",
    "text": "Released [Software, OS Types & Multitasking Explained for JKSSB](https://youtu.be/Ly0TKzpCUl4) in [JKSSB Computer Knowledge](courses/jkssb.html)."
   },
   {
@@ -183,11 +188,6 @@
    "date": "2026-10-05",
    "kind": "short",
    "text": "Short: [What happens when you press RUN?](https://youtu.be/_XXVxrhzfi8)."
-  },
-  {
-   "date": "2026-10-05",
-   "kind": "video",
-   "text": "Released [How a Compiler Works: 6 Phases, Visualized](https://youtu.be/yzgq5_2XU7Q) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
   },
   {
    "date": "2026-10-04",
