@@ -14,4 +14,4 @@ Put each week's files in its folder, then rebuild and upload:
   * Tip: also save the PPT as PDF and upload both: PDFs open on any phone, PPTX needs PowerPoint.
 
 Week topics and Google Classroom links are in  data/teaching.json  (gcr_link, gcr_code).
-Then:   python3 build.py      and drag the new dist/ folder onto Netlify > Deploys.
+Then:   python3 build.py && python3 push_pages.py "Add week material"      (publishes to https://aafaqcs.github.io)

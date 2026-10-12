@@ -222,17 +222,9 @@
      "status": "live",
      "thumb": "assets/img/yt_K-PeWrwZgtI.jpg",
      "meta": "7:43"
-    },
-    {
-     "code": "",
-     "title": "MS Word & PowerPoint",
-     "youtube": "https://youtu.be/iYhX16AAKTA",
-     "status": "live",
-     "thumb": "assets/img/yt_iYhX16AAKTA.jpg",
-     "meta": "0:00"
     }
    ],
-   "total": 5
+   "total": 4
   },
   {
    "slug": "compiler-design",
@@ -373,6 +365,359 @@
    ]
   },
   {
+   "slug": "python",
+   "title": "Python Programming",
+   "short": "Python",
+   "blurb": "A 15-week course: three lectures every week, each with a video, slides and a practice set. From your first program to a small project.",
+   "total": 45,
+   "lessons": [
+    {
+     "code": "W01 · L1",
+     "title": "Why Python? Installing it and running your first program",
+     "status": "soon",
+     "meta": "Week 1 · Getting started: Python, variables and input/output"
+    },
+    {
+     "code": "W01 · L2",
+     "title": "Variables, data types and type conversion",
+     "status": "soon",
+     "meta": "Week 1 · Getting started: Python, variables and input/output"
+    },
+    {
+     "code": "W01 · L3",
+     "title": "Input, output and arithmetic operators",
+     "status": "soon",
+     "meta": "Week 1 · Getting started: Python, variables and input/output"
+    },
+    {
+     "code": "W02 · L1",
+     "title": "if, elif and else; comparison and logical operators",
+     "status": "soon",
+     "meta": "Week 2 · Decisions and loops"
+    },
+    {
+     "code": "W02 · L2",
+     "title": "while loops and common loop patterns",
+     "status": "soon",
+     "meta": "Week 2 · Decisions and loops"
+    },
+    {
+     "code": "W02 · L3",
+     "title": "for loops, range(), break and continue",
+     "status": "soon",
+     "meta": "Week 2 · Decisions and loops"
+    },
+    {
+     "code": "W03 · L1",
+     "title": "Defining and calling functions; return values",
+     "status": "soon",
+     "meta": "Week 3 · Functions"
+    },
+    {
+     "code": "W03 · L2",
+     "title": "Parameters: positional, keyword and default arguments",
+     "status": "soon",
+     "meta": "Week 3 · Functions"
+    },
+    {
+     "code": "W03 · L3",
+     "title": "Scope, recursion and docstrings",
+     "status": "soon",
+     "meta": "Week 3 · Functions"
+    },
+    {
+     "code": "W04 · L1",
+     "title": "Indexing, slicing and immutability",
+     "status": "soon",
+     "meta": "Week 4 · Strings"
+    },
+    {
+     "code": "W04 · L2",
+     "title": "String methods and f-string formatting",
+     "status": "soon",
+     "meta": "Week 4 · Strings"
+    },
+    {
+     "code": "W04 · L3",
+     "title": "Text-processing problems",
+     "status": "soon",
+     "meta": "Week 4 · Strings"
+    },
+    {
+     "code": "W05 · L1",
+     "title": "Lists: creating, indexing, slicing and changing",
+     "status": "soon",
+     "meta": "Week 5 · Lists and tuples"
+    },
+    {
+     "code": "W05 · L2",
+     "title": "List methods, nested lists and list comprehensions",
+     "status": "soon",
+     "meta": "Week 5 · Lists and tuples"
+    },
+    {
+     "code": "W05 · L3",
+     "title": "Tuples, packing and unpacking",
+     "status": "soon",
+     "meta": "Week 5 · Lists and tuples"
+    },
+    {
+     "code": "W06 · L1",
+     "title": "Dictionaries: keys, values and iteration",
+     "status": "soon",
+     "meta": "Week 6 · Dictionaries and sets"
+    },
+    {
+     "code": "W06 · L2",
+     "title": "Sets and set operations",
+     "status": "soon",
+     "meta": "Week 6 · Dictionaries and sets"
+    },
+    {
+     "code": "W06 · L3",
+     "title": "Counting and grouping patterns",
+     "status": "soon",
+     "meta": "Week 6 · Dictionaries and sets"
+    },
+    {
+     "code": "W07 · L1",
+     "title": "Reading and writing text files; the with statement",
+     "status": "soon",
+     "meta": "Week 7 · Files and exceptions"
+    },
+    {
+     "code": "W07 · L2",
+     "title": "CSV files and simple data processing",
+     "status": "soon",
+     "meta": "Week 7 · Files and exceptions"
+    },
+    {
+     "code": "W07 · L3",
+     "title": "Exceptions: try, except, finally and raise",
+     "status": "soon",
+     "meta": "Week 7 · Files and exceptions"
+    },
+    {
+     "code": "W08 · L1",
+     "title": "lambda, map, filter and sorted with a key",
+     "status": "soon",
+     "meta": "Week 8 · Functional style and modules"
+    },
+    {
+     "code": "W08 · L2",
+     "title": "Modules and packages: import, math, random, datetime",
+     "status": "soon",
+     "meta": "Week 8 · Functional style and modules"
+    },
+    {
+     "code": "W08 · L3",
+     "title": "pip and virtual environments",
+     "status": "soon",
+     "meta": "Week 8 · Functional style and modules"
+    },
+    {
+     "code": "W09 · L1",
+     "title": "Classes and objects; __init__ and self",
+     "status": "soon",
+     "meta": "Week 9 · Object-oriented programming I"
+    },
+    {
+     "code": "W09 · L2",
+     "title": "Instance and class attributes; methods",
+     "status": "soon",
+     "meta": "Week 9 · Object-oriented programming I"
+    },
+    {
+     "code": "W09 · L3",
+     "title": "Encapsulation and properties",
+     "status": "soon",
+     "meta": "Week 9 · Object-oriented programming I"
+    },
+    {
+     "code": "W10 · L1",
+     "title": "Inheritance and method overriding",
+     "status": "soon",
+     "meta": "Week 10 · Object-oriented programming II"
+    },
+    {
+     "code": "W10 · L2",
+     "title": "Polymorphism and special methods: __str__, __eq__, __add__",
+     "status": "soon",
+     "meta": "Week 10 · Object-oriented programming II"
+    },
+    {
+     "code": "W10 · L3",
+     "title": "Dataclasses and a small object-oriented design",
+     "status": "soon",
+     "meta": "Week 10 · Object-oriented programming II"
+    },
+    {
+     "code": "W11 · L1",
+     "title": "Linear search and binary search",
+     "status": "soon",
+     "meta": "Week 11 · Algorithms in Python"
+    },
+    {
+     "code": "W11 · L2",
+     "title": "Sorting: bubble, selection and insertion sort",
+     "status": "soon",
+     "meta": "Week 11 · Algorithms in Python"
+    },
+    {
+     "code": "W11 · L3",
+     "title": "Recursion and an introduction to complexity",
+     "status": "soon",
+     "meta": "Week 11 · Algorithms in Python"
+    },
+    {
+     "code": "W12 · L1",
+     "title": "Arrays, shapes and dtypes",
+     "status": "soon",
+     "meta": "Week 12 · NumPy"
+    },
+    {
+     "code": "W12 · L2",
+     "title": "Indexing, slicing and boolean masks",
+     "status": "soon",
+     "meta": "Week 12 · NumPy"
+    },
+    {
+     "code": "W12 · L3",
+     "title": "Vectorisation and broadcasting",
+     "status": "soon",
+     "meta": "Week 12 · NumPy"
+    },
+    {
+     "code": "W13 · L1",
+     "title": "Series and DataFrames; reading a CSV",
+     "status": "soon",
+     "meta": "Week 13 · Pandas and visualisation"
+    },
+    {
+     "code": "W13 · L2",
+     "title": "Selecting, filtering, grouping and cleaning data",
+     "status": "soon",
+     "meta": "Week 13 · Pandas and visualisation"
+    },
+    {
+     "code": "W13 · L3",
+     "title": "Plots with matplotlib",
+     "status": "soon",
+     "meta": "Week 13 · Pandas and visualisation"
+    },
+    {
+     "code": "W14 · L1",
+     "title": "JSON and calling web APIs with requests",
+     "status": "soon",
+     "meta": "Week 14 · Python for the web and automation"
+    },
+    {
+     "code": "W14 · L2",
+     "title": "Working with files and folders: os and pathlib",
+     "status": "soon",
+     "meta": "Week 14 · Python for the web and automation"
+    },
+    {
+     "code": "W14 · L3",
+     "title": "Automating small tasks",
+     "status": "soon",
+     "meta": "Week 14 · Python for the web and automation"
+    },
+    {
+     "code": "W15 · L1",
+     "title": "Planning and structuring a small project",
+     "status": "soon",
+     "meta": "Week 15 · Project, testing and revision"
+    },
+    {
+     "code": "W15 · L2",
+     "title": "Testing with assert and unittest or pytest",
+     "status": "soon",
+     "meta": "Week 15 · Project, testing and revision"
+    },
+    {
+     "code": "W15 · L3",
+     "title": "Revision and a mock test",
+     "status": "soon",
+     "meta": "Week 15 · Project, testing and revision"
+    }
+   ],
+   "cover": "assets/img/python.jpg"
+  },
+  {
+   "slug": "ctq",
+   "title": "JKSSB Computer: Concept Through Questions",
+   "short": "JKSSB CTQ",
+   "blurb": "Nine episodes: a real previous-year question introduces each concept, then a visual, then Points to Remember. Every wrong option is explained, and each episode ends with new questions that could be asked next.",
+   "total": 9,
+   "lessons": [
+    {
+     "code": "CTQ 1",
+     "title": "Memory & Storage for JKSSB",
+     "status": "live",
+     "meta": "8:47",
+     "youtube": "https://youtu.be/X0PUioqiIgg",
+     "thumb": "assets/img/yt_X0PUioqiIgg.jpg"
+    },
+    {
+     "code": "CTQ 2",
+     "title": "CPU, Hardware & I/O Devices for JKSSB",
+     "status": "live",
+     "meta": "9:26",
+     "youtube": "https://youtu.be/BJABCZlvfwY",
+     "thumb": "assets/img/yt_BJABCZlvfwY.jpg"
+    },
+    {
+     "code": "CTQ 3",
+     "title": "Software, OS Types & Multitasking Explained for JKSSB",
+     "status": "live",
+     "meta": "10:34",
+     "youtube": "https://youtu.be/Ly0TKzpCUl4",
+     "thumb": "assets/img/yt_Ly0TKzpCUl4.jpg"
+    },
+    {
+     "code": "CTQ 4",
+     "title": "Deadlock, Process Scheduling, Linux & Compilers for JKSSB",
+     "status": "live",
+     "meta": "8:10",
+     "youtube": "https://youtu.be/HRjrpjCrQ68",
+     "thumb": "assets/img/yt_HRjrpjCrQ68.jpg"
+    },
+    {
+     "code": "CTQ 5",
+     "title": "MS Word & PowerPoint",
+     "status": "live",
+     "meta": "8:50",
+     "youtube": "https://youtu.be/iYhX16AAKTA",
+     "thumb": "assets/img/yt_iYhX16AAKTA.jpg"
+    },
+    {
+     "code": "CTQ 6",
+     "title": "MS Excel & Access",
+     "status": "soon",
+     "meta": "Concept Through Questions · episode 6"
+    },
+    {
+     "code": "CTQ 7",
+     "title": "Internet & Networking",
+     "status": "soon",
+     "meta": "Concept Through Questions · episode 7"
+    },
+    {
+     "code": "CTQ 8",
+     "title": "Number Systems & Malware",
+     "status": "soon",
+     "meta": "Concept Through Questions · episode 8"
+    },
+    {
+     "code": "CTQ 9",
+     "title": "Cyber Security",
+     "status": "soon",
+     "meta": "Concept Through Questions · episode 9"
+    }
+   ]
+  },
+  {
    "slug": "jkssb",
    "title": "JKSSB Computer Knowledge",
    "short": "JKSSB",
@@ -457,41 +802,9 @@
      "status": "live",
      "thumb": "assets/img/ep07.jpg",
      "meta": "8:36 · JKSSB computer series"
-    },
-    {
-     "code": "EP01",
-     "title": "Memory & Storage for JKSSB",
-     "youtube": "https://youtu.be/X0PUioqiIgg",
-     "status": "live",
-     "thumb": "assets/img/yt_X0PUioqiIgg.jpg",
-     "meta": "8:47"
-    },
-    {
-     "code": "EP02",
-     "title": "CPU, Hardware & I/O Devices for JKSSB",
-     "youtube": "https://youtu.be/BJABCZlvfwY",
-     "status": "live",
-     "thumb": "assets/img/yt_BJABCZlvfwY.jpg",
-     "meta": "0:00"
-    },
-    {
-     "code": "EP03",
-     "title": "Software, OS Types & Multitasking Explained for JKSSB",
-     "youtube": "https://youtu.be/Ly0TKzpCUl4",
-     "status": "live",
-     "thumb": "assets/img/yt_Ly0TKzpCUl4.jpg",
-     "meta": "10:34"
-    },
-    {
-     "code": "EP04",
-     "title": "Deadlock, Process Scheduling, Linux & Compilers for JKSSB",
-     "youtube": "https://youtu.be/HRjrpjCrQ68",
-     "status": "live",
-     "thumb": "assets/img/yt_HRjrpjCrQ68.jpg",
-     "meta": "8:10"
     }
    ],
-   "total": 14
+   "total": 10
   },
   {
    "slug": "shorts",

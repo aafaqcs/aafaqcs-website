@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Keep aafaqcs.netlify.app in step with the YouTube channel (run hourly by a systemd user timer).
-# New uploads -> data/*.json + thumbnails -> build check -> push to GitHub -> Netlify publishes.
+# Keep aafaqcs.github.io in step with the YouTube channel (run hourly by a systemd user timer).
+# New uploads -> data/*.json + thumbnails -> build check -> push to GitHub -> GitHub Pages publishes.
 # Quiet: lowest CPU and disk priority. Log: ~/.local/state/aafaqcs/autoupdate.log
 set -uo pipefail
 cd "$(dirname "$0")"

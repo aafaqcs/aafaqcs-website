@@ -113,6 +113,262 @@
    "video_courses": [
     "compiler-design"
    ]
+  },
+  {
+   "slug": "python",
+   "title": "Python Programming",
+   "code": "PY",
+   "programme": "B.Tech CSE",
+   "gcr_link": "",
+   "gcr_code": "",
+   "blurb": "Python from zero to a small real project: three lectures every week, each with a video, slides and a practice set.",
+   "weeks": [
+    "Getting started: Python, variables and input/output",
+    "Decisions and loops",
+    "Functions",
+    "Strings",
+    "Lists and tuples",
+    "Dictionaries and sets",
+    "Files and exceptions",
+    "Functional style and modules",
+    "Object-oriented programming I",
+    "Object-oriented programming II",
+    "Algorithms in Python",
+    "NumPy",
+    "Pandas and visualisation",
+    "Python for the web and automation",
+    "Project, testing and revision"
+   ],
+   "plan": [
+    {
+     "title": "Getting started: Python, variables and input/output",
+     "lectures": [
+      "Why Python? Installing it and running your first program",
+      "Variables, data types and type conversion",
+      "Input, output and arithmetic operators"
+     ],
+     "practice": [
+      "Read a name and print \"Hello, <name>\".",
+      "Convert a temperature from Celsius to Fahrenheit.",
+      "Read two integers and print their sum, difference, product, quotient and remainder.",
+      "Predict the output of print(7 // 2, 7 % 2, 7 / 2, 2 ** 5).",
+      "Swap two variables without using a third variable."
+     ]
+    },
+    {
+     "title": "Decisions and loops",
+     "lectures": [
+      "if, elif and else; comparison and logical operators",
+      "while loops and common loop patterns",
+      "for loops, range(), break and continue"
+     ],
+     "practice": [
+      "Read a number and print whether it is positive, negative or zero.",
+      "Check whether a year is a leap year.",
+      "Print the multiplication table of n using a for loop.",
+      "Find the sum of the digits of a number using a while loop.",
+      "Print the first 10 Fibonacci numbers."
+     ]
+    },
+    {
+     "title": "Functions",
+     "lectures": [
+      "Defining and calling functions; return values",
+      "Parameters: positional, keyword and default arguments",
+      "Scope, recursion and docstrings"
+     ],
+     "practice": [
+      "Write is_prime(n) and use it to print all primes below 100.",
+      "Write a function that returns the largest of three numbers without using max().",
+      "Write recursive functions for factorial and for the nth Fibonacci number.",
+      "What happens when a function assigns to a global variable without the global keyword? Explain.",
+      "Write a function with a default argument and call it in three different ways."
+     ]
+    },
+    {
+     "title": "Strings",
+     "lectures": [
+      "Indexing, slicing and immutability",
+      "String methods and f-string formatting",
+      "Text-processing problems"
+     ],
+     "practice": [
+      "Reverse a string using slicing.",
+      "Check whether a string is a palindrome, ignoring case and spaces.",
+      "Count the vowels in a sentence.",
+      "Replace every space in a string by a hyphen and then convert it to title case.",
+      "Given \"name=Asif;age=21\", extract the name and the age into two variables."
+     ]
+    },
+    {
+     "title": "Lists and tuples",
+     "lectures": [
+      "Lists: creating, indexing, slicing and changing",
+      "List methods, nested lists and list comprehensions",
+      "Tuples, packing and unpacking"
+     ],
+     "practice": [
+      "Remove duplicates from a list while keeping the order.",
+      "Find the second largest element of a list without sorting it.",
+      "Use a list comprehension to build the squares of the even numbers up to 20.",
+      "Rotate a list left by k positions.",
+      "Swap the first and last items of a tuple (hint: tuples are immutable)."
+     ]
+    },
+    {
+     "title": "Dictionaries and sets",
+     "lectures": [
+      "Dictionaries: keys, values and iteration",
+      "Sets and set operations",
+      "Counting and grouping patterns"
+     ],
+     "practice": [
+      "Count how often each word occurs in a sentence.",
+      "Merge two dictionaries. What happens to repeated keys?",
+      "Find the common and the different elements of two lists using sets.",
+      "Group a list of names by their first letter.",
+      "Invert a dictionary (swap keys and values) when the values are unique."
+     ]
+    },
+    {
+     "title": "Files and exceptions",
+     "lectures": [
+      "Reading and writing text files; the with statement",
+      "CSV files and simple data processing",
+      "Exceptions: try, except, finally and raise"
+     ],
+     "practice": [
+      "Count the lines, words and characters in a text file.",
+      "Write the squares of 1 to 10 to a file, one per line.",
+      "Read a CSV file of marks and print each student's average.",
+      "Make a division program that handles ZeroDivisionError and ValueError separately.",
+      "Write a function that raises ValueError for a negative age."
+     ]
+    },
+    {
+     "title": "Functional style and modules",
+     "lectures": [
+      "lambda, map, filter and sorted with a key",
+      "Modules and packages: import, math, random, datetime",
+      "pip and virtual environments"
+     ],
+     "practice": [
+      "Sort a list of (name, marks) pairs by marks, highest first, using sorted() with a key.",
+      "Use filter() to keep the strings longer than 4 characters.",
+      "Generate 5 random integers between 1 and 100 and print them in sorted order.",
+      "Print today's date and the number of days left until 31 December.",
+      "Create a virtual environment, install one package, and list the commands you used."
+     ]
+    },
+    {
+     "title": "Object-oriented programming I",
+     "lectures": [
+      "Classes and objects; __init__ and self",
+      "Instance and class attributes; methods",
+      "Encapsulation and properties"
+     ],
+     "practice": [
+      "Define a Student class with name and marks and a method grade().",
+      "Create a BankAccount class with deposit() and withdraw() where the balance can never go negative.",
+      "Add a class attribute that counts how many objects have been created.",
+      "Use @property to expose the area of a Circle computed from its radius.",
+      "Explain the difference between a class and an object with one example."
+     ]
+    },
+    {
+     "title": "Object-oriented programming II",
+     "lectures": [
+      "Inheritance and method overriding",
+      "Polymorphism and special methods: __str__, __eq__, __add__",
+      "Dataclasses and a small object-oriented design"
+     ],
+     "practice": [
+      "Create Shape, Circle and Rectangle classes, each with its own area().",
+      "Implement a Vector class that supports + and printing.",
+      "What does super() do? Show a case where it is required.",
+      "Convert a plain class with __init__ into a dataclass.",
+      "Design the classes for a library: Book, Member and Library. List the methods you would write."
+     ]
+    },
+    {
+     "title": "Algorithms in Python",
+     "lectures": [
+      "Linear search and binary search",
+      "Sorting: bubble, selection and insertion sort",
+      "Recursion and an introduction to complexity"
+     ],
+     "practice": [
+      "Implement binary search and test it on a sorted list.",
+      "Implement insertion sort and count the number of comparisons.",
+      "Write a recursive power(x, n) that uses O(log n) multiplications.",
+      "Solve the Tower of Hanoi for 3 discs and print the moves.",
+      "State the time complexity of each of your sorting functions and explain why."
+     ]
+    },
+    {
+     "title": "NumPy",
+     "lectures": [
+      "Arrays, shapes and dtypes",
+      "Indexing, slicing and boolean masks",
+      "Vectorisation and broadcasting"
+     ],
+     "practice": [
+      "Create a 3 x 3 array of 1 to 9 and print its transpose and its row sums.",
+      "Replace all the negative numbers in an array by zero.",
+      "Normalise a vector to zero mean and unit variance.",
+      "Time a Python loop against NumPy for summing one million numbers.",
+      "Predict the shape of the result of adding a (3, 1) array to a (1, 4) array."
+     ]
+    },
+    {
+     "title": "Pandas and visualisation",
+     "lectures": [
+      "Series and DataFrames; reading a CSV",
+      "Selecting, filtering, grouping and cleaning data",
+      "Plots with matplotlib"
+     ],
+     "practice": [
+      "Load a CSV and print its shape, its column names and the first 5 rows.",
+      "Find the mean marks per department using groupby.",
+      "Fill the missing values of a column with its median.",
+      "Draw a bar chart of the five highest values of a column.",
+      "Plot a histogram and describe what its shape tells you."
+     ]
+    },
+    {
+     "title": "Python for the web and automation",
+     "lectures": [
+      "JSON and calling web APIs with requests",
+      "Working with files and folders: os and pathlib",
+      "Automating small tasks"
+     ],
+     "practice": [
+      "Fetch JSON from a public API and print three fields.",
+      "Rename all .txt files in a folder to add today's date as a prefix.",
+      "Combine a folder of CSV files into one file.",
+      "Print the 10 most common words of a text file.",
+      "Handle a failed network request gracefully with try and except."
+     ]
+    },
+    {
+     "title": "Project, testing and revision",
+     "lectures": [
+      "Planning and structuring a small project",
+      "Testing with assert and unittest or pytest",
+      "Revision and a mock test"
+     ],
+     "practice": [
+      "Build a small command-line project (for example a marks manager) with at least three functions and file storage.",
+      "Write five test cases for one function using assert.",
+      "Refactor one earlier program to remove repeated code.",
+      "Write a README that explains how to run your project.",
+      "Attempt the mock test within 90 minutes, then review every mistake."
+     ]
+    }
+   ],
+   "video_courses": [
+    "python"
+   ]
   }
  ]
 }

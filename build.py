@@ -6,7 +6,7 @@ aafaqcs.com — static site generator (no installs: plain Python 3).
 Content lives in data/*.json (profile, courses, classes, publications). Edit those and rebuild; never edit dist/ by hand.
 Style: classic academic homepage (grey page, white sheet, portrait + boxed menu on the left, coloured name banner).
 The earlier course-platform look is kept in build_platform_style.py.
-Publish: drag the dist/ folder onto https://app.netlify.com/drop (free). When aafaqcs.com is connected, change SITE below and rebuild.
+Publish: python3 push_pages.py (GitHub Pages, https://aafaqcs.github.io). When aafaqcs.com is connected, change SITE below and rebuild.
 """
 
 import html
@@ -181,6 +181,31 @@ h2 svg{color:var(--teal)!important}
 .plhead .gcrbox{background:#ffffff1f!important;border:1px solid #ffffff40!important;color:#fff!important}.plhead .gcrbox .meta,.plhead .gcrbox span{color:#e8f1fb!important}.plhead .gcrbox b{color:#fff}
 .empty-pane{padding:22px;border:1px dashed var(--box);border-radius:14px;color:var(--muted);text-align:center}
 @media (max-width:780px){.plhead{grid-template-columns:1fr}.res-row{grid-template-columns:1fr}.res-row .f{justify-content:flex-start}}
+
+/* ----- weekly plan (3 lectures + videos + practice per week) ----- */
+.wkc{border:1px solid var(--line);border-radius:14px;margin:0 0 12px;background:var(--card);overflow:hidden}
+.wkc summary{display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;cursor:pointer;list-style:none}
+.wkc summary::-webkit-details-marker{display:none}
+.wkc summary::after{content:"+";font:700 20px var(--mono);color:var(--head);grid-column:4;grid-row:1}
+.wkc[open] summary::after{content:"−"}
+.wkc summary .wk{font:700 12px var(--mono);color:var(--head)}.wkc summary b{font-size:15px}
+.wkc .meta{font-size:12px;color:var(--muted)}
+.wkc[open] summary{border-bottom:1px solid var(--line);background:var(--soft)}
+.lrow{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line)}
+.lrow .ln{font:700 12px var(--mono);color:#fff;background:var(--head);border-radius:8px;text-align:center;padding:3px 0}
+.lrow .lt{font-size:14.5px;font-weight:600}
+.fbtn.vid{background:#e62117}
+.pqh{font:800 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--head);padding:14px 16px 4px}
+.pq{margin:0;padding:4px 16px 8px 38px;font-size:14px}.pq li{margin:5px 0}
+.wkc .f{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 14px}
+.glance{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 4px}
+@media (max-width:560px){.glance{grid-template-columns:1fr}}
+.glance div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.glance b{display:block;font:800 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--head);margin-bottom:4px}
+.glance p{margin:0!important;font-size:13.5px!important;color:var(--muted)}
+.abstract{border-left:4px solid var(--banner);padding:10px 16px;background:var(--soft);border-radius:0 12px 12px 0;margin:14px 0;font-size:14.5px}
+.abstract b{color:var(--head)}
+@media (max-width:780px){.wkc summary{grid-template-columns:1fr auto}.wkc summary .meta{display:none}.lrow{grid-template-columns:34px 1fr}.lrow .lf{grid-column:2}}
 
 /* ----- GCET Kashmir campus photo: blurred page backdrop + sharp banner ----- */
 html{background:var(--page)}
@@ -386,7 +411,7 @@ def build():
         return live, c.get("total", len(c["lessons"]))
 
     def cover(c, up=""):
-        t = next((l["thumb"] for l in c["lessons"] if l.get("thumb")), None)
+        t = c.get("cover") or next((l["thumb"] for l in c["lessons"] if l.get("thumb")), None)
         return f'<img src="{up}{t}" alt="" loading="lazy">' if t else '<div class="ph"></div>'
 
     def card(c, up=""):
@@ -407,7 +432,85 @@ def build():
     stats = '<div class="stats">' + "".join(f'<div class="stat"><b>{E(n)}</b><small>{E(t)}</small></div>' for n, t in
                                             (prof.get("highlights", [])[:3] + [[str(m["citations"]), "citations on Google Scholar"]])) + "</div>"
 
+    # Teaching: a placard per subject → subject page with Slides · Notes · Practice · Videos tabs
+    T = D("teaching")
+    by_slug = {c["slug"]: c for c in courses}
+    PALETTE = [("#0f2a4a", "#0e8a7e"), ("#3b1d6e", "#7c4dff"), ("#7a2e0b", "#e8590c"), ("#0b3b5c", "#1f9ad6"), ("#1e3a1e", "#2f9e44")]
+    TABJS = """<script>document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".tabs button");if(!b)return;
+var w=b.closest(".tabwrap");w.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected",x===b)});
+w.querySelectorAll(".tabpane").forEach(function(p){p.classList.toggle("on",p.id===b.dataset.t)});history.replaceState(null,"","#"+b.dataset.t)});
+window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&document.querySelector('.tabs button[data-t="'+h+'"]');if(b)b.click()})</script>"""
+    cards = ""
+    for i, sub in enumerate(T["subjects"]):
+        c1, c2 = PALETTE[i % len(PALETTE)]
+        n_w = len(sub["weeks"])
+        wf = [week_files(sub["slug"], k) for k in range(1, n_w + 1)]
+        n_sl, n_pr, n_no = (sum(len(w[j]) for w in wf) for j in range(3))
+        plan = sub.get("plan") or []
+        n_pr += sum(len(w.get("practice", [])) for w in plan)
+        vids = [l for vc in sub.get("video_courses", []) for l in by_slug.get(vc, {}).get("lessons", []) if l.get("youtube")]
+        cards += f"""<a class="tc" href="teaching/{sub["slug"]}.html" style="--c1:{c1};--c2:{c2}"><div class="top"><span class="sem">{E(T.get("semester", ""))}</span>
+<div class="code">{E(sub["code"])}</div><div class="nm">{E(sub["title"])}</div></div>
+<div class="bot"><p>{E(sub["blurb"])}</p><div class="res">{f'<span>▤ Lectures <b>{3 * n_w}</b></span>' if plan else ''}<span>▣ Slides <b>{n_sl}</b></span><span>✎ Notes <b>{n_no}</b></span><span>? Practice <b>{n_pr}</b></span><span>▶ Videos <b>{len(vids)}</b></span></div>
+<span class="meta">{E(sub.get("programme", ""))} · {n_w} weeks · open course →</span></div></a>"""
+
+        def pane(idx, cls, label):
+            rows = ""
+            for k, topic in enumerate(sub["weeks"], 1):
+                files = "".join(file_pill(f, "../", sub["slug"], k, cls, label) for f in wf[k - 1][idx])
+                rows += f'<div class="res-row"><span class="wk">WEEK {k:02d}</span><span class="t">{E(topic)}</span><span class="f">{files or f"<span class=\'fbtn off\'>{label} soon</span>"}</span></div>'
+            return rows
+        vrows = ""
+        for k, l in enumerate(vids, 1):
+            vid = l["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
+            img = f'<img src="../{l["thumb"]}" alt="" loading="lazy">' if l.get("thumb") else '<div class="ph"></div>'
+            vrows += f'<a class="lec" href="{E(l["youtube"])}" data-yt="{E(vid)}">{img}<div><b>{E(l["title"])}</b><small>{E(l.get("meta", ""))}</small></div><span class="go">Watch ▸</span></a>'
+        vpane = vrows or '<div class="empty-pane">Video lectures for this course are on the way. Meanwhile, see all <a href="../courses.html">video courses</a>.</div>'
+        def plan_html():
+            lessons = [l for vc in sub.get("video_courses", []) for l in by_slug.get(vc, {}).get("lessons", [])]
+            out = ""
+            for k, wk in enumerate(plan, 1):
+                sl, pr, no = wf[k - 1]
+                rows = ""
+                for j, lt in enumerate(wk["lectures"], 1):
+                    idx = (k - 1) * 3 + (j - 1)
+                    les = lessons[idx] if idx < len(lessons) else {}
+                    if les.get("youtube"):
+                        vid = les["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
+                        v = f'<a class="fbtn vid" href="{E(les["youtube"])}" data-yt="{E(vid)}">▶ Watch</a>'
+                    else:
+                        v = '<span class="fbtn off">Video soon</span>'
+                    rows += f'<div class="lrow"><span class="ln">L{j}</span><span class="lt">{E(lt)}</span><span class="lf">{v}</span></div>'
+                files = "".join(file_pill(f, "../", sub["slug"], k, c_, l_) for fs, c_, l_ in ((sl, "", "Slides"), (no, "notes", "Notes"), (pr, "prac", "Practice")) for f in fs)
+                pq = "".join(f"<li>{E(q)}</li>" for q in wk.get("practice", []))
+                out += (f'<details class="wkc"{" open" if k == 1 else ""}><summary><span class="wk">WEEK {k:02d}</span><b>{E(wk["title"])}</b>'
+                        f'<span class="meta">3 lectures · videos · practice</span></summary>{rows}<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>'
+                        f'<div class="f">{files or "<span class=\'fbtn off\'>Slides soon</span>"}</div></details>')
+            return out
+        tabs = ([("plan", "▤ Weekly plan", n_w, plan_html())] if plan else []) + [("slides", "▣ Slides", n_sl, pane(0, "", "Slides")), ("notes", "✎ Notes", n_no, pane(2, "notes", "Notes")),
+                ("practice", "? Practice Questions", n_pr, pane(1, "prac", "Practice")), ("videos", "▶ Videos", len(vids), vpane)]
+        tabbar = "".join(f'<button type="button" role="tab" data-t="{t}" aria-selected="{"true" if j == 0 else "false"}">{lab}<span class="n">{n}</span></button>' for j, (t, lab, n, _) in enumerate(tabs))
+        panes = "".join(f'<div class="tabpane{" on" if j == 0 else ""}" id="{t}" role="tabpanel">{html_}</div>' for j, (t, _, _, html_) in enumerate(tabs))
+        body = f"""<p class="crumb"><a href="../classes.html">Teaching</a> › {E(sub["code"])}</p>
+<div class="plhead" style="grid-template-columns:1fr"><div>{h2(sub["title"])}<p>{E(sub["blurb"])}</p><p class="meta">{E(sub.get("programme", ""))} · {E(T.get("semester", ""))} · {n_w} weeks</p><div class="gcrbox" style="margin-top:8px">{gcr_html(sub)}</div></div></div>
+<div class="tabwrap"><div class="tabs" role="tablist">{tabbar}</div>{panes}</div>{TABJS}"""
+        page(f"teaching/{sub['slug']}.html", f"{sub['title']} · {prof['short_name']}", body, prof, "classes.html", f"{sub['title']}: slides, notes, practice questions and video lectures. {sub['blurb']}")
+    page("classes.html", f"Teaching · {name}", f"""{h2("My courses · " + T.get("semester", ""))}<p>Courses I teach at {E(prof["institution"])}. Open a course for its slides, notes, practice questions and videos, week by week, plus its Google Classroom.</p>
+<div class="tcs">{cards}</div>{h2("Free video courses")}<p>Visual lectures that go with these courses are on the <a href="courses.html">video courses</a> page.</p>""",
+         prof, "classes.html", f"Courses taught by {name}: slides, notes, practice questions, videos and Google Classroom links.")
+
     # Home
+    n_live = sum(counts(c)[0] for c in courses if c["slug"] != "shorts")
+    n_subj = len(T["subjects"])
+    subj_list = "data structures, algorithms, programming in C, C++ and Python, graph theory, compiler design and operating systems"
+    abstract_html = (f'<div class="abstract"><b>Abstract.</b> I am a teacher-researcher in computer science at {E(prof["institution"])}. '
+                     f'My teaching covers {E(subj_list)}, and my research studies why deep graph neural networks forget and how to make them remember. '
+                     f'I turn that experience into free visual lectures, weekly practice and verified answers, so that students see an idea before they memorise it.</div>')
+    glance = [("Teaching", f"{n_subj} courses this semester, from first-year programming to compiler design, with slides, notes and practice every week."),
+              ("Research", "Graph learning and geometric deep learning: over-smoothing, over-squashing and recommendation systems."),
+              ("Free lectures", f"{n_live} visual lectures on YouTube for GATE, JKSSB and B.Tech students."),
+              ("Exam preparation", "GATE and UGC-NET qualified repeatedly: lectures are built around the questions that actually get asked.")]
+    glance_html = '<div class="glance">' + "".join(f"<div><b>{E(t)}</b><p>{E(x)}</p></div>" for t, x in glance) + "</div>"
     research = ", ".join(pubs["interests"]).lower()
     term = [("whoami", f'{E(name)} · Assistant Professor, CSE @ <a href="https://gcetkashmir.ac.in">GCET Kashmir</a>'),
             ("cat research.md", 'Deep graph neural networks <b>forget</b> as they grow (over-smoothing, over-squashing). My PhD at <a href="https://nitsri.ac.in">NIT Srinagar</a> built ones that <b>remember</b>.'),
@@ -418,9 +521,13 @@ def build():
     home = f"""<div class="term" aria-label="Introduction"><div class="tbar"><i></i><i></i><i></i><span>aafaq@cs: ~</span></div>
 <div class="tbody">{lines}<div class="ln" style="--d:{0.15 + 0.9 * len(term)}s"><span class="pr">aafaq@cs:~$</span> <span class="cur"></span></div></div></div>
 {stats}
+{abstract_html}
+{h2("Experience at a glance")}{glance_html}
 {h2("What's new")}<ul class="news">{"".join(news_item(n) for n in prof.get("news", []))}</ul>
 {h2("Video courses")}<div class="pls">{"".join(card(c) for c in courses[:3])}</div>
 <p class="more"><a href="courses.html">All video courses →</a></p>
+{h2("Courses I teach · " + T.get("semester", ""))}<div class="tcs">{cards}</div>
+<p class="more"><a href="classes.html">All teaching →</a></p>
 {h2("Latest publications")}{"".join(pub_html(p) for p in sorted(pubs["publications"], key=lambda p: -p["year"])[:3])}
 <p class="more"><a href="publications.html">All publications →</a></p>"""
     page("index.html", f"{name} · GCET Kashmir", home, prof, "index.html", f"{name}: Assistant Professor, CSE, GCET Kashmir. Graph learning research and free visual lectures for GATE.")
@@ -463,50 +570,6 @@ def build():
 <div class="plhead">{cover(c, "../")}<div>{h2(c["title"])}<p>{E(c["blurb"])}</p><p class="meta">{live} of {total} lectures published · free on YouTube</p>{play}</div></div>{rows}"""
         page(f"courses/{c['slug']}.html", f"{c['title']} · {prof['short_name']}", body, prof, "courses.html", c["blurb"])
 
-    # Teaching: a placard per subject → subject page with Slides · Notes · Practice · Videos tabs
-    T = D("teaching")
-    by_slug = {c["slug"]: c for c in courses}
-    PALETTE = [("#0f2a4a", "#0e8a7e"), ("#3b1d6e", "#7c4dff"), ("#7a2e0b", "#e8590c"), ("#0b3b5c", "#1f9ad6"), ("#1e3a1e", "#2f9e44")]
-    TABJS = """<script>document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".tabs button");if(!b)return;
-var w=b.closest(".tabwrap");w.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected",x===b)});
-w.querySelectorAll(".tabpane").forEach(function(p){p.classList.toggle("on",p.id===b.dataset.t)});history.replaceState(null,"","#"+b.dataset.t)});
-window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&document.querySelector('.tabs button[data-t="'+h+'"]');if(b)b.click()})</script>"""
-    cards = ""
-    for i, sub in enumerate(T["subjects"]):
-        c1, c2 = PALETTE[i % len(PALETTE)]
-        n_w = len(sub["weeks"])
-        wf = [week_files(sub["slug"], k) for k in range(1, n_w + 1)]
-        n_sl, n_pr, n_no = (sum(len(w[j]) for w in wf) for j in range(3))
-        vids = [l for vc in sub.get("video_courses", []) for l in by_slug.get(vc, {}).get("lessons", []) if l.get("youtube")]
-        cards += f"""<a class="tc" href="teaching/{sub["slug"]}.html" style="--c1:{c1};--c2:{c2}"><div class="top"><span class="sem">{E(T.get("semester", ""))}</span>
-<div class="code">{E(sub["code"])}</div><div class="nm">{E(sub["title"])}</div></div>
-<div class="bot"><p>{E(sub["blurb"])}</p><div class="res"><span>▣ Slides <b>{n_sl}</b></span><span>✎ Notes <b>{n_no}</b></span><span>? Practice <b>{n_pr}</b></span><span>▶ Videos <b>{len(vids)}</b></span></div>
-<span class="meta">{E(sub.get("programme", ""))} · {n_w} weeks · open course →</span></div></a>"""
-
-        def pane(idx, cls, label):
-            rows = ""
-            for k, topic in enumerate(sub["weeks"], 1):
-                files = "".join(file_pill(f, "../", sub["slug"], k, cls, label) for f in wf[k - 1][idx])
-                rows += f'<div class="res-row"><span class="wk">WEEK {k:02d}</span><span class="t">{E(topic)}</span><span class="f">{files or f"<span class=\'fbtn off\'>{label} soon</span>"}</span></div>'
-            return rows
-        vrows = ""
-        for k, l in enumerate(vids, 1):
-            vid = l["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
-            img = f'<img src="../{l["thumb"]}" alt="" loading="lazy">' if l.get("thumb") else '<div class="ph"></div>'
-            vrows += f'<a class="lec" href="{E(l["youtube"])}" data-yt="{E(vid)}">{img}<div><b>{E(l["title"])}</b><small>{E(l.get("meta", ""))}</small></div><span class="go">Watch ▸</span></a>'
-        vpane = vrows or '<div class="empty-pane">Video lectures for this course are on the way. Meanwhile, see all <a href="../courses.html">video courses</a>.</div>'
-        tabs = [("slides", "▣ Slides", n_sl, pane(0, "", "Slides")), ("notes", "✎ Notes", n_no, pane(2, "notes", "Notes")),
-                ("practice", "? Practice Questions", n_pr, pane(1, "prac", "Practice")), ("videos", "▶ Videos", len(vids), vpane)]
-        tabbar = "".join(f'<button type="button" role="tab" data-t="{t}" aria-selected="{"true" if j == 0 else "false"}">{lab}<span class="n">{n}</span></button>' for j, (t, lab, n, _) in enumerate(tabs))
-        panes = "".join(f'<div class="tabpane{" on" if j == 0 else ""}" id="{t}" role="tabpanel">{html_}</div>' for j, (t, _, _, html_) in enumerate(tabs))
-        body = f"""<p class="crumb"><a href="../classes.html">Teaching</a> › {E(sub["code"])}</p>
-<div class="plhead" style="grid-template-columns:1fr"><div>{h2(sub["title"])}<p>{E(sub["blurb"])}</p><p class="meta">{E(sub.get("programme", ""))} · {E(T.get("semester", ""))} · {n_w} weeks</p><div class="gcrbox" style="margin-top:8px">{gcr_html(sub)}</div></div></div>
-<div class="tabwrap"><div class="tabs" role="tablist">{tabbar}</div>{panes}</div>{TABJS}"""
-        page(f"teaching/{sub['slug']}.html", f"{sub['title']} · {prof['short_name']}", body, prof, "classes.html", f"{sub['title']}: slides, notes, practice questions and video lectures. {sub['blurb']}")
-    page("classes.html", f"Teaching · {name}", f"""{h2("My courses · " + T.get("semester", ""))}<p>Courses I teach at {E(prof["institution"])}. Open a course for its slides, notes, practice questions and videos, week by week, plus its Google Classroom.</p>
-<div class="tcs">{cards}</div>{h2("Free video courses")}<p>Visual lectures that go with these courses are on the <a href="courses.html">video courses</a> page.</p>""",
-         prof, "classes.html", f"Courses taught by {name}: slides, notes, practice questions, videos and Google Classroom links.")
-
     # Bio
     story = "".join(f"<p>{E(x)}</p>" for x in (prof.get("bio_story") or [prof["bio"]]))
     hl = '<div class="stats">' + "".join(f'<div class="stat"><b>{E(n)}</b><small>{E(t)}</small></div>' for n, t in prof.get("highlights", [])) + "</div>"
@@ -514,9 +577,9 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
     edu = "".join(f'<div class="tl"><span class="when">{E(x["when"])}</span><br><b>{E(x["degree"])}</b>, {E(x["where"])}<br><span class="meta">{E(x["note"])}</span></div>' for x in prof.get("education", []))
     lst = lambda xs: '<ul class="plain">' + "".join(f"<li>{E(x)}</li>" for x in xs) + "</ul>"
     bio_body = f"""{h2("Bio")}{f'<div class="quote">{E(prof["headline"])}</div>' if prof.get("headline") else ""}{story}
-{hl}{h2("Experience")}{exp}{h2("Education")}{edu}
+{hl}<div class="abstract"><b>In short.</b> Experience across two engineering institutes: lecturing, running programming and compiler labs, supervising B.Tech projects, and coordinating college-level initiatives. Details below.</div>{h2("Experience")}{exp}{h2("Education")}{edu}
 {h2("Achievements & fellowships")}{lst(prof.get("achievements", []))}
-{h2("Roles at GCET")}{lst(prof.get("roles", []))}<h3>Certifications</h3>{lst(prof.get("certifications", []))}"""
+{h2("Academic service")}<p>Coordination of college-level initiatives at GCET, including procurement, national student-engagement programmes and online-course (MOOC) activity.</p><h3>Certifications</h3>{lst(prof.get("certifications", []))}"""
     page("bio.html", f"Bio · {name}", bio_body, prof, "bio.html", f"Biography of {name}.")
 
     # Contact
@@ -528,19 +591,10 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
 
     redirect("about.html", "index.html")
 
-    # Netlify extras: 404 page (absolute paths, so it works at any depth), caching/security headers, robots + sitemap
+    # 404 page (absolute paths, so it works at any depth), robots + sitemap
     page("404.html", f"Page not found · {name}", f"""{h2("Page not found")}
 <p>That page doesn't exist, or it has moved.</p><p class="more"><a href="/index.html">Go to the home page →</a> · <a href="/courses.html">Video courses →</a></p>""",
          prof, "", "Page not found.", up="/", index=False)
-    (DIST / "_headers").write_text("""/*
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
-  Referrer-Policy: strict-origin-when-cross-origin
-/assets/img/*
-  Cache-Control: public, max-age=604800
-/assets/site.css
-  Cache-Control: public, max-age=86400
-""", encoding="utf-8")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     urls = "".join(f"<url><loc>{SITE}/{'' if p == 'index.html' else p}</loc><lastmod>{date.today()}</lastmod></url>" for p in PAGES)
     (DIST / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>', encoding="utf-8")

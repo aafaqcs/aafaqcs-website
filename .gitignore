@@ -1,4 +1,4 @@
-# build output (Netlify rebuilds it, or upload dist/ by hand)
+# build output (published separately to GitHub Pages by push_pages.py)
 dist/
 # local previews and browser profiles
 .shots/

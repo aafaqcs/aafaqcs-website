@@ -99,6 +99,14 @@ def place(title, short):
     m = re.search(r"\bML\s*0?(\d{1,2})\b", title)
     if m:
         return "gate-da-ml", f"ML {int(m.group(1)):02d}"
+    ctq = [("memory & storage", 1), ("cpu, hardware", 2), ("os types", 3), ("deadlock", 4), ("word & powerpoint", 5), ("word and powerpoint", 5),
+           ("excel & access", 6), ("excel and access", 6), ("internet & networking", 7), ("internet and networking", 7), ("number systems", 8), ("cyber security", 9)]
+    for key, n in ctq:                                              # Concept Through Questions episodes (titles as uploaded)
+        if key in t and "computer series" not in t:
+            return "ctq", f"CTQ {n}"
+    if "python" in t:                                               # "Python W03 L2 ..." / "Python Week 3 Lecture 2 ..."
+        m = re.search(r"\bw(?:eek)?\s*0?(\d{1,2})\b.*?\bl(?:ec(?:ture)?)?\s*0?([1-3])\b", title, re.I)
+        return "python", (f"W{int(m.group(1)):02d} · L{m.group(2)}" if m else "")
     if "jkssb" in t:
         m = re.search(r"EP\s*:?\s*0?(\d+[A-C]?)", title, re.I)
         if not m:
