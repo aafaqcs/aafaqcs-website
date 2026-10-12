@@ -481,9 +481,17 @@
      "status": "live",
      "thumb": "assets/img/yt_Ly0TKzpCUl4.jpg",
      "meta": "10:34"
+    },
+    {
+     "code": "EP04",
+     "title": "Deadlock, Process Scheduling, Linux & Compilers for JKSSB",
+     "youtube": "https://youtu.be/HRjrpjCrQ68",
+     "status": "live",
+     "thumb": "assets/img/yt_HRjrpjCrQ68.jpg",
+     "meta": "8:10"
     }
    ],
-   "total": 13
+   "total": 14
   },
   {
    "slug": "shorts",

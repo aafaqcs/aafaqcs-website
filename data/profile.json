@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-12",
+   "kind": "video",
+   "text": "Released [Deadlock, Process Scheduling, Linux & Compilers for JKSSB](https://youtu.be/HRjrpjCrQ68) in [JKSSB Computer Knowledge](courses/jkssb.html)."
+  },
+  {
    "date": "2026-10-11",
    "kind": "video",
    "text": "Released [MS Word & PowerPoint](https://youtu.be/iYhX16AAKTA) in [Algorithm Arena · GATE CS](courses/algorithms.html)."
@@ -183,11 +188,6 @@
    "date": "2026-10-06",
    "kind": "video",
    "text": "Released [Lexical Analysis, Visualised: How a Compiler Reads Code](https://youtu.be/HB0wpdpfFKI) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
-  },
-  {
-   "date": "2026-10-05",
-   "kind": "short",
-   "text": "Short: [What happens when you press RUN?](https://youtu.be/_XXVxrhzfi8)."
   },
   {
    "date": "2026-10-04",
