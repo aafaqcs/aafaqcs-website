@@ -694,20 +694,26 @@
     {
      "code": "CTQ 6",
      "title": "MS Excel & Access",
-     "status": "soon",
-     "meta": "Concept Through Questions · episode 6"
+     "status": "live",
+     "meta": "0:00",
+     "youtube": "https://youtu.be/F0WoBCfAmPk",
+     "thumb": "assets/img/yt_F0WoBCfAmPk.jpg"
     },
     {
      "code": "CTQ 7",
      "title": "Internet & Networking",
-     "status": "soon",
-     "meta": "Concept Through Questions · episode 7"
+     "status": "live",
+     "meta": "0:00",
+     "youtube": "https://youtu.be/OmEN-O6la-c",
+     "thumb": "assets/img/yt_OmEN-O6la-c.jpg"
     },
     {
      "code": "CTQ 8",
      "title": "Number Systems & Malware",
-     "status": "soon",
-     "meta": "Concept Through Questions · episode 8"
+     "status": "live",
+     "meta": "0:00",
+     "youtube": "https://youtu.be/UWNIo-KdnyM",
+     "thumb": "assets/img/yt_UWNIo-KdnyM.jpg"
     },
     {
      "code": "CTQ 9",

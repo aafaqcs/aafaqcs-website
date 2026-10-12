@@ -132,6 +132,21 @@
   {
    "date": "2026-10-12",
    "kind": "video",
+   "text": "Released [Number Systems & Malware](https://youtu.be/UWNIo-KdnyM) in [JKSSB Computer: Concept Through Questions](courses/ctq.html)."
+  },
+  {
+   "date": "2026-10-12",
+   "kind": "video",
+   "text": "Released [Internet & Networking](https://youtu.be/OmEN-O6la-c) in [JKSSB Computer: Concept Through Questions](courses/ctq.html)."
+  },
+  {
+   "date": "2026-10-12",
+   "kind": "video",
+   "text": "Released [MS Excel & Access](https://youtu.be/F0WoBCfAmPk) in [JKSSB Computer: Concept Through Questions](courses/ctq.html)."
+  },
+  {
+   "date": "2026-10-12",
+   "kind": "video",
    "text": "Released [Deadlock, Process Scheduling, Linux & Compilers for JKSSB](https://youtu.be/HRjrpjCrQ68) in [JKSSB Concept Through Questions](courses/ctq.html)."
   },
   {
@@ -173,21 +188,6 @@
    "date": "2026-10-08",
    "kind": "video",
    "text": "Released [Syntax Analysis: The Big Picture (Visual)](https://youtu.be/7Zm_ukepHp0) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
-  },
-  {
-   "date": "2026-10-07",
-   "kind": "video",
-   "text": "Released [Semantic Analysis, Visualised: Types, Scope & SDD](https://youtu.be/mhU1g-zGL0w) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
-  },
-  {
-   "date": "2026-10-06",
-   "kind": "video",
-   "text": "Released [ML 05: Bias-Variance Trade-off](https://youtu.be/sS4uZIax7wc) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
-  },
-  {
-   "date": "2026-10-06",
-   "kind": "video",
-   "text": "Released [Lexical Analysis, Visualised: How a Compiler Reads Code](https://youtu.be/HB0wpdpfFKI) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
   },
   {
    "date": "2026-10-04",
