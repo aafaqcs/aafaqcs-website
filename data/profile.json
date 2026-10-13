@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-13",
+   "kind": "short",
+   "text": "Short: [](https://youtu.be/KN6ofEyDjmE)."
+  },
+  {
    "date": "2026-10-12",
    "kind": "video",
    "text": "Released [Cyber Security](https://youtu.be/2UaniqawaEM) in [JKSSB Computer: Concept Through Questions](courses/ctq.html)."
@@ -183,11 +188,6 @@
    "date": "2026-10-09",
    "kind": "video",
    "text": "Released [Syntax Analysis: CFG, Parse Trees & Ambiguity (Visual)](https://youtu.be/etJKYkK8wrM) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
-  },
-  {
-   "date": "2026-10-09",
-   "kind": "video",
-   "text": "Released [Memory & Storage for JKSSB](https://youtu.be/X0PUioqiIgg) in [JKSSB Concept Through Questions](courses/ctq.html)."
   },
   {
    "date": "2026-10-04",
