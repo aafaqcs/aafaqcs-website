@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-14",
+   "kind": "short",
+   "text": "Short: [](https://youtu.be/C5DZm2S12r0)."
+  },
+  {
    "date": "2026-10-13",
    "kind": "short",
    "text": "Short: [](https://youtu.be/KN6ofEyDjmE)."
@@ -183,11 +188,6 @@
    "date": "2026-10-10",
    "kind": "video",
    "text": "Released [Left Recursion & Left Factoring, Visualised](https://youtu.be/yIqYR2iUIic) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
-  },
-  {
-   "date": "2026-10-09",
-   "kind": "video",
-   "text": "Released [Syntax Analysis: CFG, Parse Trees & Ambiguity (Visual)](https://youtu.be/etJKYkK8wrM) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
   },
   {
    "date": "2026-10-04",
