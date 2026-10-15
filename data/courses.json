@@ -1180,27 +1180,27 @@
     },
     {
      "code": "SHORT",
-     "title": "",
+     "title": "What Happens When You Press the Power Button? (Boot Process)",
      "youtube": "https://youtu.be/KN6ofEyDjmE",
      "status": "live",
      "thumb": "assets/img/yt_KN6ofEyDjmE.jpg",
-     "meta": "0:52 · Short"
+     "meta": "0:52 · boot process"
     },
     {
      "code": "SHORT",
-     "title": "",
+     "title": "How a Key Press Becomes a Letter on Your Screen",
      "youtube": "https://youtu.be/C5DZm2S12r0",
      "status": "live",
      "thumb": "assets/img/yt_C5DZm2S12r0.jpg",
-     "meta": "0:53 · Short"
+     "meta": "0:53 · keyboard to screen"
     },
     {
      "code": "SHORT",
-     "title": "",
+     "title": "RAM vs SSD — Which One Forgets?",
      "youtube": "https://youtu.be/6B_w2RXb34A",
      "status": "live",
      "thumb": "assets/img/yt_6B_w2RXb34A.jpg",
-     "meta": "1:05 · Short"
+     "meta": "1:05 · RAM vs SSD"
     }
    ]
   }

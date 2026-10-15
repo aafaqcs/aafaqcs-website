@@ -87,8 +87,10 @@ def clean(title):
     if m and len(title[:m.start()].strip()) >= 15:
         title = title[:m.start()]
     t = re.sub(r"#\w+", "", title)
-    t = re.split(r"\s+\|\s+", t)[0]
-    t = re.sub(r"[\U0001F300-\U0001FAFF☀-➿️]", "", t)
+    parts = [x.strip() for x in re.split(r"\s*\|\s*", t) if x.strip()]
+    t = parts[0] if parts else t
+    t = re.sub(r"[\U0001F300-\U0001FAFF\u2300-\u23FF☀-➿️]", "", t)
+    t = re.sub(r"\(\s+", "(", re.sub(r"\s+\)", ")", t))
     return re.sub(r"\s{2,}", " ", t).strip(" :|-")
 
 
