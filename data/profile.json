@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-15",
+   "kind": "short",
+   "text": "Short: [](https://youtu.be/6B_w2RXb34A)."
+  },
+  {
    "date": "2026-10-14",
    "kind": "short",
    "text": "Short: [](https://youtu.be/C5DZm2S12r0)."
@@ -183,11 +188,6 @@
    "date": "2026-10-10",
    "kind": "video",
    "text": "Released [Ridge Regression](https://youtu.be/OlFmy6D_vQU) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
-  },
-  {
-   "date": "2026-10-10",
-   "kind": "video",
-   "text": "Released [Left Recursion & Left Factoring, Visualised](https://youtu.be/yIqYR2iUIic) in [Compiler Design · GATE CS/IT](courses/compiler-design.html)."
   },
   {
    "date": "2026-10-04",

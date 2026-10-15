@@ -819,7 +819,7 @@
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",
    "blurb": "Quick visual ideas from every series, each under a minute.",
-   "total": 11,
+   "total": 12,
    "lessons": [
     {
      "code": "SHORT",
@@ -908,6 +908,14 @@
      "status": "live",
      "thumb": "assets/img/yt_C5DZm2S12r0.jpg",
      "meta": "0:53 · Short"
+    },
+    {
+     "code": "SHORT",
+     "title": "",
+     "youtube": "https://youtu.be/6B_w2RXb34A",
+     "status": "live",
+     "thumb": "assets/img/yt_6B_w2RXb34A.jpg",
+     "meta": "1:05 · Short"
     }
    ]
   }
