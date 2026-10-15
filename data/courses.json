@@ -369,7 +369,7 @@
    "title": "Python Programming",
    "short": "Python",
    "blurb": "A 15-week course: three lectures every week, each with a video, slides and a practice set. From your first program to a small project.",
-   "total": 44,
+   "total": 45,
    "lessons": [
     {
      "code": "W01 · L1",
@@ -382,6 +382,12 @@
      "title": "How Python runs programs: interpreter, byte code and the PVM",
      "status": "soon",
      "meta": "Week 1 · notes: Lec02_Notes_Compact.pdf"
+    },
+    {
+     "code": "W01 · L3",
+     "title": "Installing Python and running your first program",
+     "status": "soon",
+     "meta": "Week 1 · video: Installing Python"
     },
     {
      "code": "W02 · L1",

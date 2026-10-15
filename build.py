@@ -479,7 +479,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                     if les.get("youtube"):
                         vid = les["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
                         v = f'<a class="fbtn vid" href="{E(les["youtube"])}" data-yt="{E(vid)}">▶ Watch</a>'
-                    elif wk.get("notes_only"):
+                    elif (j - 1) in wk.get("no_video", []):
                         v = ""
                     else:
                         v = '<span class="fbtn off">Video soon</span>'
@@ -487,7 +487,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                 files = "".join(file_pill(f, "../", sub["slug"], k, c_, l_) for fs, c_, l_ in ((sl, "", "Slides"), (no, "notes", "Notes"), (pr, "prac", "Practice")) for f in fs)
                 pq = "".join(f"<li>{E(q)}</li>" for q in wk.get("practice", []))
                 out += (f'<details class="wkc"{" open" if k == 1 else ""}><summary><span class="wk">WEEK {k:02d}</span><b>{E(wk["title"])}</b>'
-                        f'<span class="meta">{len(wk["lectures"])} lectures{"" if wk.get("notes_only") else " · videos · practice"}</span></summary>{rows}' + (f'<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>' if wk.get("practice") else "") + ''
+                        f'<span class="meta">{len(wk["lectures"])} lectures{" · videos · practice" if (wk.get("practice") or len(wk.get("no_video", [])) < len(wk["lectures"])) else ""}</span></summary>{rows}' + (f'<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>' if wk.get("practice") else "") + ''
                         f'<div class="f">{files or "<span class=\'fbtn off\'>Slides soon</span>"}</div></details>')
             return out
         tabs = ([("plan", "▤ Weekly plan", n_w, plan_html())] if plan else []) + [("slides", "▣ Slides", n_sl, pane(0, "", "Slides")), ("notes", "✎ Notes", n_no, pane(2, "notes", "Notes")),

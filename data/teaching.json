@@ -96,7 +96,7 @@
    "gcr_code": "",
    "blurb": "Python from zero to a small real project: three lectures every week, each with a video, slides and a practice set.",
    "weeks": [
-    "Why Python, and how Python runs programs",
+    "Why Python, how Python runs programs, and installing Python",
     "Decisions and loops",
     "Functions",
     "Strings",
@@ -114,13 +114,17 @@
    ],
    "plan": [
     {
-     "title": "Why Python, and how Python runs programs",
+     "title": "Why Python, how Python runs programs, and installing Python",
      "lectures": [
       "Why Python? Reasons, uses and the speed trade-off",
-      "How Python runs programs: interpreter, byte code and the PVM"
+      "How Python runs programs: interpreter, byte code and the PVM",
+      "Installing Python and running your first program"
      ],
      "practice": [],
-     "notes_only": true
+     "no_video": [
+      0,
+      1
+     ]
     },
     {
      "title": "Decisions and loops",
