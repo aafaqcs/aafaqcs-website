@@ -373,21 +373,21 @@
    "lessons": [
     {
      "code": "W01 · L1",
-     "title": "Why Python? Installing it and running your first program",
+     "title": "Why Python? Reasons, uses and the speed trade-off",
      "status": "soon",
-     "meta": "Week 1 · Getting started: Python, variables and input/output"
+     "meta": "Week 1 · notes: Lec01_Notes_Compact.pdf"
     },
     {
      "code": "W01 · L2",
-     "title": "Variables, data types and type conversion",
+     "title": "How Python runs programs: interpreter, byte code and the PVM",
      "status": "soon",
-     "meta": "Week 1 · Getting started: Python, variables and input/output"
+     "meta": "Week 1 · notes: Lec02_Notes_Compact.pdf"
     },
     {
      "code": "W01 · L3",
-     "title": "Input, output and arithmetic operators",
+     "title": "Installing Python and running your first program",
      "status": "soon",
-     "meta": "Week 1 · Getting started: Python, variables and input/output"
+     "meta": "Week 1 · video: Installing Python"
     },
     {
      "code": "W02 · L1",

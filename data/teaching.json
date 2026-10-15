@@ -123,7 +123,7 @@
    "gcr_code": "",
    "blurb": "Python from zero to a small real project: three lectures every week, each with a video, slides and a practice set.",
    "weeks": [
-    "Getting started: Python, variables and input/output",
+    "Why Python, how Python runs programs, and your first install",
     "Decisions and loops",
     "Functions",
     "Strings",
@@ -141,18 +141,18 @@
    ],
    "plan": [
     {
-     "title": "Getting started: Python, variables and input/output",
+     "title": "Why Python, how Python runs programs, and your first install",
      "lectures": [
-      "Why Python? Installing it and running your first program",
-      "Variables, data types and type conversion",
-      "Input, output and arithmetic operators"
+      "Why Python? Reasons, uses and the speed trade-off",
+      "How Python runs programs: interpreter, byte code and the PVM",
+      "Installing Python and running your first program"
      ],
      "practice": [
-      "Read a name and print \"Hello, <name>\".",
-      "Convert a temperature from Celsius to Fahrenheit.",
-      "Read two integers and print their sum, difference, product, quotient and remainder.",
-      "Predict the output of print(7 // 2, 7 % 2, 7 / 2, 2 ** 5).",
-      "Swap two variables without using a third variable."
+      "Give six reasons people choose Python.",
+      "Predict the output: a = [4, 9, 1]; print(sum(a))  (answer: 14).",
+      "Define interpreter, source code, byte code and PVM, and draw the execution diagram.",
+      "Why is byte code saved for imported files but not for the main script?",
+      "Type L = [1, 2]; L.append(L); L and explain the output (answer: [1, 2, [...]], Python detects the list containing itself)."
      ]
     },
     {
