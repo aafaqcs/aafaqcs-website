@@ -59,33 +59,6 @@
    "video_courses": []
   },
   {
-   "slug": "os",
-   "title": "Operating Systems",
-   "code": "OS",
-   "programme": "B.Tech CSE",
-   "gcr_link": "",
-   "gcr_code": "",
-   "blurb": "What happens between your program and the hardware: processes, CPU scheduling, synchronisation, deadlocks, memory, file systems and disks.",
-   "weeks": [
-    "Introduction: OS functions, structures, system calls",
-    "Processes and threads: states, PCB, context switch",
-    "CPU scheduling I: FCFS, SJF, SRTF",
-    "CPU scheduling II: priority, round robin, multilevel queues",
-    "Process synchronisation: critical section, Peterson's solution",
-    "Semaphores, mutexes and classical synchronisation problems",
-    "Monitors; deadlocks: conditions and resource-allocation graphs",
-    "Deadlock prevention, avoidance (Banker's algorithm), detection",
-    "Memory management: contiguous allocation, fragmentation",
-    "Paging, TLB and segmentation",
-    "Virtual memory: demand paging, page replacement (FIFO, LRU, Optimal)",
-    "Thrashing and working sets; file-system interface",
-    "File-system implementation: allocation methods, directories",
-    "Disk scheduling and I/O systems",
-    "Protection and security; revision"
-   ],
-   "video_courses": []
-  },
-  {
    "slug": "cd",
    "title": "Compiler Design",
    "code": "CD",
@@ -144,8 +117,7 @@
      "title": "Why Python, how Python runs programs, and your first install",
      "lectures": [
       "Why Python? Reasons, uses and the speed trade-off",
-      "How Python runs programs: interpreter, byte code and the PVM",
-      "Installing Python and running your first program"
+      "How Python runs programs: interpreter, byte code and the PVM"
      ],
      "practice": [
       "Give six reasons people choose Python.",

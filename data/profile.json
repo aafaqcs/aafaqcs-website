@@ -4,7 +4,7 @@
  "title": "Assistant Professor, Department of CSE",
  "institution": "GCET Kashmir",
  "tagline": "Computer science, shown with real data.",
- "bio": "Dr. Aafaq Mohi Ud Din is an Assistant Professor (Rank 1, JKPSC State Cadre) in the Department of Computer Science & Engineering at GCET Kashmir. He earned his PhD in Computer Science & Engineering from NIT Srinagar, working on geometric deep learning and graph neural networks, after an M.Tech and B.Tech from the University of Kashmir. He has taught Data Structures, Algorithms, Programming, Graph Theory, Compiler Design and Operating Systems at NIT Srinagar and GCET Kashmir, and has qualified GATE (CS & IT) seven times.",
+ "bio": "Dr. Aafaq Mohi Ud Din is an Assistant Professor (Rank 1, JKPSC State Cadre) in the Department of Computer Science & Engineering at GCET Kashmir. He earned his PhD in Computer Science & Engineering from NIT Srinagar, working on geometric deep learning and graph neural networks, after an M.Tech and B.Tech from the University of Kashmir. He has taught Data Structures, Algorithms, Programming, Graph Theory, and Compiler Design at NIT Srinagar and GCET Kashmir, and has qualified GATE (CS & IT) seven times.",
  "email": "cse.aafaq@gmail.com",
  "links": {
   "linkedin": "https://www.linkedin.com/in/aafaq-cs-149bb9334/",
@@ -20,7 +20,7 @@
    "role": "Assistant Professor (Rank 1, JKPSC – State Cadre)",
    "where": "Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
    "points": [
-    "Teaches Data Structures, Algorithms, Programming, Graph Theory, Compiler Design and Operating Systems",
+    "Teaches Data Structures, Algorithms, Programming, Graph Theory and Compiler Design",
     "Guides B.Tech projects in natural algorithms, machine learning and graph learning",
     "Conducts labs for C, C++, Python and Compiler Design"
    ]
@@ -30,7 +30,7 @@
    "role": "Assistant Professor",
    "where": "National Institute of Technology, Srinagar",
    "points": [
-    "Taught Data Structures, Algorithms, Programming, Graph Theory, Compiler Design and Operating Systems",
+    "Taught Data Structures, Algorithms, Programming, Graph Theory and Compiler Design",
     "Guided B.Tech projects in natural algorithms and graph learning",
     "Conducted labs for C, C++ and Compiler Design"
    ]
@@ -91,8 +91,7 @@
   "Algorithms",
   "Programming in C / C++ / Python",
   "Graph Theory",
-  "Compiler Design",
-  "Operating Systems"
+  "Compiler Design"
  ],
  "emails": [
   "cse.aafaq@gmail.com",

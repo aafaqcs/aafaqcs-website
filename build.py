@@ -362,7 +362,7 @@ def file_pill(f, up, slug, n, cls, label):
 def gcr_html(sub, big=False):
     if sub.get("gcr_link"):
         code = f' <span class="meta">Class code: <b>{E(sub["gcr_code"])}</b></span>' if sub.get("gcr_code") else ""
-        return f'<a class="pill gcr" href="{E(sub["gcr_link"])}">Join Google Classroom</a>{code}'
+        return f'<a class="pill gcr" href="{E(sub["gcr_link"])}">Open Google Classroom</a> <span class="meta">invited students only</span>{code}'
     if sub.get("gcr_code"):
         return f'<span>Google Classroom code: <b>{E(sub["gcr_code"])}</b></span> <a class="pill gcr" href="https://classroom.google.com/">Open Classroom</a>'
     return '<span class="meta">Google Classroom: ask in class for the joining code.</span>'
@@ -451,7 +451,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
         vids = [l for vc in sub.get("video_courses", []) for l in by_slug.get(vc, {}).get("lessons", []) if l.get("youtube")]
         cards += f"""<a class="tc" href="teaching/{sub["slug"]}.html" style="--c1:{c1};--c2:{c2}"><div class="top"><span class="sem">{E(T.get("semester", ""))}</span>
 <div class="code">{E(sub["code"])}</div><div class="nm">{E(sub["title"])}</div></div>
-<div class="bot"><p>{E(sub["blurb"])}</p><div class="res">{f'<span>▤ Lectures <b>{3 * n_w}</b></span>' if plan else ''}<span>▣ Slides <b>{n_sl}</b></span><span>✎ Notes <b>{n_no}</b></span><span>? Practice <b>{n_pr}</b></span><span>▶ Videos <b>{len(vids)}</b></span></div>
+<div class="bot"><p>{E(sub["blurb"])}</p><div class="res">{f'<span>▤ Lectures <b>{sum(len(w["lectures"]) for w in plan)}</b></span>' if plan else ''}<span>▣ Slides <b>{n_sl}</b></span><span>✎ Notes <b>{n_no}</b></span><span>? Practice <b>{n_pr}</b></span><span>▶ Videos <b>{len(vids)}</b></span></div>
 <span class="meta">{E(sub.get("programme", ""))} · {n_w} weeks · open course →</span></div></a>"""
 
         def pane(idx, cls, label):
@@ -473,7 +473,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                 sl, pr, no = wf[k - 1]
                 rows = ""
                 for j, lt in enumerate(wk["lectures"], 1):
-                    idx = (k - 1) * 3 + (j - 1)
+                    idx = sum(len(w['lectures']) for w in plan[:k - 1]) + (j - 1)
                     les = lessons[idx] if idx < len(lessons) else {}
                     if les.get("youtube"):
                         vid = les["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
@@ -484,7 +484,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                 files = "".join(file_pill(f, "../", sub["slug"], k, c_, l_) for fs, c_, l_ in ((sl, "", "Slides"), (no, "notes", "Notes"), (pr, "prac", "Practice")) for f in fs)
                 pq = "".join(f"<li>{E(q)}</li>" for q in wk.get("practice", []))
                 out += (f'<details class="wkc"{" open" if k == 1 else ""}><summary><span class="wk">WEEK {k:02d}</span><b>{E(wk["title"])}</b>'
-                        f'<span class="meta">3 lectures · videos · practice</span></summary>{rows}<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>'
+                        f'<span class="meta">{len(wk["lectures"])} lectures · videos · practice</span></summary>{rows}<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>'
                         f'<div class="f">{files or "<span class=\'fbtn off\'>Slides soon</span>"}</div></details>')
             return out
         tabs = ([("plan", "▤ Weekly plan", n_w, plan_html())] if plan else []) + [("slides", "▣ Slides", n_sl, pane(0, "", "Slides")), ("notes", "✎ Notes", n_no, pane(2, "notes", "Notes")),
@@ -502,11 +502,11 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
     # Home
     n_live = sum(counts(c)[0] for c in courses if c["slug"] != "shorts")
     n_subj = len(T["subjects"])
-    subj_list = "data structures, algorithms, programming in C, C++ and Python, graph theory, compiler design and operating systems"
+    subj_list = "data structures, algorithms, programming in C, C++ and Python, graph theory and compiler design"
     abstract_html = (f'<div class="abstract"><b>Abstract.</b> I am a teacher-researcher in computer science at {E(prof["institution"])}. '
                      f'My teaching covers {E(subj_list)}, and my research studies why deep graph neural networks forget and how to make them remember. '
                      f'I turn that experience into free visual lectures, weekly practice and verified answers, so that students see an idea before they memorise it.</div>')
-    glance = [("Teaching", f"{n_subj} courses this semester, from first-year programming to compiler design, with slides, notes and practice every week."),
+    glance = [("Teaching", f"{n_subj} courses, from first-year programming to compiler design, each with slides, notes and practice every week."),
               ("Research", "Graph learning and geometric deep learning: over-smoothing, over-squashing and recommendation systems."),
               ("Free lectures", f"{n_live} visual lectures on YouTube for GATE, JKSSB and B.Tech students."),
               ("Exam preparation", "GATE and UGC-NET qualified repeatedly: lectures are built around the questions that actually get asked.")]
