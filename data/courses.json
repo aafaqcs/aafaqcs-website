@@ -809,6 +809,291 @@
    "total": 10
   },
   {
+   "slug": "dsa-60",
+   "title": "DSA in 60 Seconds",
+   "short": "DSA Shorts",
+   "blurb": "One data structure or algorithm in 60 seconds, shown as a machine you can see inside. 46 Shorts for semester exams, GATE and placements.",
+   "total": 46,
+   "lessons": [
+    {
+     "code": "DSA 1",
+     "title": "What is a Data Structure",
+     "status": "soon",
+     "meta": "Short · Phase 1 Foundations · DSA in 60 Seconds #1"
+    },
+    {
+     "code": "DSA 2",
+     "title": "Big-O Notation",
+     "status": "soon",
+     "meta": "Short · Phase 1 Foundations · DSA in 60 Seconds #2"
+    },
+    {
+     "code": "DSA 3",
+     "title": "Time vs Space Complexity",
+     "status": "soon",
+     "meta": "Short · Phase 1 Foundations · DSA in 60 Seconds #3"
+    },
+    {
+     "code": "DSA 4",
+     "title": "Best/Average/Worst Case",
+     "status": "soon",
+     "meta": "Short · Phase 1 Foundations · DSA in 60 Seconds #4"
+    },
+    {
+     "code": "DSA 5",
+     "title": "Arrays and Memory",
+     "status": "soon",
+     "meta": "Short · Phase 1 Foundations · DSA in 60 Seconds #5"
+    },
+    {
+     "code": "DSA 6",
+     "title": "Array vs Linked List",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #6"
+    },
+    {
+     "code": "DSA 7",
+     "title": "Singly vs Doubly Linked List",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #7"
+    },
+    {
+     "code": "DSA 8",
+     "title": "Reverse a Linked List",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #8"
+    },
+    {
+     "code": "DSA 9",
+     "title": "Stack",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #9"
+    },
+    {
+     "code": "DSA 10",
+     "title": "Queue",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #10"
+    },
+    {
+     "code": "DSA 11",
+     "title": "Stack vs Queue",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #11"
+    },
+    {
+     "code": "DSA 12",
+     "title": "Circular Queue & Deque",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #12"
+    },
+    {
+     "code": "DSA 13",
+     "title": "Fast & Slow Pointer",
+     "status": "soon",
+     "meta": "Short · Phase 2 Linear · DSA in 60 Seconds #13"
+    },
+    {
+     "code": "DSA 14",
+     "title": "Linear vs Binary Search",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #14"
+    },
+    {
+     "code": "DSA 15",
+     "title": "Bubble Sort",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #15"
+    },
+    {
+     "code": "DSA 16",
+     "title": "Selection Sort",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #16"
+    },
+    {
+     "code": "DSA 17",
+     "title": "Insertion Sort",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #17"
+    },
+    {
+     "code": "DSA 18",
+     "title": "Merge Sort",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #18"
+    },
+    {
+     "code": "DSA 19",
+     "title": "Quick Sort",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #19"
+    },
+    {
+     "code": "DSA 20",
+     "title": "Sorting Compared",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #20"
+    },
+    {
+     "code": "DSA 21",
+     "title": "Stable vs Unstable Sorting",
+     "status": "soon",
+     "meta": "Short · Phase 3 Search & Sort · DSA in 60 Seconds #21"
+    },
+    {
+     "code": "DSA 22",
+     "title": "Recursion",
+     "status": "soon",
+     "meta": "Short · Phase 4 Recursion/Hashing · DSA in 60 Seconds #22"
+    },
+    {
+     "code": "DSA 23",
+     "title": "Backtracking",
+     "status": "soon",
+     "meta": "Short · Phase 4 Recursion/Hashing · DSA in 60 Seconds #23"
+    },
+    {
+     "code": "DSA 24",
+     "title": "Hash Table",
+     "status": "soon",
+     "meta": "Short · Phase 4 Recursion/Hashing · DSA in 60 Seconds #24"
+    },
+    {
+     "code": "DSA 25",
+     "title": "Hash Collisions",
+     "status": "soon",
+     "meta": "Short · Phase 4 Recursion/Hashing · DSA in 60 Seconds #25"
+    },
+    {
+     "code": "DSA 26",
+     "title": "Two Pointers & Sliding Window",
+     "status": "soon",
+     "meta": "Short · Phase 4 Recursion/Hashing · DSA in 60 Seconds #26"
+    },
+    {
+     "code": "DSA 27",
+     "title": "Tree Basics",
+     "status": "soon",
+     "meta": "Short · Phase 5 Trees · DSA in 60 Seconds #27"
+    },
+    {
+     "code": "DSA 28",
+     "title": "Tree Traversals",
+     "status": "soon",
+     "meta": "Short · Phase 5 Trees · DSA in 60 Seconds #28"
+    },
+    {
+     "code": "DSA 29",
+     "title": "BST",
+     "status": "soon",
+     "meta": "Short · Phase 5 Trees · DSA in 60 Seconds #29"
+    },
+    {
+     "code": "DSA 30",
+     "title": "AVL Tree",
+     "status": "soon",
+     "meta": "Short · Phase 5 Trees · DSA in 60 Seconds #30"
+    },
+    {
+     "code": "DSA 31",
+     "title": "Heap & Priority Queue",
+     "status": "soon",
+     "meta": "Short · Phase 5 Trees · DSA in 60 Seconds #31"
+    },
+    {
+     "code": "DSA 32",
+     "title": "Trie",
+     "status": "soon",
+     "meta": "Short · Phase 5 Trees · DSA in 60 Seconds #32"
+    },
+    {
+     "code": "DSA 33",
+     "title": "Graph Basics",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #33"
+    },
+    {
+     "code": "DSA 34",
+     "title": "BFS",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #34"
+    },
+    {
+     "code": "DSA 35",
+     "title": "DFS",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #35"
+    },
+    {
+     "code": "DSA 36",
+     "title": "BFS vs DFS",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #36"
+    },
+    {
+     "code": "DSA 37",
+     "title": "Dijkstra",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #37"
+    },
+    {
+     "code": "DSA 38",
+     "title": "Topological Sort",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #38"
+    },
+    {
+     "code": "DSA 39",
+     "title": "Union-Find",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #39"
+    },
+    {
+     "code": "DSA 40",
+     "title": "MST (Kruskal vs Prim)",
+     "status": "soon",
+     "meta": "Short · Phase 6 Graphs · DSA in 60 Seconds #40"
+    },
+    {
+     "code": "DSA 41",
+     "title": "Greedy",
+     "status": "soon",
+     "meta": "Short · Phase 7 Paradigms · DSA in 60 Seconds #41"
+    },
+    {
+     "code": "DSA 42",
+     "title": "Divide and Conquer",
+     "status": "soon",
+     "meta": "Short · Phase 7 Paradigms · DSA in 60 Seconds #42"
+    },
+    {
+     "code": "DSA 43",
+     "title": "Dynamic Programming idea",
+     "status": "soon",
+     "meta": "Short · Phase 7 Paradigms · DSA in 60 Seconds #43"
+    },
+    {
+     "code": "DSA 44",
+     "title": "Memoization vs Tabulation",
+     "status": "soon",
+     "meta": "Short · Phase 7 Paradigms · DSA in 60 Seconds #44"
+    },
+    {
+     "code": "DSA 45",
+     "title": "0/1 Knapsack",
+     "status": "soon",
+     "meta": "Short · Phase 7 Paradigms · DSA in 60 Seconds #45"
+    },
+    {
+     "code": "DSA 46",
+     "title": "Choosing the Right Data Structure",
+     "status": "soon",
+     "meta": "Short · Phase 7 Paradigms · DSA in 60 Seconds #46"
+    }
+   ]
+  },
+  {
    "slug": "shorts",
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",

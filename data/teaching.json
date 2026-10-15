@@ -119,13 +119,8 @@
       "Why Python? Reasons, uses and the speed trade-off",
       "How Python runs programs: interpreter, byte code and the PVM"
      ],
-     "practice": [
-      "Give six reasons people choose Python.",
-      "Predict the output: a = [4, 9, 1]; print(sum(a))  (answer: 14).",
-      "Define interpreter, source code, byte code and PVM, and draw the execution diagram.",
-      "Why is byte code saved for imported files but not for the main script?",
-      "Type L = [1, 2]; L.append(L); L and explain the output (answer: [1, 2, [...]], Python detects the list containing itself)."
-     ]
+     "practice": [],
+     "notes_only": true
     },
     {
      "title": "Decisions and loops",

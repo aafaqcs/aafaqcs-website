@@ -356,7 +356,8 @@ def file_pill(f, up, slug, n, cls, label):
     shutil.copy2(f, out)
     kind = {".ppt": "PPT", ".pptx": "PPT", ".pdf": "PDF", ".doc": "DOC", ".docx": "DOC", ".key": "Keynote"}.get(f.suffix.lower(), f.suffix.lstrip(".").upper())
     icon = {"Slides": "▣", "Notes": "✎", "Practice": "?"}.get(label, "⬇")
-    return f'<a class="fbtn {cls}" href="{up}teaching/{slug}/week{n:02d}/{quote(f.name)}" target="_blank" rel="noopener">{icon} {label} · {kind}</a>'
+    nice = re.sub(r"[_-]+", " ", f.stem).replace(" Compact", "").strip()
+    return f'<a class="fbtn {cls}" href="{up}teaching/{slug}/week{n:02d}/{quote(f.name)}" target="_blank" rel="noopener">{icon} {E(nice)} · {kind}</a>'
 
 
 def gcr_html(sub, big=False):
@@ -478,13 +479,15 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                     if les.get("youtube"):
                         vid = les["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
                         v = f'<a class="fbtn vid" href="{E(les["youtube"])}" data-yt="{E(vid)}">▶ Watch</a>'
+                    elif wk.get("notes_only"):
+                        v = ""
                     else:
                         v = '<span class="fbtn off">Video soon</span>'
                     rows += f'<div class="lrow"><span class="ln">L{j}</span><span class="lt">{E(lt)}</span><span class="lf">{v}</span></div>'
                 files = "".join(file_pill(f, "../", sub["slug"], k, c_, l_) for fs, c_, l_ in ((sl, "", "Slides"), (no, "notes", "Notes"), (pr, "prac", "Practice")) for f in fs)
                 pq = "".join(f"<li>{E(q)}</li>" for q in wk.get("practice", []))
                 out += (f'<details class="wkc"{" open" if k == 1 else ""}><summary><span class="wk">WEEK {k:02d}</span><b>{E(wk["title"])}</b>'
-                        f'<span class="meta">{len(wk["lectures"])} lectures · videos · practice</span></summary>{rows}<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>'
+                        f'<span class="meta">{len(wk["lectures"])} lectures{"" if wk.get("notes_only") else " · videos · practice"}</span></summary>{rows}' + (f'<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>' if wk.get("practice") else "") + ''
                         f'<div class="f">{files or "<span class=\'fbtn off\'>Slides soon</span>"}</div></details>')
             return out
         tabs = ([("plan", "▤ Weekly plan", n_w, plan_html())] if plan else []) + [("slides", "▣ Slides", n_sl, pane(0, "", "Slides")), ("notes", "✎ Notes", n_no, pane(2, "notes", "Notes")),
@@ -561,7 +564,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
             inner = f'{img}<div>{code}<b>{E(l["title"])}</b><small>{E(l.get("meta", ""))}</small></div>'
             if l.get("youtube"):
                 vid = l["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
-                rows += f'<a class="lec" href="{E(l["youtube"])}" data-yt="{E(vid)}"{" data-short" if l.get("code") == "SHORT" else ""}>{inner}<span class="go">Watch ▸</span></a>'
+                rows += f'<a class="lec" href="{E(l["youtube"])}" data-yt="{E(vid)}"{" data-short" if (l.get("code") == "SHORT" or c["slug"] == "dsa-60") else ""}>{inner}<span class="go">Watch ▸</span></a>'
             else:
                 rows += f'<div class="lec">{inner}<span class="soon">Coming soon</span></div>'
         first = next((l for l in c["lessons"] if l.get("youtube")), None)

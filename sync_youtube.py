@@ -94,6 +94,9 @@ def clean(title):
 
 def place(title, short):
     t = title.lower()
+    m = re.search(r"DSA in 60 Seconds\s*#\s*(\d{1,2})", title, re.I)       # "<Concept> | DSA in 60 Seconds #9"
+    if m:
+        return "dsa-60", f"DSA {int(m.group(1))}"
     if short:
         return "shorts", "SHORT"
     m = re.search(r"\bML\s*0?(\d{1,2})\b", title)
