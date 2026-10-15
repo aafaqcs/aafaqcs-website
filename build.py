@@ -360,9 +360,19 @@ def file_pill(f, up, slug, n, cls, label):
     return f'<a class="fbtn {cls}" href="{up}teaching/{slug}/week{n:02d}/{quote(f.name)}" target="_blank" rel="noopener">{icon} {E(nice)} · {kind}</a>'
 
 
+PROFILE_EMAIL = "cse.aafaq@gmail.com"
+
+
 def gcr_html(sub, big=False):
     if sub.get("gcr_link"):
         code = f' <span class="meta">Class code: <b>{E(sub["gcr_code"])}</b></span>' if sub.get("gcr_code") else ""
+        if sub.get("gcr_request"):
+            from urllib.parse import quote
+            subj = quote(f'Request to join {sub["title"]} (Google Classroom)')
+            body = quote("Name:\nRoll number:\nBranch / semester:\nGoogle account email to invite (institute email preferred):\n\nPlease add me to the class.")
+            mail = f'mailto:{PROFILE_EMAIL}?subject={subj}&body={body}'
+            return (f'<a class="pill gcr" href="{mail}">Request access</a> <a class="pill gcr" href="{E(sub["gcr_link"])}">Open Classroom</a> '
+                    f'<span class="meta">Invitation only: send the request, I approve it by adding your email. Already added? Open Classroom.</span>')
         return f'<a class="pill gcr" href="{E(sub["gcr_link"])}">Open Google Classroom</a> <span class="meta">invited students only</span>{code}'
     if sub.get("gcr_code"):
         return f'<span>Google Classroom code: <b>{E(sub["gcr_code"])}</b></span> <a class="pill gcr" href="https://classroom.google.com/">Open Classroom</a>'

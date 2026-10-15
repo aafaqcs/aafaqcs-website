@@ -339,7 +339,8 @@
    ],
    "video_courses": [
     "python"
-   ]
+   ],
+   "gcr_request": true
   }
  ]
 }
