@@ -313,7 +313,7 @@ def page(path, title, body, prof, active, desc, up=None, index=True):
         PAGES.append(path)
     links = prof["links"]
     menu = "".join(f'<a class="{"on" if active == href else ""}" href="{up}{href}"{" aria-current=page" if active == href else ""}>{lab}</a>' for href, lab in MENU)
-    ext = " · ".join(f'<a href="{E(u)}">{n}</a>' for n, u in (("YouTube", links.get("youtube")), ("LinkedIn", links.get("linkedin")), ("Google Scholar", links.get("scholar"))) if u)
+    ext = " · ".join(f'<a href="{E(u)}">{n}</a>' for n, u in (("YouTube", links.get("youtube")), ("LinkedIn", links.get("linkedin")), ("Google Scholar", links.get("scholar")), ("GCET Kashmir profile", links.get("gcet"))) if u)
     banner = f"""<div class="banner">{NET}<h1>{E(prof["name"])}.</h1><p>{E(prof["title"])} · {E(prof["institution"])}</p></div>"""
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}"><link rel="icon" href="{FAVICON}">{f'<link rel="canonical" href="{SITE}/{"" if path == "index.html" else path}">' if index else '<meta name="robots" content="noindex">'}
@@ -602,7 +602,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
 
     # Contact
     em = "<br>".join(f'<a href="mailto:{E(x)}">{E(x)}</a>' for x in prof.get("emails", []))
-    ext = "<br>".join(f'<a href="{E(u)}">{n}</a>' for n, u in (("YouTube", links.get("youtube")), ("LinkedIn", links.get("linkedin")), ("Google Scholar", links.get("scholar")), ("ORCID", links.get("orcid"))) if u)
+    ext = "<br>".join(f'<a href="{E(u)}">{n}</a>' for n, u in (("YouTube", links.get("youtube")), ("LinkedIn", links.get("linkedin")), ("Google Scholar", links.get("scholar")), ("GCET Kashmir profile", links.get("gcet")), ("ORCID", links.get("orcid"))) if u)
     page("contact.html", f"Contact · {name}", f"""{h2("Contact")}
 <div class="contact"><div><b>Email</b>{em}</div><div><b>Office</b>{E(prof.get("address", prof["institution"]))}</div><div><b>Elsewhere</b>{ext}</div></div>""",
          prof, "contact.html", f"How to contact {name}.")
