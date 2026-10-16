@@ -259,6 +259,36 @@
    "active": true
   },
   {
+   "slug": "cn",
+   "title": "Computer Networks",
+   "code": "CN",
+   "programme": "B.Tech CSE",
+   "active": true,
+   "gcr_link": "",
+   "gcr_code": "",
+   "blurb": "How data travels from one computer to another: layered models, addressing and subnetting, routing, TCP and congestion control, and the applications on top. Solved with real packets and GATE-style questions.",
+   "weeks": [
+    "Introduction: network types, topologies, protocol layering (OSI and TCP/IP)",
+    "Physical layer: transmission media, signals, switching",
+    "Data link layer I: framing, error detection (parity, checksum, CRC)",
+    "Data link layer II: flow control and sliding window (stop-and-wait, Go-Back-N, Selective Repeat)",
+    "Medium access: ALOHA, CSMA/CD, Ethernet",
+    "LANs: switches, VLANs, Wi-Fi (802.11)",
+    "Network layer I: IPv4 addressing, classful addressing, subnetting",
+    "Network layer II: CIDR, VLSM, supernetting, NAT",
+    "Routing: distance vector, link state (RIP, OSPF), BGP",
+    "IPv6, ICMP, ARP, DHCP",
+    "Transport layer I: UDP, TCP segment, connection management",
+    "Transport layer II: TCP flow control and congestion control",
+    "Application layer: DNS, HTTP, e-mail (SMTP, POP3, IMAP), FTP",
+    "Network security: cryptography basics, TLS, firewalls",
+    "Revision and GATE problem solving"
+   ],
+   "video_courses": [
+    "networks"
+   ]
+  },
+  {
    "slug": "ada",
    "title": "Design & Analysis of Algorithms",
    "code": "ADA",
