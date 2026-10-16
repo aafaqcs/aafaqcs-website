@@ -129,6 +129,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-16",
+   "kind": "short",
+   "text": "Short: [Billion Times a Second: What Your CPU Does in One Second](https://youtu.be/BC791RQIt4g)."
+  },
+  {
    "date": "2026-10-15",
    "kind": "short",
    "text": "Short: [RAM vs SSD — Which One Forgets?](https://youtu.be/6B_w2RXb34A)."
@@ -182,11 +187,6 @@
    "date": "2026-10-10",
    "kind": "video",
    "text": "Released [CPU, Hardware & I/O Devices for JKSSB](https://youtu.be/BJABCZlvfwY) in [JKSSB Concept Through Questions](courses/ctq.html)."
-  },
-  {
-   "date": "2026-10-10",
-   "kind": "video",
-   "text": "Released [Ridge Regression](https://youtu.be/OlFmy6D_vQU) in [GATE DA 2027 · Machine Learning](courses/gate-da-ml.html)."
   },
   {
    "date": "2026-10-04",

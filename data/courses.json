@@ -1104,7 +1104,7 @@
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",
    "blurb": "Quick visual ideas from every series, each under a minute.",
-   "total": 12,
+   "total": 13,
    "lessons": [
     {
      "code": "SHORT",
@@ -1201,6 +1201,14 @@
      "status": "live",
      "thumb": "assets/img/yt_6B_w2RXb34A.jpg",
      "meta": "1:05 · RAM vs SSD"
+    },
+    {
+     "code": "SHORT",
+     "title": "Billion Times a Second: What Your CPU Does in One Second",
+     "youtube": "https://youtu.be/BC791RQIt4g",
+     "status": "live",
+     "thumb": "assets/img/yt_BC791RQIt4g.jpg",
+     "meta": "0:51 · Short"
     }
    ]
   }
