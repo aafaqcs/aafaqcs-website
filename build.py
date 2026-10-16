@@ -167,6 +167,11 @@ h2 svg{color:var(--teal)!important}
 .tc .res span{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--soft);border:1px solid var(--line)}
 .tc .res span b{color:var(--head)}
 
+/* inactive courses */
+.tc.off{filter:grayscale(.85);opacity:.62}.tc.off:hover{opacity:.9}
+.tc .top .sem{background:#ffffff33}
+.tc:not(.off) .top .sem{background:#2ed573;color:#06210f}
+
 /* ----- subject page tabs ----- */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 16px;border-bottom:1px solid var(--line);padding-bottom:10px}
 .tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 14px var(--sans);padding:9px 16px;border-radius:999px;cursor:pointer}
@@ -452,7 +457,7 @@ var w=b.closest(".tabwrap");w.querySelectorAll(".tabs button").forEach(function(
 w.querySelectorAll(".tabpane").forEach(function(p){p.classList.toggle("on",p.id===b.dataset.t)});history.replaceState(null,"","#"+b.dataset.t)});
 window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&document.querySelector('.tabs button[data-t="'+h+'"]');if(b)b.click()})</script>"""
     cards = ""
-    for i, sub in enumerate(T["subjects"]):
+    for i, sub in enumerate(sorted(T["subjects"], key=lambda x: not x.get("active", True))):
         c1, c2 = PALETTE[i % len(PALETTE)]
         n_w = len(sub["weeks"])
         wf = [week_files(sub["slug"], k) for k in range(1, n_w + 1)]
@@ -460,7 +465,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
         plan = sub.get("plan") or []
         n_pr += sum(len(w.get("practice", [])) for w in plan)
         vids = [l for vc in sub.get("video_courses", []) for l in by_slug.get(vc, {}).get("lessons", []) if l.get("youtube")]
-        cards += f"""<a class="tc" href="teaching/{sub["slug"]}.html" style="--c1:{c1};--c2:{c2}"><div class="top"><span class="sem">{E(T.get("semester", ""))}</span>
+        cards += f"""<a class="tc{'' if sub.get('active', True) else ' off'}" href="teaching/{sub["slug"]}.html" style="--c1:{c1};--c2:{c2}"><div class="top"><span class="sem">{'ACTIVE' if sub.get('active', True) else 'INACTIVE'}</span>
 <div class="code">{E(sub["code"])}</div><div class="nm">{E(sub["title"])}</div></div>
 <div class="bot"><p>{E(sub["blurb"])}</p><div class="res">{f'<span>▤ Lectures <b>{sum(len(w["lectures"]) for w in plan)}</b></span>' if plan else ''}<span>▣ Slides <b>{n_sl}</b></span><span>✎ Notes <b>{n_no}</b></span><span>? Practice <b>{n_pr}</b></span><span>▶ Videos <b>{len(vids)}</b></span></div>
 <span class="meta">{E(sub.get("programme", ""))} · {n_w} weeks · open course →</span></div></a>"""
@@ -505,7 +510,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
         tabbar = "".join(f'<button type="button" role="tab" data-t="{t}" aria-selected="{"true" if j == 0 else "false"}">{lab}<span class="n">{n}</span></button>' for j, (t, lab, n, _) in enumerate(tabs))
         panes = "".join(f'<div class="tabpane{" on" if j == 0 else ""}" id="{t}" role="tabpanel">{html_}</div>' for j, (t, _, _, html_) in enumerate(tabs))
         body = f"""<p class="crumb"><a href="../classes.html">Teaching</a> › {E(sub["code"])}</p>
-<div class="plhead" style="grid-template-columns:1fr"><div>{h2(sub["title"])}<p>{E(sub["blurb"])}</p><p class="meta">{E(sub.get("programme", ""))} · {E(T.get("semester", ""))} · {n_w} weeks</p><div class="gcrbox" style="margin-top:8px">{gcr_html(sub)}</div></div></div>
+<div class="plhead" style="grid-template-columns:1fr"><div>{h2(sub["title"])}<p>{E(sub["blurb"])}</p><p class="meta">{E(sub.get("programme", ""))} · {'Active' if sub.get('active', True) else 'Inactive: not running now'} · {n_w} weeks</p><div class="gcrbox" style="margin-top:8px">{gcr_html(sub)}</div></div></div>
 <div class="tabwrap"><div class="tabs" role="tablist">{tabbar}</div>{panes}</div>{TABJS}"""
         page(f"teaching/{sub['slug']}.html", f"{sub['title']} · {prof['short_name']}", body, prof, "classes.html", f"{sub['title']}: slides, notes, practice questions and video lectures. {sub['blurb']}")
     page("classes.html", f"Teaching · {name}", f"""{h2("My courses · " + T.get("semester", ""))}<p>Courses I teach at {E(prof["institution"])}. Open a course for its slides, notes, practice questions and videos, week by week, plus its Google Classroom.</p>
