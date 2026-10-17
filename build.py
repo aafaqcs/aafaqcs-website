@@ -258,7 +258,7 @@ ICON = ('<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g s
         '<line x1="19" y1="17" x2="19" y2="5"/><line x1="19" y1="17" x2="6" y2="20"/><line x1="19" y1="17" x2="29" y2="28"/></g>'
         '<g fill="currentColor"><circle cx="19" cy="17" r="5.5"/><circle cx="19" cy="4.5" r="3"/><circle cx="5" cy="20.5" r="3"/><circle cx="29.5" cy="28.5" r="3.6"/></g></svg>')
 
-MENU = [("index.html", "Home"), ("start.html", "Start here"), ("publications.html", "Publications"), ("courses.html", "Video courses"),
+MENU = [("index.html", "Home"),  ("publications.html", "Publications"), ("courses.html", "Video courses"),
         ("classes.html", "Teaching"), ("bio.html", "Bio"), ("contact.html", "Contact")]
 
 
@@ -544,7 +544,6 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
     home = f"""<div class="term" aria-label="Introduction"><div class="tbar"><i></i><i></i><i></i><span>aafaq@cs: ~</span></div>
 <div class="tbody">{lines}<div class="ln" style="--d:{0.15 + 0.9 * len(term)}s"><span class="pr">aafaq@cs:~$</span> <span class="cur"></span></div></div></div>
 {stats}
-<div class="cta"><div><b>Student? Start here.</b><span>Python Programming, Autumn 2026: weekly lectures, notes and practice. See in 4 steps how to reach it.</span></div><a class="btn" href="start.html">How to reach the course →</a><a class="btn alt" href="teaching/python.html">Open Python course</a></div>
 {abstract_html}
 {h2("Experience at a glance")}{glance_html}
 {h2("What's new")}<ul class="news">{"".join(news_item(n) for n in prof.get("news", []))}</ul>
@@ -555,15 +554,6 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
 {h2("Latest publications")}{"".join(pub_html(p) for p in sorted(pubs["publications"], key=lambda p: -p["year"])[:3])}
 <p class="more"><a href="publications.html">All publications →</a></p>"""
     page("index.html", f"{name} · GCET Kashmir", home, prof, "index.html", f"{name}: Assistant Professor, CSE, GCET Kashmir. Graph learning research and free visual lectures for GATE.")
-
-    # Start here: how students reach the Python course (annotated screenshots in assets/img/guide_*.png)
-    gsteps = [("Open the website", "Go to <b>aafaqcs.github.io</b>. On the home page press <b>Open Python course</b> (green box), or use <b>Teaching</b> in the left menu.", "guide_1.png"),
-              ("Pick Python Programming", "On the Teaching page the active courses are on top. Click the <b>PY · Python Programming</b> card.", "guide_2.png"),
-              ("Join the Google Classroom", "Press <b>Request access</b> (this sends me your email, I approve it), then <b>Open Classroom</b>. Use your own Gmail address.", "guide_3.png"),
-              ("Open your week", "Click <b>Week 01</b> to open it. Each lecture has its video, notes (PDF buttons) and practice. Week 1: Why Python, How Python runs programs, Installing Python.", "guide_4.png")]
-    gh = "".join(f'<div class="step"><h3><i>{k}</i>{t}</h3><p>{d}</p><img src="assets/img/{im}" alt="Step {k}: {E(t)}" loading="lazy"></div>' for k, (t, d, im) in enumerate(gsteps, 1))
-    page("start.html", f"Start here · Python Programming · {name}", f"""{h2("Start here: reach the Python Programming course")}<p>Four steps, with screenshots. Takes one minute.</p><div class="guide">{gh}</div>
-<p class="more"><a href="teaching/python.html">Open the Python course →</a></p>""", prof, "start.html", "How students reach the Python Programming course: four steps with screenshots.")
 
     # Publications
     labels = {"journal": "Journal articles", "conference": "Conference papers", "chapter": "Book chapters"}
