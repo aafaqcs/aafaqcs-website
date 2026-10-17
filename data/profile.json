@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-17",
+   "kind": "short",
+   "text": "Short: [How Hard Drives Work: Why HDDs Are 100x Slower Than SSDs](https://youtu.be/g87pPfxVEa0)."
+  },
+  {
    "date": "2026-10-16",
    "kind": "short",
    "text": "Short: [Billion Times a Second: What Your CPU Does in One Second](https://youtu.be/BC791RQIt4g)."
@@ -183,11 +188,6 @@
    "date": "2026-10-11",
    "kind": "video",
    "text": "Released [Software, OS Types & Multitasking Explained for JKSSB](https://youtu.be/Ly0TKzpCUl4) in [JKSSB Concept Through Questions](courses/ctq.html)."
-  },
-  {
-   "date": "2026-10-10",
-   "kind": "video",
-   "text": "Released [CPU, Hardware & I/O Devices for JKSSB](https://youtu.be/BJABCZlvfwY) in [JKSSB Concept Through Questions](courses/ctq.html)."
   },
   {
    "date": "2026-10-04",

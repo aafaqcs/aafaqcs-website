@@ -1104,7 +1104,7 @@
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",
    "blurb": "Quick visual ideas from every series, each under a minute.",
-   "total": 13,
+   "total": 14,
    "lessons": [
     {
      "code": "SHORT",
@@ -1209,6 +1209,14 @@
      "status": "live",
      "thumb": "assets/img/yt_BC791RQIt4g.jpg",
      "meta": "0:51 · Short"
+    },
+    {
+     "code": "SHORT",
+     "title": "How Hard Drives Work: Why HDDs Are 100x Slower Than SSDs",
+     "youtube": "https://youtu.be/g87pPfxVEa0",
+     "status": "live",
+     "thumb": "assets/img/yt_g87pPfxVEa0.jpg",
+     "meta": "0:53 · Short"
     }
    ]
   }
