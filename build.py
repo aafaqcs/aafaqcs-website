@@ -224,6 +224,11 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 :root[data-theme="dark"] body::after{background:linear-gradient(180deg,#050912e6 0%,#050912b3 50%,#05091ef0 100%)}
 footer .photo-credit{font-size:12px;opacity:.8}
 
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:18px 0 0;padding:16px 18px;border-radius:14px;background:linear-gradient(120deg,#0f766e,#115e59);color:#fff}
+.cta div{flex:1 1 260px}.cta b{display:block;font-size:18px;margin-bottom:2px}.cta span{font-size:14px;opacity:.92}
+.cta .btn{background:#fff;color:#0f5f58;font-weight:700;padding:9px 16px;border-radius:999px;text-decoration:none;font-size:14px}.cta .btn.alt{background:transparent;color:#fff;border:1.5px solid #ffffffaa}
+.guide .step{margin:26px 0}.guide .step h3{display:flex;gap:10px;align-items:center;margin:0 0 6px}.guide .step h3 i{font-style:normal;background:#e11d48;color:#fff;border-radius:50%;width:28px;height:28px;display:inline-grid;place-items:center;font-size:15px}
+.guide img{width:100%;border:1px solid var(--line,#d5dde8);border-radius:12px;box-shadow:0 8px 24px #0b1b2e22;margin-top:8px}
 /* ----- terminal intro (home) ----- */
 .term{border-radius:14px;overflow:hidden;background:#0a1220;border:1px solid #1d2b45;box-shadow:0 18px 44px #0b1b2e40;margin:20px 0 22px;font:14.5px/1.65 var(--mono);color:#d6e2f0}
 .term .tbar{display:flex;align-items:center;gap:7px;padding:9px 14px;background:#111d33;border-bottom:1px solid #1d2b45}
@@ -253,7 +258,7 @@ ICON = ('<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g s
         '<line x1="19" y1="17" x2="19" y2="5"/><line x1="19" y1="17" x2="6" y2="20"/><line x1="19" y1="17" x2="29" y2="28"/></g>'
         '<g fill="currentColor"><circle cx="19" cy="17" r="5.5"/><circle cx="19" cy="4.5" r="3"/><circle cx="5" cy="20.5" r="3"/><circle cx="29.5" cy="28.5" r="3.6"/></g></svg>')
 
-MENU = [("index.html", "Home"), ("publications.html", "Publications"), ("courses.html", "Video courses"),
+MENU = [("index.html", "Home"), ("start.html", "Start here"), ("publications.html", "Publications"), ("courses.html", "Video courses"),
         ("classes.html", "Teaching"), ("bio.html", "Bio"), ("contact.html", "Contact")]
 
 
@@ -467,7 +472,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
         vids = [l for vc in sub.get("video_courses", []) for l in by_slug.get(vc, {}).get("lessons", []) if l.get("youtube")]
         cards += f"""<a class="tc{'' if sub.get('active', True) else ' off'}" href="teaching/{sub["slug"]}.html" style="--c1:{c1};--c2:{c2}"><div class="top"><span class="sem">{'ACTIVE' if sub.get('active', True) else 'INACTIVE'}</span>
 <div class="code">{E(sub["code"])}</div><div class="nm">{E(sub["title"])}</div></div>
-<div class="bot"><p>{E(sub["blurb"])}</p><div class="res">{f'<span>▤ Lectures <b>{sum(len(w["lectures"]) for w in plan)}</b></span>' if plan else ''}<span>▣ Slides <b>{n_sl}</b></span><span>✎ Notes <b>{n_no}</b></span><span>? Practice <b>{n_pr}</b></span><span>▶ Videos <b>{len(vids)}</b></span></div>
+<div class="bot"><p>{E(sub["blurb"])}</p><div class="res">{f'<span>▤ Lectures <b>{sum(len(w["lectures"]) for w in plan)}</b></span>' if plan else ''}{f'<span>▣ Slides <b>{n_sl}</b></span>' if n_sl else ''}{f'<span>✎ Notes <b>{n_no}</b></span>' if n_no else ''}{f'<span>? Practice <b>{n_pr}</b></span>' if n_pr else ''}{f'<span>▶ Videos <b>{len(vids)}</b></span>' if vids else ''}</div>
 <span class="meta">{E(sub.get("programme", ""))} · {n_w} weeks · open course →</span></div></a>"""
 
         def pane(idx, cls, label):
@@ -509,7 +514,7 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                 ("practice", "? Practice Questions", n_pr, pane(1, "prac", "Practice")), ("videos", "▶ Videos", len(vids), vpane)]
         tabbar = "".join(f'<button type="button" role="tab" data-t="{t}" aria-selected="{"true" if j == 0 else "false"}">{lab}<span class="n">{n}</span></button>' for j, (t, lab, n, _) in enumerate(tabs))
         panes = "".join(f'<div class="tabpane{" on" if j == 0 else ""}" id="{t}" role="tabpanel">{html_}</div>' for j, (t, _, _, html_) in enumerate(tabs))
-        body = f"""<p class="crumb"><a href="../classes.html">Teaching</a> › {E(sub["code"])}</p>
+        body = f"""<p class="crumb"><a href="../classes.html">Teaching</a> › {E(sub["title"])}</p>
 <div class="plhead" style="grid-template-columns:1fr"><div>{h2(sub["title"])}<p>{E(sub["blurb"])}</p><p class="meta">{E(sub.get("programme", ""))} · {'Active' if sub.get('active', True) else 'Inactive: not running now'} · {n_w} weeks</p><div class="gcrbox" style="margin-top:8px">{gcr_html(sub)}</div></div></div>
 <div class="tabwrap"><div class="tabs" role="tablist">{tabbar}</div>{panes}</div>{TABJS}"""
         page(f"teaching/{sub['slug']}.html", f"{sub['title']} · {prof['short_name']}", body, prof, "classes.html", f"{sub['title']}: slides, notes, practice questions and video lectures. {sub['blurb']}")
@@ -532,13 +537,14 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
     research = ", ".join(pubs["interests"]).lower()
     term = [("whoami", f'{E(name)} · Assistant Professor, CSE @ <a href="https://gcetkashmir.ac.in">GCET Kashmir</a>'),
             ("cat research.md", 'Deep graph neural networks <b>forget</b> as they grow (over-smoothing, over-squashing). My PhD at <a href="https://nitsri.ac.in">NIT Srinagar</a> built ones that <b>remember</b>.'),
-            ("./teach --free --visual --verified", '<a href="courses.html">GATE · GATE DA · JKSSB</a>: every graph computed from real data, every answer checked.'),
+            ("./teach --free --visual --verified", '<a href="courses.html">Python · GATE · JKSSB</a>: every graph computed from real data, every answer checked.'),
             ("echo $MOTTO", '<b class="mot">"Computer science, shown. Not just told."</b>')]
     lines = "".join(f'<div class="ln" style="--d:{0.15 + 0.9 * k}s"><span class="pr">aafaq@cs:~$</span> <span class="cmd">{E(c)}</span></div>'
                     f'<div class="out" style="--d:{0.6 + 0.9 * k}s">{o}</div>' for k, (c, o) in enumerate(term))
     home = f"""<div class="term" aria-label="Introduction"><div class="tbar"><i></i><i></i><i></i><span>aafaq@cs: ~</span></div>
 <div class="tbody">{lines}<div class="ln" style="--d:{0.15 + 0.9 * len(term)}s"><span class="pr">aafaq@cs:~$</span> <span class="cur"></span></div></div></div>
 {stats}
+<div class="cta"><div><b>Student? Start here.</b><span>Python Programming, Autumn 2026: weekly lectures, notes and practice. See in 4 steps how to reach it.</span></div><a class="btn" href="start.html">How to reach the course →</a><a class="btn alt" href="teaching/python.html">Open Python course</a></div>
 {abstract_html}
 {h2("Experience at a glance")}{glance_html}
 {h2("What's new")}<ul class="news">{"".join(news_item(n) for n in prof.get("news", []))}</ul>
@@ -549,6 +555,15 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
 {h2("Latest publications")}{"".join(pub_html(p) for p in sorted(pubs["publications"], key=lambda p: -p["year"])[:3])}
 <p class="more"><a href="publications.html">All publications →</a></p>"""
     page("index.html", f"{name} · GCET Kashmir", home, prof, "index.html", f"{name}: Assistant Professor, CSE, GCET Kashmir. Graph learning research and free visual lectures for GATE.")
+
+    # Start here: how students reach the Python course (annotated screenshots in assets/img/guide_*.png)
+    gsteps = [("Open the website", "Go to <b>aafaqcs.github.io</b>. On the home page press <b>Open Python course</b> (green box), or use <b>Teaching</b> in the left menu.", "guide_1.png"),
+              ("Pick Python Programming", "On the Teaching page the active courses are on top. Click the <b>PY · Python Programming</b> card.", "guide_2.png"),
+              ("Join the Google Classroom", "Press <b>Request access</b> (this sends me your email, I approve it), then <b>Open Classroom</b>. Use your own Gmail address.", "guide_3.png"),
+              ("Open your week", "Click <b>Week 01</b> to open it. Each lecture has its video, notes (PDF buttons) and practice. Week 1: Why Python, How Python runs programs, Installing Python.", "guide_4.png")]
+    gh = "".join(f'<div class="step"><h3><i>{k}</i>{t}</h3><p>{d}</p><img src="assets/img/{im}" alt="Step {k}: {E(t)}" loading="lazy"></div>' for k, (t, d, im) in enumerate(gsteps, 1))
+    page("start.html", f"Start here · Python Programming · {name}", f"""{h2("Start here: reach the Python Programming course")}<p>Four steps, with screenshots. Takes one minute.</p><div class="guide">{gh}</div>
+<p class="more"><a href="teaching/python.html">Open the Python course →</a></p>""", prof, "start.html", "How students reach the Python Programming course: four steps with screenshots.")
 
     # Publications
     labels = {"journal": "Journal articles", "conference": "Conference papers", "chapter": "Book chapters"}

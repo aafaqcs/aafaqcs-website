@@ -8,3 +8,5 @@ __pycache__/
 # backups made while editing
 build_pre_*.py
 data/*_before_*.json
+shots/
+.ffprof/
