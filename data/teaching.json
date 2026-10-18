@@ -33,7 +33,8 @@
      "lectures": [
       "Why Python? Reasons, uses and the speed trade-off",
       "How Python runs programs: interpreter, byte code and the PVM",
-      "Installing Python and running your first program"
+      "Installing Python and running your first program",
+      "Running Python on Windows: 6 ways (CMD, IDLE, PyCharm, Jupyter, VS Code)"
      ],
      "practice": [],
      "no_video": [

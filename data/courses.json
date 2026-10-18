@@ -390,6 +390,14 @@
      "meta": "Week 1 · video: Installing Python"
     },
     {
+     "code": "W01 · L4",
+     "title": "Running Python on Windows: 6 ways (CMD, IDLE, PyCharm, Jupyter, VS Code)",
+     "status": "live",
+     "meta": "7:19 · one program, six tools · common errors · which to use",
+     "thumb": "assets/img/yt_SHYetLPC-9A.jpg",
+     "youtube": "https://youtu.be/SHYetLPC-9A"
+    },
+    {
      "code": "W02 · L1",
      "title": "if, elif and else; comparison and logical operators",
      "status": "soon",
@@ -640,14 +648,6 @@
      "title": "Revision and a mock test",
      "status": "soon",
      "meta": "Week 15 · Project, testing and revision"
-    },
-    {
-     "code": "",
-     "title": "6 Ways to Run Python on Windows (CMD, IDLE, PyCharm, Jupyter, VS Code)",
-     "youtube": "https://youtu.be/SHYetLPC-9A",
-     "status": "live",
-     "thumb": "assets/img/yt_SHYetLPC-9A.jpg",
-     "meta": "7:19"
     }
    ],
    "cover": "assets/img/python.jpg"
