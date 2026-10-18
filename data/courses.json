@@ -369,7 +369,7 @@
    "title": "Python Programming",
    "short": "Python",
    "blurb": "A 15-week course: three lectures every week, each with a video, slides and a practice set. From your first program to a small project.",
-   "total": 45,
+   "total": 46,
    "lessons": [
     {
      "code": "W01 · L1",
@@ -640,6 +640,14 @@
      "title": "Revision and a mock test",
      "status": "soon",
      "meta": "Week 15 · Project, testing and revision"
+    },
+    {
+     "code": "",
+     "title": "6 Ways to Run Python on Windows (CMD, IDLE, PyCharm, Jupyter, VS Code)",
+     "youtube": "https://youtu.be/SHYetLPC-9A",
+     "status": "live",
+     "thumb": "assets/img/yt_SHYetLPC-9A.jpg",
+     "meta": "7:19"
     }
    ],
    "cover": "assets/img/python.jpg"
