@@ -200,6 +200,12 @@ h2 svg{color:var(--teal)!important}
 .lrow .ln{font:700 12px var(--mono);color:#fff;background:var(--head);border-radius:8px;text-align:center;padding:3px 0}
 .lrow .lt{font-size:14.5px;font-weight:600}
 .fbtn.vid{background:#e62117}
+.pqweek{border:1px solid var(--box);border-radius:12px;margin:12px 0;overflow:hidden;background:var(--bg,#fff)}
+.pqwh{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--soft);border-bottom:1px solid var(--box)}
+.pqwh .wk{font:800 12px var(--mono);letter-spacing:.08em;color:var(--head)}.pqwh b{flex:1;font-size:15px}.pqwh .pqn{font:700 12px var(--mono);color:#c2410c}
+.pqt{padding:12px 20px 12px 42px!important}.pqt li{margin:9px 0!important;line-height:1.55}
+.pqf{padding:6px 16px 12px}.pqsoon{padding:12px 16px;color:var(--muted);font-size:14px}
+.pqlinkrow{padding:8px 16px 12px}.pqlink{font-weight:700;color:#c2410c;text-decoration:none}.pqlink:hover{text-decoration:underline}
 .pqh{font:800 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--head);padding:14px 16px 4px}
 .pq{margin:0;padding:4px 16px 8px 38px;font-size:14px}.pq li{margin:5px 0}
 .wkc .f{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 14px}
@@ -481,6 +487,18 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                 files = "".join(file_pill(f, "../", sub["slug"], k, cls, label) for f in wf[k - 1][idx])
                 rows += f'<div class="res-row"><span class="wk">WEEK {k:02d}</span><span class="t">{E(topic)}</span><span class="f">{files or f"<span class=\'fbtn off\'>{label} soon</span>"}</span></div>'
             return rows
+        def practice_pane():
+            if not plan:
+                return pane(1, "prac", "Practice")
+            out = ""
+            for k, wk in enumerate(plan, 1):
+                qs = wk.get("practice", [])
+                files = "".join(file_pill(f, "../", sub["slug"], k, "prac", "Practice") for f in wf[k - 1][1])
+                body = (f'<ol class="pq pqt">{"".join(f"<li>{E(q)}</li>" for q in qs)}</ol>' if qs else "") + (f'<div class="f pqf">{files}</div>' if files else "")
+                if not body:
+                    body = '<div class="pqsoon">Practice questions soon</div>'
+                out += f'<div class="pqweek"><div class="pqwh"><span class="wk">WEEK {k:02d}</span><b>{E(wk["title"])}</b><span class="pqn">{len(qs) if qs else ""}{" questions" if len(qs) != 1 and qs else (" question" if qs else "")}</span></div>{body}</div>'
+            return out
         vrows = ""
         for k, l in enumerate(vids, 1):
             vid = l["youtube"].rstrip("/").rsplit("/", 1)[-1].split("=")[-1]
@@ -507,11 +525,11 @@ window.addEventListener("load",function(){var h=location.hash.slice(1);var b=h&&
                 files = "".join(file_pill(f, "../", sub["slug"], k, c_, l_) for fs, c_, l_ in ((sl, "", "Slides"), (no, "notes", "Notes"), (pr, "prac", "Practice")) for f in fs)
                 pq = "".join(f"<li>{E(q)}</li>" for q in wk.get("practice", []))
                 out += (f'<details class="wkc"{" open" if k == 1 else ""}><summary><span class="wk">WEEK {k:02d}</span><b>{E(wk["title"])}</b>'
-                        f'<span class="meta">{len(wk["lectures"])} lectures{" · videos · practice" if (wk.get("practice") or len(wk.get("no_video", [])) < len(wk["lectures"])) else ""}</span></summary>{rows}' + (f'<div class="pqh">Practice set</div><ol class="pq">{pq}</ol>' if wk.get("practice") else "") + ''
+                        f'<span class="meta">{len(wk["lectures"])} lectures{" · videos · practice" if (wk.get("practice") or len(wk.get("no_video", [])) < len(wk["lectures"])) else ""}</span></summary>{rows}' + (f'<div class="pqlinkrow"><a href="#practice" class="pqlink" onclick="var b=document.querySelector(\'[data-t=practice]\');if(b){{b.click();b.scrollIntoView({{block:\'center\'}});}}return false">? {len(wk["practice"])} practice questions for this week →</a></div>' if wk.get("practice") else "") + ''
                         f'<div class="f">{files or "<span class=\'fbtn off\'>Slides soon</span>"}</div></details>')
             return out
         tabs = ([("plan", "▤ Weekly plan", n_w, plan_html())] if plan else []) + [("slides", "▣ Slides", n_sl, pane(0, "", "Slides")), ("notes", "✎ Notes", n_no, pane(2, "notes", "Notes")),
-                ("practice", "? Practice Questions", n_pr, pane(1, "prac", "Practice")), ("videos", "▶ Videos", len(vids), vpane)]
+                ("practice", "? Practice Questions", n_pr, practice_pane()), ("videos", "▶ Videos", len(vids), vpane)]
         tabbar = "".join(f'<button type="button" role="tab" data-t="{t}" aria-selected="{"true" if j == 0 else "false"}">{lab}<span class="n">{n}</span></button>' for j, (t, lab, n, _) in enumerate(tabs))
         panes = "".join(f'<div class="tabpane{" on" if j == 0 else ""}" id="{t}" role="tabpanel">{html_}</div>' for j, (t, _, _, html_) in enumerate(tabs))
         body = f"""<p class="crumb"><a href="../classes.html">Teaching</a> › {E(sub["title"])}</p>
