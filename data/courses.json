@@ -369,7 +369,7 @@
    "title": "Python Programming",
    "short": "Python",
    "blurb": "A 15-week course: three lectures every week, each with a video, slides and a practice set. From your first program to a small project.",
-   "total": 46,
+   "total": 45,
    "lessons": [
     {
      "code": "W01 · L1",
@@ -385,15 +385,9 @@
     },
     {
      "code": "W01 · L3",
-     "title": "Installing Python and running your first program",
-     "status": "soon",
-     "meta": "Week 1 · video: Installing Python"
-    },
-    {
-     "code": "W01 · L4",
-     "title": "Running Python on Windows: 6 ways (CMD, IDLE, PyCharm, Jupyter, VS Code)",
+     "title": "Installing Python and running your first program: CMD, IDLE, Jupyter, PyCharm, VS Code",
      "status": "live",
-     "meta": "7:19 · one program, six tools · common errors · which to use",
+     "meta": "7:19 · install Python, then run one program six ways · notes: Lec03_Notes.pdf",
      "thumb": "assets/img/yt_SHYetLPC-9A.jpg",
      "youtube": "https://youtu.be/SHYetLPC-9A"
     },

@@ -33,10 +33,19 @@
      "lectures": [
       "Why Python? Reasons, uses and the speed trade-off",
       "How Python runs programs: interpreter, byte code and the PVM",
-      "Installing Python and running your first program",
-      "Running Python on Windows: 6 ways (CMD, IDLE, PyCharm, Jupyter, VS Code)"
+      "Installing Python and running your first program: CMD, IDLE, Jupyter, PyCharm, VS Code"
      ],
-     "practice": [],
+     "practice": [
+      "Install Python on your own machine. Record the output of python --version and where python (which python3 on macOS).",
+      "In the interactive prompt compute 2**64, 7/2, 7//2 and len('engineering'). Which results would differ in C?",
+      "Write hello.py in Notepad (or TextEdit) and run it from the terminal. Then deliberately save it as hello.txt; can python hello.txt still run it? Why?",
+      "Run hello.py in IDLE with F5, then type total in the Shell. Explain why it works.",
+      "Create a Jupyter notebook lab3.ipynb with a Markdown title, a cell setting x = 10, and a cell printing x * 2. Change x to 99 in the first cell without re-running it and run the second cell. What prints, and what does Restart & Run All print?",
+      "Create a PyCharm project with a venv, run hello.py, and step through the loop in the debugger. Write down the values of total after each iteration.",
+      "In VS Code, open your lab folder, select the interpreter, and run hello.py using (a) the Run triangle, (b) Shift+Enter on the loop only, (c) F5.",
+      "In VS Code create a notebook, select a kernel, pip install numpy if needed, and run import numpy as np; print(np.arange(10).mean()).",
+      "Detective. A friend's import numpy works in the terminal but fails in VS Code. Give two possible causes and the one line of Python that helps tell them apart."
+     ],
      "no_video": [
       0,
       1
