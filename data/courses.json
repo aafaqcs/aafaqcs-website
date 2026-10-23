@@ -369,7 +369,7 @@
    "title": "Python Programming",
    "short": "Python",
    "blurb": "A 15-week course: three lectures every week, each with a video, slides and a practice set. From your first program to a small project.",
-   "total": 45,
+   "total": 46,
    "lessons": [
     {
      "code": "W01 · L1",
@@ -642,6 +642,14 @@
      "title": "Revision and a mock test",
      "status": "soon",
      "meta": "Week 15 · Project, testing and revision"
+    },
+    {
+     "code": "",
+     "title": "Learn Python Basics Visually: print(), Variables, Types & All Operators",
+     "youtube": "https://youtu.be/ojrANEkx9kk",
+     "status": "live",
+     "thumb": "assets/img/yt_ojrANEkx9kk.jpg",
+     "meta": "5:37"
     }
    ],
    "cover": "assets/img/python.jpg"
