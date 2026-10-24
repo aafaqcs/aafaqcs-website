@@ -130,6 +130,11 @@
  "address": "Department of Computer Science & Engineering, Government College of Engineering and Technology, Safapora, Ganderbal, Kashmir",
  "news": [
   {
+   "date": "2026-10-24",
+   "kind": "short",
+   "text": "Short: [Your Phone Flips Billions of Switches. None of Them Move.](https://youtu.be/KSpof2T-UOw)."
+  },
+  {
    "date": "2026-10-23",
    "kind": "video",
    "text": "Released [Learn Python Basics Visually: print(), Variables, Types & All Operators](https://youtu.be/ojrANEkx9kk) in [Python Programming](courses/python.html)."
@@ -183,11 +188,6 @@
    "date": "2026-10-12",
    "kind": "video",
    "text": "Released [MS Excel & Access](https://youtu.be/F0WoBCfAmPk) in [JKSSB Computer: Concept Through Questions](courses/ctq.html)."
-  },
-  {
-   "date": "2026-10-12",
-   "kind": "video",
-   "text": "Released [Deadlock, Process Scheduling, Linux & Compilers for JKSSB](https://youtu.be/HRjrpjCrQ68) in [JKSSB Concept Through Questions](courses/ctq.html)."
   },
   {
    "date": "2026-10-04",

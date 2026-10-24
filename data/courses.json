@@ -1114,7 +1114,7 @@
    "title": "Shorts · one idea in 60 seconds",
    "short": "Shorts",
    "blurb": "Quick visual ideas from every series, each under a minute.",
-   "total": 14,
+   "total": 15,
    "lessons": [
     {
      "code": "SHORT",
@@ -1227,6 +1227,14 @@
      "status": "live",
      "thumb": "assets/img/yt_g87pPfxVEa0.jpg",
      "meta": "0:53 · Short"
+    },
+    {
+     "code": "SHORT",
+     "title": "Your Phone Flips Billions of Switches. None of Them Move.",
+     "youtube": "https://youtu.be/KSpof2T-UOw",
+     "status": "live",
+     "thumb": "assets/img/yt_KSpof2T-UOw.jpg",
+     "meta": "1:04 · Short"
     }
    ]
   }
